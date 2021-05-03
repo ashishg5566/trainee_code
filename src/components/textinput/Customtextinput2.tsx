@@ -1,24 +1,28 @@
 import React, { Component, FC } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet,  TouchableOpacity } from 'react-native';
+import { TextInput } from 'react-native-paper';
 // import FloatLabelTextInput from 'react-native-floating-label-text-input';
+import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 // create a component
-const Customtextinput2: FC = ({ value, onChangeText, placeholder, secureTextEntry,label }) => {
+const CustomTextInput2: FC = ({  value, onChangeText, placeholder, secureTextEntry,label,lefticon,righticon,style,
+}) => {
     return (
         <View>
-            <View style={styles.customtextinput2}>
+         <View style={[styles.SectionStyle3,style]}>
             <TextInput
                    //multiline={true}
                    secureTextEntry={secureTextEntry}
                     placeholder={placeholder}
-                    style={{ flex: 1 ,fontSize:15,marginLeft:10}}
-                    value={value}
-                    mode="flat"
-				   label={label}
-                   //style={styles.inputStyle}
-                   />
-             </View>
+                    style={{flex:1,backgroundColor:'white',justifyContent:'center',margin:2}}
+                    onChangeText={onChangeText}
+                    label={label}
+                     value={value}
+                     underlineColor={'white'}
+                     />
+                    {/* {error && <Text>{error}</Text>} */}
+                 </View>
         </View>
          );
 };
-export default Customtextinput2;
+export default CustomTextInput2;

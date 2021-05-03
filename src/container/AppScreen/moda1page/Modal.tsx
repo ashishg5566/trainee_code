@@ -1,12 +1,19 @@
+//import liraries
 import React, { Component,FC,useState } from 'react';
-import { View, Text, TouchableOpacity,TextInput } from 'react-native';
+import { View, Text, TouchableOpacity,Button } from 'react-native';
 import styles from './styles.tsx';
- import Icon from 'react-native-vector-icons/FontAwesome';
-import Modal from 'react-native-modal';  
-const Simplemodal: FC = () => {
-     return (
-       <View style={styles.container}>
-          <Modal isVisible={isModalVisible}  style={{margin:0,flexDirection: 'column',justifyContent: 'flex-end'}}>
+import {CustomDropdown,CustomTextInput2,Customheader} from '../../../components/textinput';
+import Modal from 'react-native-modal';
+import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+const Modal1: FC = () => {
+    const [isModalVisible, setModalVisible] = useState(false);
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+      };
+return(
+    <KeyboardAwareScrollView> 
+           <Modal isVisible={isModalVisible} style={{alignItems:'center'}}>
+           <Modal isVisible={isModalVisible}  style={{margin:0,flexDirection: 'column',justifyContent: 'flex-end'}}>
              <View style={styles.modalcontainer}>
                 <Text style={styles.modaltext1}>Update your Batch Details</Text>
                 <Text style={styles.modaltext2}>Batch Year</Text>
@@ -31,12 +38,12 @@ const Simplemodal: FC = () => {
                 <Text style={styles.modalupdatetext}>Update</Text>
                </TouchableOpacity>
            </View>
-        </Modal>
-</View>
- 
+             </Modal>
+              <TouchableOpacity style={styles.button} onPress={toggleModal}>
+                     <Text style={styles.buttontext}>open modal</Text>
+                      </TouchableOpacity>
+              
+            </KeyboardAwareScrollView>
      );
 };
-
-// define your styles
- //make this component available to the app
- export default Simpleodal;
+ export default Modal1;

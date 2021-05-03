@@ -1,7 +1,6 @@
 //import liraries
 import React, { Component,FC,useState } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native';
-import { TextInput } from 'react-native-paper';
 //import { CheckBox } from 'react-native-elements';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
 // import { CheckBox } from 'react-native-elements'
@@ -17,49 +16,60 @@ const Login: FC = ({navigation}) => {
   const [password,setpassword]=useState('');
   const [confirmpassword,setconfirmpassword]=useState('');
   const checkTextInput = () => {
-   if (!textFirstNameValue.trim()) {
-      alert('Please Enter First Name');
-      return;
+   if (!textFirstNameValue) {
+        alert('please enter your first name')
+        return;
     }
-    //Check for the Email TextInput
-    if (!textLastNameValue.trim()) {
+     if (!textLastNameValue) {
       alert('Please Enter Last Name');
       return;
-    }
-    
-    var emailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if (!textEmailValue.trim()) {
-      
-       if (!emailRegex.test(textEmailValue)) {
-      alert('please enter valid email');
+     }
+    if (!textEmailValue) {
+      alert('Please Enter Your Email');
       return;
-       
-      } 
-    }
-      else{
-        alert('Enter email')
-        return;
-      } 
-    
-      if (!PhoneValue.trim()) {
+     }
+     if (textEmailValue!== "undefined") {
+      var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+      if (!pattern.test(textEmailValue)) {
+       alert('please enter valid email')
+       return;
+       }
+      }
+     if (!PhoneValue) {
       alert('Please Enter Phone number');
       return;
-    }
-    if (!dob.trim()) {
+      }
+      if (PhoneValue!== "undefined") {
+          var pattern = new RegExp(/^[0-9\b]+$/);
+        if (!pattern.test(PhoneValue)) {
+              alert('enter only number')
+              return;
+             }else if(PhoneValue.length != 10){
+           alert('enter valid phone number')
+           return;
+       }
+       }
+       if (!dob) {
       alert('Please Enter dob');
       return;
-    }
-    if (!password.trim()) {
-      alert('Please Enter password');
-      return;
-    }
-    if (!confirmpassword.trim()) {
-      alert('Please Enter confirmpassword');
-      return;
-    }
-    //Checked Successfully
-    //Do whatever you want
-    alert('Success');
+       }
+       if (!password) {
+        alert('Please Enter confirmpassword');
+        return;
+        return;
+       }
+       if (!confirmpassword) {
+        alert('Please Enter confirmpassword');
+        return;
+       }
+      
+      if (password !== "undefined" && password!== "undefined") {
+        if (password != confirmpassword) {
+        alert('password and confirm password are not matching')
+        return;
+     }
+     }
+   alert('Success');
   };
  return (
       <KeyboardAwareScrollView> 
@@ -72,34 +82,18 @@ const Login: FC = ({navigation}) => {
            </View>
             <View style={styles.formcontainer}>
                 <View style={styles.nameinputcontainer} > 
-                     <View style={styles.namesectionStyle}>
-                      <TextInput
-                        style={{ flex: 1,backgroundColor:'white',justifyContent:'center'}}
-                       label="First Name"
-                      //  value='settextFirstNameValue'
-                       maxLength={20}
-                       underlineColor={'white'}
-                       value={textFirstNameValue}
-                       onChangeText={(text)=>settextFirstNameValue(text)}
-                      />
-                     <Text style={styles.icontext}>M</Text>
-               {/* <Icon name="md-beer" type="ionicon" color="#887700" style={styles.iconStyle} /> */}
-                 </View>
-                  <View style={styles.namesectionStyle}>
-                 <TextInput
-                     style={{ flex: 1,backgroundColor:'white',justifyContent:'center'}}
-                     label=" Last Name"
-                    underlineColorAndroid="transparent"
-                    value={textLastNameValue}
-                    onChangeText={(value)=>settextLastNameValue(value)}
-                    underlineColor={'white'}
-                  />
-                  <Text style={styles.icontext}>M</Text>
-               </View>
-         </View>
-         <CustomTextinput label="Enter Your Email Id"  value={textEmailValue} onChangeText={(value)=>settextEmailValue(value)}
-         onChange
-           />
+                <CustomTextinput label="First Name" style={{width:160,margin:5}}
+                value={textFirstNameValue}
+                 maxLength={20}
+                 onChangeText={(text)=>settextFirstNameValue(text)}
+               />
+               <CustomTextinput label="First Name" style={{width:160,margin:5}}
+                value={textLastNameValue}
+                 maxLength={20}
+                 onChangeText={(text)=>settextLastNameValue(text)}
+               />
+             </View>
+         <CustomTextinput label="Enter Your Email Id"  value={textEmailValue} onChangeText={(value)=>settextEmailValue(value)} />
          <CustomTextinput label="Enter Your Phone Number"   value={PhoneValue} onChangeText={(value)=>setPhoneValue(value)}  />
          <CustomTextinput label="Enter DOB"   value={dob} onChangeText={(value)=>setdob(value)}/>
          <CustomTextinput label="Enter Password" value={password} onChangeText={(value)=>setpassword(value)}/>

@@ -6,6 +6,7 @@ import About from '../container/AppScreen/aboutscreen/About.tsx';
 import Contact from '../container/AppScreen/contactscreen/Contact.tsx';
 import Detail from '../container/AppScreen/detailscreen/Detail.tsx';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Icon from 'react-native-vector-icons/FontAwesome';
  
  
 const Tab = createBottomTabNavigator();
@@ -15,15 +16,80 @@ const Tab = createBottomTabNavigator();
 // create a component
 const Tabnavigation: FC = () => {
     return (
-      <Tab.Navigator screenOptions={{
-      }}>
+      <Tab.Navigator 
+      
+      // screenOptions={({ route }) => ({
+      //   tabBarIcon: ({ focused, color, size }) => {
+      //     let iconName;
+
+      //     if (route.name === 'Home') {
+      //       iconName = focused
+      //         ? 'ios-information-circle'
+      //         : 'ios-information-circle-outline';
+      //     } else if (route.name === 'Settings') {
+      //       iconName = focused ? 'ios-list-box' : 'ios-list';
+      //     }
+
+      //     // You can return any component that you like here!
+      //     return  <Icon name="home"  color="grey" size={20}/>
+      //   },
+      // })}
+      tabBarOptions={{
+        showLabel: false,
+        activeTintColor: 'tomato',
+        inactiveTintColor: 'gray',
+      }}
+      
+      
+      
+      >
   <Tab.Screen name="Home" component={Homescreen}
    
+   options={{
+    tabBarIcon: ({ color}) => (
+      <View style={{ flex: 1 }}>
+       <Icon name="home"  color="grey" size={20}/>
+      </View>
+    )
+  }}
+   
    />
-  <Tab.Screen name="contact" component={Contact} 
+  <Tab.Screen name="Message" component={Contact} 
+   
+   options={{
+    
+   
+    tabBarIcon: ({focused}) => (
+      <View style={{ flex: 1 }}>
+       <Icon name="envelope-square"  focused={focused} color="grey" size={20}/>
+      </View>
+    )
+  }}
   />
-  <Tab.Screen name="about" component={About} />
-  <Tab.Screen name="detail" component={Detail} />
+  <Tab.Screen name="Cap" component={About}
+   
+   options={{
+    
+    tabBarIcon: ({ color}) => (
+      <View style={{ flex: 1 }}>
+       <Icon name="graduation-cap"  color="grey" size={20}/>
+      </View>
+    )
+  }}
+  
+  
+  />
+  <Tab.Screen name="User" component={Detail} 
+  options={{
+    tabBarIcon: ({ color}) => (
+      <View style={{ flex: 1 }}>
+       <Icon name="user"  color="grey" size={20}/>
+      </View>
+    )
+  }}
+  
+  
+  />
 </Tab.Navigator>
 );
         

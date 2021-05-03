@@ -3,29 +3,7 @@ export default ScaledSheet.create({
     container: {
         flex: 1,
           },
-         namesectionStyle: {
-          flexDirection: 'row',
-          width: '145@ms',
-           justifyContent: 'center',
-           alignItems: 'center',
-            backgroundColor: '#fff',
-            height: '55@ms',
-            borderRadius: '10@ms' ,
-            margin: '5@ms',
-            padding: '6@ms',
-           shadowColor: 'black',
-           shadowOffset: {
-            width: '8@ms',
-           height:  '10@ms',
-           },
-           shadowOpacity: 0.29,
-           shadowRadius: 5.22,
-            elevation: 10,
-            },
-            icontext:{
-              margin:4,
-
-            },
+         
             header:{
             marginTop:'30@ms',
              flexDirection:'row',
@@ -49,7 +27,7 @@ export default ScaledSheet.create({
           fontWeight:'bold'
          },
         formcontainer:{
-          flex:1,
+          width:'100%',
          // backgroundColor:'pink',
           alignItems:'center',
           marginTop:'30@ms'

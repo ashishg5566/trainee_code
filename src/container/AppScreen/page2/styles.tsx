@@ -6,27 +6,8 @@ const styles = ScaledSheet.create({
       backgroundColor:'#e0e0e0',
       alignItems:'center',
       height:'100%',
-      
-    },
-    
-   picker:{
-        width: '150@ms',
-         marginTop: '25@ms',
-        // marginLeft:'20@ms',
-        // marginRight:'20@ms',
-         height:'55@ms',
-         margin:'5@ms',
-         borderRadius: '10@ms',
-        backgroundColor:'white',
-        justifyContent:'center',
-        borderWidth:'3@ms',
-        borderColor:'lightgray',
-        color:'lightgray'
        },
-        pickerItem:{
-        color:'#A9A9A9'
-        },
-       submitbutton:{
+     submitbutton:{
       marginTop:'25@ms',
       backgroundColor:'#4E387E',
       width:'310@ms',
@@ -34,54 +15,18 @@ const styles = ScaledSheet.create({
       justifyContent:'center',
       alignItems:'center',
       borderRadius:'10@ms'
-
-    },
+      },
     submittext:{
       color:'white',
       fontSize:'18@ms'
-
-    },
-    gradepicker:{
-        width: '190@ms',
-        marginTop: '8@ms',
-       // marginLeft:'20@ms',
-       // marginRight:'20@ms',
-        height:'50@ms',
-        margin:'5@ms',
-        borderRadius: '10@ms',
-       backgroundColor:'white',
-       justifyContent:'center',
-       borderWidth:3,
-       borderColor:'lightgray',
+       },
+    
      
-    },
-    gradepickercontainer:{
-      flexDirection:'row',
-      marginTop:'15@ms'
-
-    },
     addbatchtext:{
       fontWeight:'bold',
       fontSize:18,
       marginTop:20
 
-    },
-    addresstextinputstyle:{
-        width: '310@ms',
-        marginTop: '8@ms',
-        borderWidth:'3@ms',
-        borderColor:'lightgray',
-        // marginLeft:'20@ms',
-        // marginRight:'20@ms',
-         height:'90@ms',
-         margin:5,
-         borderRadius: '10@ms',
-        backgroundColor:'white',
-         },
-    addressinput:{
-      fontSize:'14@ms',
-      padding:'16@ms',
-      color:'lightgray'
     },
     SectionStyle: {
         flexDirection: 'row',
@@ -89,7 +34,7 @@ const styles = ScaledSheet.create({
         width: '110@ms',
         //  alignItems: 'center',
         backgroundColor: '#fff',
-        height: '50@ms',
+        height: '52@ms',
         borderRadius: '10@ms' ,
         margin: '8@ms',
         borderColor:'lightgray',
