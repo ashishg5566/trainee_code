@@ -112,6 +112,40 @@ const styles = ScaledSheet.create({
             height:'50@ms',
             borderRadius:'40@ms'
 
+          },
+          modalcontent:{
+            flexDirection:'row',
+            marginRight:'10@ms',
+            marginTop:'8@ms'
+          },
+          modaltext:{
+            fontSize:'18@ms',
+              fontWeight:'bold',
+              color:'grey'
+          },
+          bordercontent:{
+            borderColor:'#DCDCDC',
+            borderWidth:1,
+            height:'43@ms',
+            marginLeft:'28@ms',
+            marginRight:'28@ms'
+
+          },
+          mainmodalcontainer:{
+            backgroundColor:'white',
+            height:'120@ms',
+            borderRadius:'20@ms',
+            justifyContent:'center',
+            alignItems:'center'
+
+          },
+          textinput:{
+            marginTop:'20@ms',
+            borderRadius:'10@ms',
+            backgroundColor:'lightgrey',
+            padding:'15@ms',
+            fontSize:'18@ms'
+
           }
 
 

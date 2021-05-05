@@ -1,17 +1,20 @@
 import { ScaledSheet } from 'react-native-size-matters';
 const styles = ScaledSheet.create({
   cardcontent:{
-    width:'90%',
-    marginTop:'8@ms',
-    borderRadius:'20@ms',
-    padding:'12@ms',
+    width:'92%',
+    marginTop:'10@ms',
+    borderRadius:'10@ms',
+    padding:'10@ms',
+    alignSelf:'center'
+    
+
    },
   cardcontent1:{
     flexDirection:'row', 
     justifyContent: 'space-between',
      borderBottomWidth: 1,
     borderColor:'#DCDCDC',
-    padding:'4@ms'
+    padding:'5@ms'
      
 
   },
@@ -32,23 +35,39 @@ const styles = ScaledSheet.create({
   cardcontent2:{
     flexDirection:'row', 
     justifyContent: 'space-between',
-    marginTop:'5@ms'
+    marginTop:'5@ms',
+    padding:'6@ms'
 
   },
   videocontent:{
   width:'100%',
-    
      height:'120@ms',
    
-    marginTop:'8@ms'
 
   },
   cardcontent3:{
     justifyContent:'space-between',
     flexDirection:'row',
-    marginTop:'5@ms'
+    marginTop:'5@ms',
+    padding:'6@ms'
 
   },
+  cardparagrap:{
+    color:'gray',
+    marginTop:'5@ms',
+    fontSize:'13@ms',
+    fontWeight:'bold',
+    textAlign:'justify'
+
+  },
+  projecttitletext:{
+    color:'grey',
+    fontSize:'13@ms',
+    fontWeight:'bold'
+
+  },
+
+  
   //small card
   smallcardcontent:{
     width:'100@ms',

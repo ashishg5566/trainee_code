@@ -1,15 +1,36 @@
-//import liraries
-import React, { Component, FC } from 'react';
+ 
+import React, { Component, FC,useState } from 'react';
 import { View, Text, StyleSheet,  TouchableOpacity ,Image,TextInput} from 'react-native';
  import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
-// create a component
-import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import Modal from 'react-native-modal';
+ import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 const Dashboard: FC = ({ 
 }) => {
+    const [isModalVisible, setModalVisible] = useState(false);
+    const toggleModal = () => {
+        setModalVisible(!isModalVisible);
+      };
     return (
          <View style={styles.container}> 
-           <View style={styles.header}>
+          <Modal isVisible={isModalVisible}>
+              <View style={styles.mainmodalcontainer}>
+              <View style={{flexDirection:'row',justifyContent:'space-between'}}>
+                  <View style={styles.modalcontent}>
+                    <Icon name="share-alt" size={28} color="grey" style={{marginRight:10}}/>
+                    <Text style={styles.modaltext}>Share</Text>
+                 </View>
+                  <View style={styles.bordercontent}>
+                  </View>
+                   <View style={styles.modalcontent}>
+                   <Icon name="repeat" size={28} color="grey" style={{marginRight:10,marginLeft:10}}/>
+                    <Text style={styles.modaltext}>Repost</Text>
+                     </View>
+                 </View>
+              </View>
+              
+           </Modal>
+            <View style={styles.header}>
               <View> 
                  <Icon name="arrow-left" size={20}  color="white" style={{color:'white',alignSelf:'flex-start'}}/>
               </View>
@@ -17,8 +38,7 @@ const Dashboard: FC = ({
                    <Text style={styles.headerTitle}>Post Detailed</Text>
               </View>
                <View>
-
-          </View>
+             </View>
           </View>
           <Card style={styles.cardContent}>
              <View style={styles.cardcontent1}>
@@ -46,7 +66,9 @@ const Dashboard: FC = ({
                       <Icon name="comment" size={24} color="grey" style={{marginLeft:20}}/>
                 </View>
                  <View style={{flexDirection:'row'}}> 
-                      <Text style={{fontWeight:'bold',marginRight:15,color:'grey',fontSize:16}}>Share</Text>
+                     <TouchableOpacity onPress={toggleModal}>  
+                         <Text style={{fontWeight:'bold',marginRight:15,color:'grey',fontSize:16}}>Share</Text>
+                     </TouchableOpacity>
                       <Icon name="share-alt" size={24} color="grey"/>
                 </View>
             </View>
@@ -70,7 +92,7 @@ const Dashboard: FC = ({
             </View>
             <TextInput
               placeholder="Write here..."
-               style={{marginTop:20,borderRadius:10,backgroundColor:'lightgrey',padding:15,fontSize:18}}
+               style={styles.textinput}
              />
           </Card>
     </View>

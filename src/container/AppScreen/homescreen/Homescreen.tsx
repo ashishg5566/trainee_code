@@ -5,6 +5,10 @@ import styles from './styles.tsx';
 import {Customcard,Smallcustomcard} from '../../../components/card';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+
+
+
+
 // create a component
 const Homescreen: FC = () => {
     return (

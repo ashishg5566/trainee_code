@@ -38,7 +38,11 @@ const Tabnavigation: FC = () => {
         showLabel: false,
         activeTintColor: 'tomato',
         inactiveTintColor: 'gray',
+         labelStyle: { padding: 0, margin: 0, border: 0 },
+        // tabStyle: { padding: 0, margin: 0, border: 0 },
       }}
+      lazy={true}
+      // style={{ padding: 10, marginTop: 10, border: 0 }}
       
       
       

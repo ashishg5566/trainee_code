@@ -12,7 +12,7 @@ const Modal1: FC = () => {
       };
 return(
     <KeyboardAwareScrollView> 
-           <Modal isVisible={isModalVisible} style={{alignItems:'center'}}>
+            
            <Modal isVisible={isModalVisible}  style={{margin:0,flexDirection: 'column',justifyContent: 'flex-end'}}>
              <View style={styles.modalcontainer}>
                 <Text style={styles.modaltext1}>Update your Batch Details</Text>
