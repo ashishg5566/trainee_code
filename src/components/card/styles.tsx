@@ -20,9 +20,9 @@ const styles = ScaledSheet.create({
   },
   nametext:{
     fontWeight:'bold',
-    marginTop:'8@ms',
+    marginTop:'5@ms',
     marginLeft:'20@ms',
-    fontSize:'12@ms',
+    fontSize:'15@ms',
     color:'black'
 
   },

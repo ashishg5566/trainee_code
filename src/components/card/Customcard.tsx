@@ -18,8 +18,16 @@ const Customcard: FC = ({
                  <Icon name="ellipsis-v"  color="grey" size={20}/>
             </View>
             <View style={styles.cardcontent2}>
+                
+
+                 
                 <Text style={styles.projecttitletext}>Title of the Project</Text>
-                <Text style={{color:'grey',fontWeight:'bold'}}>655</Text>
+
+                
+                <View style={{flexDirection:'row'}}> 
+                <Icon name="eye"  color="black" size={15} style={{margin:2,marginRight:8}}/>
+                <Text style={{color:'grey',fontWeight:'bold'}}>432</Text>
+                </View>
             </View>
              <Image source={require('../../Assets/images/video.jpg')} style={{width:'100%',height:150,borderRadius:15}}  /> 
              <Paragraph style={styles.cardparagrap}>

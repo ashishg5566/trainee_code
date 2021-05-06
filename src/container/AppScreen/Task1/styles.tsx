@@ -3,9 +3,7 @@ const styles = ScaledSheet.create({
 container: {
      flex:1,
      backgroundColor:'lightgrey',
-     paddingBottom:'8@ms'
-     
-     
+       paddingBottom:'10@ms'
       },
      header:{
           borderBottomRightRadius :'20@ms',
@@ -26,7 +24,7 @@ container: {
              },
              backgroundImage:{
                  width:'100%',
-                 height:'200@ms'
+                 height:'240@ms'
              },
              profilepic:{
                  marginTop:'-40@ms',
@@ -34,7 +32,8 @@ container: {
                 borderColor:'white',
                 width:'80@ms',
                 height:'80@ms',
-                borderRadius:'50@ms'
+                borderRadius:'50@ms',
+                marginLeft:'8@ms'
 
              },
              profilecontainer:{
@@ -50,7 +49,7 @@ container: {
 
              },
              messageicon:{
-                marginLeft:'45@ms',
+                marginLeft:'35@ms',
                   },
                   nametext:{
                     fontSize:'16@ms',
@@ -61,25 +60,27 @@ container: {
                       flexDirection:'row',
                       justifyContent:'space-between',
                        paddingHorizontal:'15@ms',
-                       marginTop:'8@ms'
+                       marginTop:'8@ms',
+                       marginBottom:"10@ms"
 
                   },
                   addbuddybutton:{
                     borderWidth:2,
                     borderColor:'grey',
                     width:'90@ms',
-                    height:'30@ms',
-                    marginTop:'8@ms',
+                    height:'35@ms',
+                    marginTop:'2@ms',
                     justifyContent:'center',
                     alignItems:'center',
-                    borderRadius:'8@ms'
+                    borderRadius:'8@ms',
+                    backgroundColor:'white'
 
                   },
                   followbutton:{
                     backgroundColor:'#4E387E',
                     width:'90@ms',
-                    height:'30@ms',
-                    marginTop:'8@ms',
+                    height:'35@ms',
+                    marginTop:'2@ms',
                     justifyContent:'center',
                     alignItems:'center',
                     borderRadius:'8@ms'
@@ -90,12 +91,22 @@ container: {
                       alignSelf:'center',
                       padding:'10@ms',
                       marginTop:'10@ms',
-                      borderRadius:'10@ms'
-
-                  },
+                      borderRadius:'10@ms',
+                       },
+                  cardContent2:{
+                    width:'92%',
+                    alignSelf:'center',
+                    padding:'10@ms',
+                    marginTop:'10@ms',
+                   borderBottomColor:'white',
+                    marginBottom:-50,
+                    height:50,
+                    borderTopEndRadius:10,
+                   borderTopLeftRadius:10,
+                       },
                   cardtitletext:{
                       fontWeight:'bold',
-                      fontSize:'15@ms',
+                      fontSize:'16@ms',
                       color:'black'
 
                   },
@@ -113,7 +124,7 @@ container: {
 
                   schooltext:{
                       fontWeight:'bold',
-                      fontSize:'14@ms',
+                      fontSize:'15@ms',
                       marginBottom:'4@ms'
                   },
                   textcontent:{
@@ -133,7 +144,9 @@ container: {
                   boldtext:{
                     fontWeight:'bold',
                     fontSize:'16@ms',
-                    color:'black'
+                    color:'black',
+                    
+                   
                   },
                   icons:{
                     flexDirection:'row',
@@ -156,8 +169,22 @@ container: {
                     marginBottom:'4@ms'
 
                   }
+,
+picContainer:{
+  width:'100%',
+  
+  flexDirection:'row',
+  justifyContent:'center',
+  
+  
+},
+image:{
+  width:'170@ms',
+  height:'170@ms',
+  margin:'8@ms',
+  borderRadius:'20@ms'
 
-             
+}         
              
  
 })

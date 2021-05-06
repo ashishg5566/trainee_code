@@ -1,10 +1,34 @@
-import * as React from 'react';
+import React, { Component,FC } from 'react';
 import { Text, View,FlatList,Image,TouchableOpacity,ImageBackground ,ScrollView} from 'react-native';
 import styles from './styles.tsx';
  import Icon from 'react-native-vector-icons/FontAwesome';
   import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
   import {Customcard} from '../../../components/card';
-  export default function Task1() {
+  import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+  function ImageScreen() {
+    return (
+       <View style={{backgroundColor:'lightgray',flex:1}}>
+         <View style={styles.picContainer}>
+         <Image source={require('../../../Assets/images/college1.jpg')} style={styles.image}  />
+         <Image source={require('../../../Assets/images/college2.jpg')} style={styles.image}  />
+        </View>
+         <View style={styles.picContainer}>
+         <Image source={require('../../../Assets/images/college3.jpg')} style={styles.image}  />
+         <Image source={require('../../../Assets/images/college4.jpg')} style={styles.image}  />
+
+         </View>
+      </View>
+       );
+  }
+  function ProfileScreen() {
+    return (
+      <View style={{flex:1,backgroundColor:'lightgrey'}}>
+          <Customcard/>
+      </View>
+    );
+  }
+  const Tab = createMaterialTopTabNavigator();
+  const Task1: FC = (props) => {
   return (
       <ScrollView> 
     <View style={styles.container}> 
@@ -54,12 +78,12 @@ import styles from './styles.tsx';
              </View>
               <View> 
                    <TouchableOpacity style={styles.followbutton}>
-                        <Text style={{color:'white',fontSize:10}}>Follow</Text>
+                        <Text style={{color:'white',fontSize:12}}>Follow</Text>
                     </TouchableOpacity>
               </View>
               <View>
                      <TouchableOpacity style={styles.addbuddybutton}>
-                        <Text style={{color:'grey',fontSize:10}}>Add Buddy</Text>
+                        <Text style={{color:'grey',fontSize:12}}>Add Buddy</Text>
                     </TouchableOpacity>
 
                </View>
@@ -84,10 +108,10 @@ import styles from './styles.tsx';
                   <Icon name="check-circle" size={17}  color="#4E387E" style={{marginLeft:5,marginTop:2}}/>
                   </View>
                    <Text style={styles.textcontent}>
-                       <Text style={styles.boldtext}>6th</Text>(Batch 2016-2017) 
+                       <Text style={styles.boldtext}>6th</Text> (Batch 2016-2017) 
                    </Text >
                    <Text style={styles.textcontent}>
-                      <Text style={styles.boldtext}>7th</Text>(Batch 2017-2018) 
+                      <Text style={styles.boldtext}>7th</Text> (Batch 2017-2018) 
                    </Text>
                </View>
                 <View style={ styles.borderstyle} >
@@ -97,10 +121,10 @@ import styles from './styles.tsx';
                        Army Public School
                   </Text>
                    <Text style={styles.textcontent}>
-                       <Text style={styles.boldtext}>8th</Text>(Batch 2010-2019) 
+                       <Text style={styles.boldtext}>8th</Text> (Batch 2010-2019) 
                    </Text >
                    <Text style={styles.textcontent}>
-                      <Text style={styles.boldtext}>9th</Text>(Batch 2019-2020) 
+                      <Text style={styles.boldtext}>9th</Text> (Batch 2019-2020) 
                    </Text>
                    <Text style={styles.currentschoolText}>
                       Current School
@@ -122,18 +146,17 @@ import styles from './styles.tsx';
                 <View style={styles.textcontainer}>
                    
                    <Text style={styles.personalinfocontent}>
-                       <Text style={styles.boldtext}>DOB:</Text>30/Oct/1997
+                       <Text style={styles.boldtext}>DOB : </Text>30/Oct/1997
                     </Text >
                     <Text style={styles.personalinfocontent}>
-                       <Text style={styles.boldtext}>Email:</Text>Simmi.sh@gmail.com
+                       <Text style={styles.boldtext}>Email : </Text>Simmi.sh@gmail.com
                     </Text >
                     <Text style={styles.personalinfocontent}>
-                       <Text style={styles.boldtext}>Profession:</Text>Student
+                       <Text style={styles.boldtext}>Profession : </Text>Student
                     </Text >
-             
-               </View>
+           </View>
           </Card>
-          <Card style={styles.cardContent}>
+          <Card style={styles.cardContent2}>
                <View style={styles.cardtitlecontent}>
                    <View>
                        <Text style={styles.cardtitletext}>Posts</Text>
@@ -142,16 +165,62 @@ import styles from './styles.tsx';
                    </View>
                </View>
                
-                <View style={ styles.borderstyle} >
-              </View>
-               <View style={styles.icons}>
-                 <Icon name="th" size={30}  color="grey"/>
-                 <View style={{borderLeftWidth:1,  borderLeftColor: '#DCDCDC',}}></View>
-                 <Icon name="image" size={30}  color="black"/>
-               </View>
-          </Card>
-          <Customcard/>
-</View>
+                {/* <View style={ styles.borderstyle} >
+              </View> */}
+              </Card>
+            <Tab.Navigator
+                  tabBarOptions={{
+                    iconStyle:{
+                      height:50,
+                      width:50,
+                      //backgroundColor:'lightblue',
+                      justifyContent:'center',
+                      alignItems:'center'
+
+                       },
+                       showLabel: false,
+                      // pressColor: "#FDF5F1",
+                        showIcon: true,
+                        activeTintColor:'#4E387E',
+                         inactiveTintColor:'grey',
+                         indicatorStyle: {
+                            backgroundColor:'white',
+                            width:150,
+                            opacity: 0
+                          },
+                          tabStyle: {
+                            width:160,
+                            height:50,
+                           // color:'red',
+                            //backgroundColor:'red',
+                             alignSelf:'center',
+                             marginLeft:20,
+                             marginTop:50,
+                             },
+                            style: {borderWidth:1,borderColor:'white' , width:'92%',backgroundColor:'white',borderRadius:12,height:110,justifyContent:'center',alignSelf:'center'},
+                           }}
+                        >
+            <Tab.Screen name="th" component={ImageScreen} 
+                options={{ 
+                 tabBarIcon: ({ color }) => (
+                  <Icon name='th' size={30} color={color} />
+                 )
+               
+          }}
+           />
+           <Tab.Screen name="Profile" component={ProfileScreen} 
+           options={{
+            tabBarIcon: ({ color }) => (
+                <Icon name='image' size={30} color={ color }/>
+            )
+             }}
+           />
+          </Tab.Navigator>
+        
+          
+            
+    </View>
 </ScrollView>
      );
 }
+export default Task1;
