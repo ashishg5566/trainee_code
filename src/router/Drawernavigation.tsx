@@ -7,7 +7,8 @@ import Information1 from '../container/AppScreen/page1/Information1.tsx';
 import Information2 from '../container/AppScreen/page2/Information2.tsx';
 import Information3 from '../container/AppScreen/page3/Information3.tsx';
 import Task1 from '../container/AppScreen/Task1/Task1.tsx';
-// import Task2 from '../container/AppScreen/Task2/Task2.tsx';
+import Task2 from '../container/AppScreen/Task2/Task2.tsx';
+import Task3 from '../container/AppScreen/Task3/Task3.tsx';
 import About from '../container/AppScreen/aboutscreen/About.tsx';
 import Contact from '../container/AppScreen/contactscreen/Contact.tsx';
 import Detail from '../container/AppScreen/detailscreen/Detail.tsx';
@@ -38,7 +39,8 @@ const Drawernavigation: FC = () => {
         <Drawer.Screen name="information2" component={Information2} />
         <Drawer.Screen name="information3" component={Information3} />
         <Drawer.Screen name="Task1" component={Task1} />
-        {/* <Drawer.Screen name="Task2" component={Task2} /> */}
+        <Drawer.Screen name="Task2" component={Task2} />
+        <Drawer.Screen name="Task3" component={Task3} />
       </Drawer.Navigator>
         
         </View>
