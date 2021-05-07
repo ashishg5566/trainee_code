@@ -1,17 +1,14 @@
 import { ScaledSheet } from 'react-native-size-matters';
 const styles = ScaledSheet.create({
-container: {
+    container: {
      flex:1,
      backgroundColor:'white',
-     
-     
-     
       },
-     header:{
-      width:'100%',
-          borderBottomRightRadius :'20@ms',
-           borderBottomLeftRadius :'15@ms',
-             backgroundColor:'#4E387E',
+      header:{
+           width:'100%',
+            borderBottomRightRadius :'20@ms',
+            borderBottomLeftRadius :'15@ms',
+            backgroundColor:'#4E387E',
             height:'70@ms',
             flexDirection:'row',           
              padding:'16@ms',
@@ -21,28 +18,23 @@ container: {
              headerTitle:{
                color:'white',
                fontSize:'20@ms',
-               //alignItems:'center'
+               alignItems:'center'
              },
              schoolProfile:{
-               //backgroundColor:'lightgrey',
-               flexDirection:'row',
-               width:"100%",
-               marginTop:'15@ms',
-               paddingLeft:'22@ms',
-               paddingRight:'22@ms',
-              // alignItems:'center'
-
-             },
-             profilepic:{
+                flexDirection:'row',
+                width:"100%",
+                marginTop:'15@ms',
+                paddingLeft:'22@ms',
+                paddingRight:'22@ms',
+               },
+              profilepic:{
                height:'50@ms',
                width:'50@ms',
                borderRadius:'40@ms'
-               
-             },
+              },
              schoolprofileText:{
                marginLeft:'20@ms',
                marginTop:'8@ms'
-
              },
              schoolnameText:{
                fontWeight:'bold',
@@ -54,7 +46,6 @@ container: {
                marginTop:'15@ms',
                marginLeft:'22@ms',
                marginRight:'22@ms'
-
              },
              projectTitle:{
                marginTop:'8@ms',
@@ -68,39 +59,29 @@ container: {
              bigImageContainer:{
                width:'100%',
                justifyContent:'center',
-               //backgroundColor:'lightblue',
                marginTop:'10@ms',
                alignItems:'center',
                paddingLeft:'22@ms',
                paddingRight:'22@ms',
                marginBottom:'18@ms'
-                
-
-             },
-             bigImage:{
+               },
+              bigImage:{
                width:'100%',
                height:'190@ms',
                borderRadius:'20@ms',
-               
-               
-             },
-             separator:{
+              },
+              separator:{
               borderBottomWidth:'3@ms',
               borderBottomColor: '#DCDCDC',
               marginTop:'12@ms',
               marginBottom:'12@ms'
-             
-
-             },
+              },
              content1:{
               flexDirection:'row', 
               justifyContent: 'space-between',
              // backgroundColor:'yellow',
               paddingRight:'22@ms',
               paddingLeft:'22@ms'
-              
-             
-             
              },
              icon:{
                marginLeft:'8@ms'
@@ -124,16 +105,13 @@ container: {
                flexDirection:'row',
                paddingLeft:'22@ms',
                paddingRight:'22@ms'
-
-             },
+              },
              content3:{
                width:'100%',
-              // backgroundColor:'yellow' ,
                alignItems:'center',
                paddingLeft:'22@ms',
                paddingRight:'22@ms'
-
-             },
+               },
              paragraphtext:{
                //fontWeight:'bold',
                fontSize:'13@ms',
@@ -143,9 +121,8 @@ container: {
              paragraphtext2:{
               //fontWeight:'bold',
               fontSize:'13@ms',
-              width:'305@ms',
-              //backgroundColor:'pink',
-              color:'grey'
+               width:'305@ms',
+               color:'grey'
             },
              content4:{
                flexDirection:'row',
@@ -161,28 +138,31 @@ container: {
                fontWeight:'bold'
              },
              content5:{
-              
-              width:'100%',
+               width:'100%',
               paddingLeft:'22@ms'
             },
             fundingtextcontent:{
               flexDirection:'row',
-
-            },
+             },
             fundingtext:{
               fontWeight:'bold',
               fontSize:'13@ms',
               margin:'2@ms'
-
-              },
+               },
               fundingamounttext:{
-
-                fontWeight:'bold',
+              fontWeight:'bold',
                 fontSize:'13@ms',
                 margin:'2@ms',
                 color:'#4E387E'
               },
-              content6:{
+              viewprogressText:{
+                fontSize:'14@ms',
+                color:'green', 
+                borderBottomWidth:1, 
+                borderBottomColor: 'green',
+               // fontWeight:'bold'
+               },
+                content6:{
                  width:'100%',
                 paddingLeft:'22@ms',
                 paddingRight:'22@ms',
@@ -196,8 +176,7 @@ container: {
                 fontSize:'13@ms',
                 padding:'10@ms',
                 height:'50@ms'
-    
-              },
+               },
               fundbutton:{
                 backgroundColor:'green',
                 justifyContent:'center',
@@ -206,36 +185,25 @@ container: {
                 height:'50@ms',
                 width:'100@ms',
                 borderRadius:'10@ms'
-
-              },
+                },
               fundbuttontext:{
                 color:'white'
-
-              },
+                },
               content7:{
                 flexDirection:'row',
                 width:'100%',
-               // backgroundColor:'yellow' ,
-               alignItems:'center',
                 paddingLeft:'22@ms',
-                
-               // backgroundColor:'pink',
-                justifyContent:'center'
- 
-              },
-              profiledesc:{
-                marginLeft:10,
-               
-              },
+                 },
+               profiledesc:{
+                marginLeft:'10@ms',
+                },
               content8:{
                 flexDirection:'row',
                 width:'100%',
-               // backgroundColor:'yellow' ,
-               alignItems:'center',
+                alignItems:'center',
                 paddingLeft:'22@ms',
                 paddingRight:'22@ms',
                 marginTop:'20@ms',
-                //backgroundColor:'pink'
                 marginBottom:'10@ms'
               },
               textinput2:{
@@ -247,10 +215,5 @@ container: {
                 height:'50@ms'
     
               }
-              
-
-             
-             
- 
 })
 export default styles;

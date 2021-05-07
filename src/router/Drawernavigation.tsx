@@ -9,7 +9,11 @@ import Information3 from '../container/AppScreen/page3/Information3.tsx';
 import Task1 from '../container/AppScreen/Task1/Task1.tsx';
 import Task2 from '../container/AppScreen/Task2/Task2.tsx';
 import Task3 from '../container/AppScreen/Task3/Task3.tsx';
+import Task4 from '../container/AppScreen/Task4/Task4.tsx';
+import Task5 from '../container/AppScreen/Task5/Task5.tsx';
+import Task6 from '../container/AppScreen/Task6/Task6.tsx';
 import About from '../container/AppScreen/aboutscreen/About.tsx';
+ 
 import Contact from '../container/AppScreen/contactscreen/Contact.tsx';
 import Detail from '../container/AppScreen/detailscreen/Detail.tsx';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -41,6 +45,9 @@ const Drawernavigation: FC = () => {
         <Drawer.Screen name="Task1" component={Task1} />
         <Drawer.Screen name="Task2" component={Task2} />
         <Drawer.Screen name="Task3" component={Task3} />
+        <Drawer.Screen name="Task4" component={Task4} />
+        <Drawer.Screen name="Task5" component={Task5} />
+        <Drawer.Screen name="Task6" component={Task6} />
       </Drawer.Navigator>
         
         </View>

@@ -7,76 +7,64 @@ import Contact from '../container/AppScreen/contactscreen/Contact.tsx';
 import Detail from '../container/AppScreen/detailscreen/Detail.tsx';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/FontAwesome';
- 
- 
 const Tab = createBottomTabNavigator();
- 
- 
-     
-// create a component
 const Tabnavigation: FC = () => {
     return (
       <Tab.Navigator 
       
-      // screenOptions={({ route }) => ({
-      //   tabBarIcon: ({ focused, color, size }) => {
-      //     let iconName;
+        tabBarOptions={{
 
-      //     if (route.name === 'Home') {
-      //       iconName = focused
-      //         ? 'ios-information-circle'
-      //         : 'ios-information-circle-outline';
-      //     } else if (route.name === 'Settings') {
-      //       iconName = focused ? 'ios-list-box' : 'ios-list';
-      //     }
 
-      //     // You can return any component that you like here!
-      //     return  <Icon name="home"  color="grey" size={20}/>
-      //   },
-      // })}
-      tabBarOptions={{
+          style: {
+            backgroundColor: 'white',
+            //borderBottomWidth: 2,
+            borderBottomColor: '#D3D3D3',
+            paddingVertical: 2,
+            height: 70,
+            justifyContent:'center',
+            alignContent:'center'
+          },
         showLabel: false,
-        activeTintColor: 'tomato',
+        activeTintColor: '#4E387E',
         inactiveTintColor: 'gray',
-         labelStyle: { padding: 0, margin: 0, border: 0 },
-        // tabStyle: { padding: 0, margin: 0, border: 0 },
+        tabStyle: {
+          //backgroundColor: 'yellow',
+          flex: 1,
+          justifyContent: 'center',
+          alignItems: 'center',
+          alignSelf: 'center',
+            marginBottom: 0,
+          paddingBottom: 0,
+          padding:10,
+             },
+         
+       
       }}
       lazy={true}
-      // style={{ padding: 10, marginTop: 10, border: 0 }}
-      
-      
-      
-      >
-  <Tab.Screen name="Home" component={Homescreen}
-   
-   options={{
-    tabBarIcon: ({ color}) => (
+       >
+      <Tab.Screen name="Home" component={Homescreen}
+      options={{
+       tabBarIcon: ({ color}) => (
       <View style={{ flex: 1 }}>
-       <Icon name="home"  color="grey" size={20}/>
+       <Icon name="home"  color={color} size={28}/>
       </View>
-    )
-  }}
-   
-   />
-  <Tab.Screen name="Message" component={Contact} 
-   
-   options={{
-    
-   
-    tabBarIcon: ({focused}) => (
+      )
+      }}
+    />
+     <Tab.Screen name="Message" component={Contact} 
+        options={{
+        tabBarIcon: ({color}) => (
       <View style={{ flex: 1 }}>
-       <Icon name="envelope-square"  focused={focused} color="grey" size={20}/>
+       <Icon name="envelope-square" color={color} size={28}/>
       </View>
     )
   }}
   />
   <Tab.Screen name="Cap" component={About}
-   
    options={{
-    
-    tabBarIcon: ({ color}) => (
+     tabBarIcon: ({ color}) => (
       <View style={{ flex: 1 }}>
-       <Icon name="graduation-cap"  color="grey" size={20}/>
+       <Icon name="graduation-cap"  color={color} size={28}/>
       </View>
     )
   }}
@@ -87,7 +75,7 @@ const Tabnavigation: FC = () => {
   options={{
     tabBarIcon: ({ color}) => (
       <View style={{ flex: 1 }}>
-       <Icon name="user"  color="grey" size={20}/>
+       <Icon name="user"  color={color} size={28}/>
       </View>
     )
   }}

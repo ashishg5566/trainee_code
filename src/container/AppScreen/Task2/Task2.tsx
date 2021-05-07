@@ -64,7 +64,7 @@ import styles from './styles.tsx';
                    <Text style={styles.fundingamounttext} >Rs 3,00,000 </Text>
                 </View>
                 <View>
-                    <Text style={{fontSize:14,color:'green', borderBottomWidth:1, borderBottomColor: 'green',fontWeight:'bold'}}>View Progress</Text>
+                    <Text style={styles.viewprogressText}>View Progress</Text>
                 </View>
            </View>
            <View style={ styles.separator} >

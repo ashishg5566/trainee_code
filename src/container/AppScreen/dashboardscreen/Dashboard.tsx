@@ -90,7 +90,7 @@ const Dashboard: FC = ({
                    </Paragraph>
                 </View>
             </View>
-            <TextInput
+             <TextInput
               placeholder="Write here..."
                style={styles.textinput}
              />
