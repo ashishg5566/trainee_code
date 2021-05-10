@@ -13,7 +13,7 @@
             <View style={styles.content1}>
             <View style={styles.header}>
                  <View> 
-                     <Icon name="bars" size={20}  color="white" style={{color:'white',alignSelf:'flex-start'}}/>
+                     <Icon name="bars" size={20}  color="white"/>
                  </View>
                   <View> 
                      <Text style={styles.headerTitle}>Create Post</Text>
@@ -30,7 +30,7 @@
                   
                    <CustomDropdown  label1="Friends"
                                    value1="0"  label2="Akash" value2="1" label3="Rohit" value3="2"
-                                     style={{width:145,fontSize:10,height:50}}/>
+                                     style={{width:140,fontSize:6,height:40}}/>
                    
               </View>
               </View>

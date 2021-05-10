@@ -6,15 +6,15 @@ const styles = ScaledSheet.create({
       },
     
        header:{
-        borderBottomRightRadius :'20@ms',
-        borderBottomLeftRadius :'15@ms',
-        backgroundColor:'#4E387E',
-        height:'80@ms',
-        flexDirection:'row',           
-         padding:'15@ms',
-         width:'100%',
-         justifyContent:'space-between',
-         alignItems:'center',
+           borderBottomRightRadius :'20@ms',
+           borderBottomLeftRadius :'15@ms',
+            backgroundColor:'#4E387E',
+            height:'80@ms',
+           flexDirection:'row',           
+            padding:'15@ms',
+            width:'100%',
+            justifyContent:'space-between',
+            alignItems:'center',
          
          },
          headerTitle:{
@@ -48,37 +48,33 @@ const styles = ScaledSheet.create({
          },
          textinputcontainer:{
             marginTop:'15@ms',
-           justifyContent:'center',
-           alignItems:'center',
-           marginBottom:'30@ms'
+            justifyContent:'center',
+            alignItems:'center',
+             marginBottom:'30@ms',
+            
+            
          },
          textinput:{
              borderTopEndRadius:'15@ms',
-            borderTopLeftRadius:'15@ms',
-            borderRadius:'20@ms',
+             borderTopLeftRadius:'15@ms',
+            borderRadius: '20@ms',
+            height: '57@ms',
             backgroundColor:'white',
-            padding:'15@ms',
             fontSize:'15@ms',
-            width:'270@ms',
-            height:'25@ms',
+            width:'275@ms',
             textAlign:'center',
-           borderWidth:1,
-           borderColor:'grey',
-           color:'grey'
-            
-
+            borderColor:'grey',
+            color:'grey',
+            overflow: 'hidden',
+            borderWidth:1,
+            fontWeight:'bold'
           },
           
-          
-          textcontent:{
-            //   marginTop:20,
-            alignSelf:'center',
-            marginLeft:'25@ms'
-
-          },
-          text:{
+      text:{
               fontSize:'15@ms',
               fontWeight:'bold',
+              marginLeft:'25@ms',
+              alignSelf:'center',
               
              },
           profilecontainer:{
@@ -90,15 +86,16 @@ const styles = ScaledSheet.create({
               paddingLeft:'20@ms',
               paddingRight:'20@ms'
                },
+               userprofile:{
+                flexDirection:'row'
+           },
           userimage:{
             height:'60@ms',
             width:'60@ms',
             borderRadius:'80@ms'
 
           },
-          userprofile:{
-               flexDirection:'row'
-          },
+          
           buttoncontainer:{
                 alignItems:'center',
               justifyContent:'center',
@@ -119,7 +116,8 @@ const styles = ScaledSheet.create({
          
           exittext:{
             color:'darkred',
-            fontSize:'15@ms'
+            fontSize:'15@ms',
+            fontWeight:'bold'
         }
 
          

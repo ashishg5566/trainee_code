@@ -52,23 +52,24 @@ const styles = ScaledSheet.create({
            alignItems:'center'
          },
          textinput:{
-             borderTopEndRadius:'15@ms',
-            borderTopLeftRadius:'15@ms',
-            borderRadius:'20@ms',
+          borderTopEndRadius:'15@ms',
+          borderTopLeftRadius:'15@ms',
+           borderRadius: '20@ms',
+           height: '57@ms',
             backgroundColor:'white',
-            padding:'15@ms',
             fontSize:'15@ms',
-            width:'270@ms',
-            height:'25@ms',
+             width:'275@ms',
             textAlign:'center',
-            borderWidth:1,
             borderColor:'grey',
+             color:'grey',
+            overflow: 'hidden',
+            borderWidth:1,
+            fontWeight:'bold'
 
           },
           usericoncontainer:{
               marginTop:'25@ms',
- //  backgroundColor:'yellow',
-              paddingLeft:'30@ms',
+               paddingLeft:'20@ms',
               flexDirection:'row'
            },
           usericon:{
@@ -78,20 +79,14 @@ const styles = ScaledSheet.create({
             justifyContent:'center',
             alignItems:'center',
             borderRadius:'40@ms'
-               
-
-          },
-          textcontent:{
-            //   marginTop:20,
-            alignSelf:'center',
-            marginLeft:'25@ms'
-
-          },
+           },
+          
           text:{
               fontSize:'15@ms',
               fontWeight:'bold',
-              
-             },
+              alignSelf:'center',
+              marginLeft:'25@ms'
+               },
           profilecontainer:{
              // backgroundColor:'yellow',
               flexDirection:'row',
@@ -146,11 +141,13 @@ const styles = ScaledSheet.create({
         },
           deletetext:{
               color:'white',
-              fontSize:'15@ms'
+              fontSize:'15@ms',
+              fontWeight:'bold'
           },
           exittext:{
             color:'darkred',
-            fontSize:'15@ms'
+            fontSize:'15@ms',
+            fontWeight:'bold'
         }
 
          
