@@ -2,6 +2,7 @@ import { ScaledSheet } from 'react-native-size-matters';
 const styles = ScaledSheet.create({
 container: {
      flex:1,
+    // paddingLeft:10
       },
      header:{
           borderBottomRightRadius :'20@ms',
@@ -20,31 +21,28 @@ container: {
                fontSize:'20@ms',
                alignItems:'center'
              },
-             cardcontainer:{
-                  width:'100%',
-                  marginTop:'10@ms',
-                  height:'82@ms',
-                  padding:'8@ms',
-                  justifyContent:'center',
-                  
-             },
+             
              cardcontent:{
+              //alignSelf:'center',
+              height:'75@ms',
+               backgroundColor:'white',
                   flexDirection:'row',
                   justifyContent:'space-between',
-                 marginLeft:'8@ms',
-                 marginTop:'4@ms'
-                   
-             },
+                paddingLeft:'10@ms',
+                 marginTop:'10@ms',
+                 paddingRight:'10@ms',
+                 borderRadius:'5@ms',
+                },
              profilepic:{
-                  height:'60@ms',
-                  width:'60@ms',
+                  height:'52@ms',
+                  width:'52@ms',
                   borderRadius:'40@ms',
-                 
+                   
 
              },
              buddyname:{
                fontWeight:'bold',
-               fontSize:'16@ms'
+               fontSize:'14@ms'
 
              },
              buddyalumni:{
@@ -65,10 +63,10 @@ container: {
                   borderWidth:1,
                   width:'95@ms'
           ,
-         
+                 // marginTop:'5@ms',
                   height:'40@ms',
-                  marginLeft:'20@ms',
-                  marginRight:'8@ms'
+                  // marginLeft:'20@ms',
+                  // marginRight:'8@ms'
 
              },
              

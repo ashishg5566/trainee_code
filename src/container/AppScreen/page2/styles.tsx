@@ -2,10 +2,11 @@ import { ScaledSheet } from 'react-native-size-matters';
 const styles = ScaledSheet.create({
     
     maincontainer:{
-      width:'100%',
+      flex:1,
       backgroundColor:'#e0e0e0',
       alignItems:'center',
-      height:'100%',
+       
+      
        },
      submitbutton:{
       marginTop:'25@ms',
@@ -14,40 +15,38 @@ const styles = ScaledSheet.create({
       height:'55@ms',
       justifyContent:'center',
       alignItems:'center',
-      borderRadius:'10@ms'
+      borderRadius:'10@ms',
+      alignSelf:'center'
       },
     submittext:{
       color:'white',
       fontSize:'18@ms'
        },
     
-     
+     batchtextcontainer:{
+       width:'100%',
+      marginTop:'20@ms',
+      
+
+     },
     addbatchtext:{
       fontWeight:'bold',
-      fontSize:18,
-      marginTop:20
+      fontSize:'18@ms',
+       textAlign:'center'
 
     },
-    SectionStyle: {
-        flexDirection: 'row',
-        justifyContent:'space-between',
-        width: '110@ms',
-        //  alignItems: 'center',
-        backgroundColor: '#fff',
-        height: '52@ms',
-        borderRadius: '10@ms' ,
-        margin: '8@ms',
-        borderColor:'lightgray',
-        borderWidth:3,
-        padding:'5@ms'
-         
-        
-         },
+    
+    
          addmorecontainer:{
           flexDirection:'row',
-          marginRight:'120@ms',
-          padding:'10@ms'
-
+         
+          marginTop:'10@ms',
+          
+          //alignSelf:'center',
+         // paddingLeft:'@ms',
+          width:'100%',
+          paddingLeft:'35@ms',
+            alignItems:"center"
          },
          addmorebutton:{
           backgroundColor:'#4E387E',
@@ -67,7 +66,7 @@ const styles = ScaledSheet.create({
           color:'#4E387E',
           fontWeight:'bold',
           fontSize:'15@ms',
-          marginTop:'6@ms',
+        
           marginLeft:'12@ms'
 
          }

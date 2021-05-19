@@ -55,10 +55,10 @@ const styles = ScaledSheet.create({
   cardparagrap:{
     color:'gray',
     marginTop:'5@ms',
-    fontSize:'13@ms',
-    fontWeight:'bold',
-    textAlign:'justify'
-
+    fontSize:'11@ms',
+   // fontWeight:'bold',
+    textAlign:'justify',
+ fontWeight:'bold'
   },
   projecttitletext:{
     color:'grey',
@@ -96,7 +96,11 @@ const styles = ScaledSheet.create({
     marginTop:'10@ms',
     marginLeft:'20@ms'
 
-  }
+  },
+  icontext:{
+    marginRight:'15@ms'
+
+  },
  
 })
 export default styles;

@@ -3,14 +3,16 @@ import { Text, View,FlatList,Image,TouchableOpacity,ImageBackground ,ScrollView,
 import styles from './styles.tsx';
  import Icon from 'react-native-vector-icons/FontAwesome';
   
-  export default function Task2() {
+  export default function Task2({navigation}) {
   return (
-      <ScrollView> 
+      
     <View style={styles.container}> 
      
              <View style={styles.header}>
                 <View> 
+                <TouchableOpacity  onPress={() => navigation.goBack()} >
                     <Icon name="arrow-left" size={20}  color="white" style={{color:'white',alignSelf:'flex-start'}}/>
+                    </TouchableOpacity>
                 </View>
                  <View> 
                     <Text style={styles.headerTitle}>Project Details</Text>
@@ -19,6 +21,7 @@ import styles from './styles.tsx';
                  <Icon name="ellipsis-v" size={20}  color="white" style={{color:'white',alignSelf:'flex-end'}}/>
                 </View>
              </View>
+             <ScrollView> 
              <View style={styles.schoolProfile}>
                  <View >
                    <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  />
@@ -109,26 +112,25 @@ import styles from './styles.tsx';
             </View>
             <View style={ styles.separator} >
            </View>
-           <View style={styles.content7}>
-               <View>
-                  <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  />
-               </View>
-                <View style={styles.profiledesc}>
-                    <Text style={styles.nametext}>
-                        Raushel
-                   </Text>
-                    <Text style={styles.paragraphtext2}> 
-                        ipsum lorem is simply dummy text of the printing and typesetting industry 
-                   </Text>
-                  </View>
-               </View>
+           <View style={styles.cardcontent7}>
+                  <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic} /> 
+                  <View style={styles.paragraphcontent}>
+                     <Text style={styles.profiletext}>Nikhil</Text>
+                      <Text style={styles.profileparagraph}>
+                        Lorem ipsum is simply dummy text of the printing and simply type setting industry
+                        
+                        
+                         </Text>
+                </View>
+            </View>
                <View style={styles.content8}>
                <TextInput
                 placeholder="Write here..."
                style={styles.textinput2}
              />
                </View>
+               </ScrollView>
                </View>
-</ScrollView>
+ 
      );
 }

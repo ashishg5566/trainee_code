@@ -12,6 +12,7 @@ import Task3 from '../container/AppScreen/Task3/Task3.tsx';
 import Task4 from '../container/AppScreen/Task4/Task4.tsx';
 import Task5 from '../container/AppScreen/Task5/Task5.tsx';
 import Task6 from '../container/AppScreen/Task6/Task6.tsx';
+import Task7 from '../container/AppScreen/Task7/Task7.tsx';
 import About from '../container/AppScreen/aboutscreen/About.tsx';
  
 import Contact from '../container/AppScreen/contactscreen/Contact.tsx';
@@ -48,6 +49,7 @@ const Drawernavigation: FC = () => {
         <Drawer.Screen name="Task4" component={Task4} />
         <Drawer.Screen name="Task5" component={Task5} />
         <Drawer.Screen name="Task6" component={Task6} />
+        <Drawer.Screen name="Task7" component={Task7} />
       </Drawer.Navigator>
         
         </View>

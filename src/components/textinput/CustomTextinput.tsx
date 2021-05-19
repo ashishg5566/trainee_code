@@ -12,15 +12,23 @@ const CustomTextinput: FC = ({  value, onChangeText, placeholder, secureTextEntr
         <View>
          <View style={[styles.SectionStyle,style]}>
             <TextInput
-                   //multiline={true}
+              style={{flex:1,backgroundColor:'white',justifyContent:'center',margin:2,  overflow: 'hidden'}}
+                    // outline:none
                    secureTextEntry={secureTextEntry}
                     placeholder={placeholder}
-                    style={{flex:1,backgroundColor:'white',justifyContent:'center',margin:2}}
                     onChangeText={onChangeText}
                     label={label}
                      value={value}
-                     underlineColor={'white'}
-                     right={<TextInput.Icon name="info" color={"#ff0000"} onPress={() => {}} />}
+                     selectionColor='red'
+                     underlineColor='#fff'
+                     theme={{
+                        colors: {
+                        primary: 'white',
+                        },
+                     }}
+                     underlineColorAndroid="transparent"
+                     borderWidth={0}
+                      right={<TextInput.Icon name="info" color={"#ff0000"} onPress={() => {}} />}
                    />
                     {/* {error && <Text>{error}</Text>} */}
                  </View>

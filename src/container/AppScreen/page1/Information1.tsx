@@ -1,5 +1,5 @@
 import React, {FC,useState } from 'react';
-import { View, Text, TouchableOpacity} from 'react-native';
+import { View, Text, TouchableOpacity,ScrollView} from 'react-native';
 import styles from './styles.tsx';
  import {CustomDropdown,CustomTextArea,Customheader} from '../../../components/textinput';
 import Icon from 'react-native-vector-icons/FontAwesome';
@@ -34,14 +34,20 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
      alert('Success');
  };
  return (
-      <KeyboardAwareScrollView> 
+      
        <View style={styles.container}>
-
-         <View style={styles.maincontainer1}> 
-                  <View style={{width:'100%',top:0,position:'absolute'}}> 
+             
+             <View style={{width:'100%'}}> 
                         <Customheader title="EI Information"/>
                    </View>
-                   <View style={{flexDirection:'row',marginTop:100}}>
+                 
+     <ScrollView> 
+          <View style={{backgroundColor:'white'}}> 
+         <View style={styles.maincontainer1}> 
+         
+         
+                   
+                   <View style={{flexDirection:'row'}}>
                             <CustomDropdown  label1="State"
                                   value1="0"  label2="Bombay" value2="1" label3="Gujarat" value3="2"
                                    selectedValue={selectedSchool} 
@@ -91,9 +97,12 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
                   <TouchableOpacity style={styles.submitbutton} onPress={submit} >
                         <Text style={styles.submittext}>Submit</Text>
                   </TouchableOpacity>
+                  
            </View>
+           </View>
+           </ScrollView> 
      </View>
-    </KeyboardAwareScrollView> 
+    
      );
 };
  export default Information1;

@@ -1,80 +1,136 @@
- //import liraries
- import React, { Component,FC,useState} from 'react';
- import { View, Text, TouchableOpacity,Image } from 'react-native';
- import Icon from 'react-native-vector-icons/FontAwesome';
- import styles from './styles.tsx';
- import { TextInput } from 'react-native-paper';
- import {CustomDropdown,CustomTextArea,Customheader} from '../../../components/textinput';
- // create a component
- const Task6: FC = () => {
-     
-     return (
-         <View style={styles.container}> 
-            <View style={styles.content1}>
-            <View style={styles.header}>
+import React, { useState } from 'react';
+import {
+  Text,
+  View,
+  FlatList,
+  TouchableOpacity,
+  Image
+} from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
+import styles from './styles';
+const ingredientList = [
+  {
+    id: 1,
+    name: 'Akash Sharma',
+    desig:'(student)',
+    selected: false,
+  },
+  {
+    id: 2,
+    name: 'Prashant Choudhary',
+    desig:'(Teacher)',
+    selected: false,
+  },
+  {
+    id: 3,
+    name: 'Amit Kumat',
+    desig:'(Student)',
+    selected: false,
+  },
+  {
+    id: 4,
+    name: 'Tarun Sharma',
+    desig:'(Teacher)',
+    selected: false,
+  },
+  {
+    id: 5,
+    name: 'Akash Sharma',
+    desig:'(student)',
+    selected: false,
+  },
+  {
+    id: 6,
+    name: 'Prashant Choudhary',
+    desig:'(Teacher)',
+    selected: false,
+  },
+  {
+    id: 7,
+    name: 'Amit Kumat',
+    desig:'(Student)',
+    selected: false,
+  },
+  {
+    id: 8,
+    name: 'Tarun Sharma',
+    desig:'(Teacher)',
+    selected: false,
+  },
+  {
+    id: 9,
+    name: 'Amit Kumat',
+    desig:'(Student)',
+    selected: false,
+  },
+  {
+    id: 10,
+    name: 'Tarun Sharma',
+    desig:'(Teacher)',
+    selected: false,
+  },
+  
+];
+const Task6: FC = ({navigation}) => {
+   const [selectedItem, setSelectedItem] = useState(null);
+   const [allItems, setAllItems] = useState(ingredientList);
+
+    const selectedIngredient = (item) => {
+    console.log('selecionado: ' + item.name);
+    setSelectedItem(item);
+    let temp = allItems.filter((parentItem) => parentItem.id !== item.id);
+    item.selected = !item.selected;
+    temp = temp.concat(item);
+    temp.sort((a, b) => parseInt(a.id) - parseInt(b.id));
+    setAllItems(temp);
+    console.log(allItems);
+  };
+  return (
+    <View style={styles.container}>
+         <View style={styles.header}>
+                <View> 
+                <TouchableOpacity  onPress={() => navigation.goBack()} >
+                    <Icon name="arrow-left" size={20}  color="white" />
+                    </TouchableOpacity>
+                </View>
                  <View> 
-                     <Icon name="bars" size={20}  color="white"/>
+                    <Text style={styles.headerTitle}>Create Group Chat</Text>
                  </View>
-                  <View> 
-                     <Text style={styles.headerTitle}>Create Post</Text>
-                  </View>
                   <View>
+                    <Icon name="search" size={20}  color="white"/>
                  </View>
-              </View>
-               <View style={styles.profilecontent}>
-                   <View>
-                      <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic} /> 
-                   </View>
-                   <View style={styles.textcontent}>
-                       <Text style={styles.nametext}>Simmi Sharma</Text>
-                  
-                   <CustomDropdown  label1="Friends"
-                                   value1="0"  label2="Akash" value2="1" label3="Rohit" value3="2"
-                                     style={{width:140,fontSize:6,height:40}}/>
-                   
-              </View>
-              </View>
-               <View style={styles.paragraphcontent}>
-                  <Text style={styles.paragraphtext}>
-                    ipsum lorem is simply dummy text of the printing and typesetting industry lorem ipsum has been 
-                    the indusry's standard dummy text ever since the 1500s, when an unknown printer took a gallery of type
-                    and scrambled it to make a type specimen book.
-                  </Text>
-              </View>
-          </View>
-          <View style={styles.content2}>
-              <View style={styles.cameracontainer}>
-                  <View style={styles.cameracontent}> 
-                   <Icon name="camera" size={40}  color="white" style={styles.cameraicon}/>
-                     <Text style={styles.cameratext}>Add</Text>
-                     <Text style={styles.cameratext}>Photo/Video</Text>
-                  </View>
-         </View>
-          <View style={styles.textinputcontainer}>
-             <View style={styles.SectionStyle}>
-                 <TextInput
-                    placeholder="Tag People"
-                     style={{flex:1,backgroundColor:'white',justifyContent:'center',margin:5}}
-                      label="Tag People"
-                      underlineColor={'white'}
-                      left={<TextInput.Icon name="user-friends" color={"#ff0000"} ></TextInput.Icon>}
-                    />
-              </View>
-              <TouchableOpacity style={styles.postbutton}>
-                  <Text style={styles.posttext}>Post</Text>
-              </TouchableOpacity>
- 
-         </View>
-            
-     </View>
- </View>
-     );
- };
- 
- // define your styles
-  
- 
- //make this component available to the app
-  
-  
- export default Task6;
+             </View>
+            <FlatList
+              style={styles.flatlist}
+               bounces={false}
+               data={allItems}
+               renderItem={({ item }) => (
+                          <TouchableOpacity
+                               style={styles.flatListItem}
+                               key={item.id}
+                               onPress={() => selectedIngredient(item)}>
+                               <View style={styles. flatlistcontainer}>
+                                   <View style={{flexDirection:'row',alignItems:'center'}}> 
+                                      <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.flatlistimage}  /> 
+                                          <View style={styles.flatlisttext}> 
+                                               <Text style={{fontSize:16}}>{item.name}</Text>
+                                               <Text style={styles.desigtext}>{item.desig}</Text>
+                                          </View>
+                                    </View>
+                                     {!item.selected ? ( 
+                                        
+                                        <Icon name='check' size={20}color="#ecf0f1"/>
+                                      ) : (
+                                     
+                                        <Icon name='check'  size={16}  color="white" style={styles.selecticon}/>
+                                         )}
+                                   </View>
+                                    <View style={styles.flatlistborder}></View>
+                           </TouchableOpacity>
+                                )}
+                           keyExtractor={(item) => item.index}
+                          />
+           </View>
+  );
+}
+export default Task6;

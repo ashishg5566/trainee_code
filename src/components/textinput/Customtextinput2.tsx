@@ -19,6 +19,11 @@ const CustomTextInput2: FC = ({  value, onChangeText, placeholder, secureTextEnt
                     label={label}
                      value={value}
                      underlineColor={'white'}
+                     theme={{
+                        colors: {
+                        primary: 'white',
+                        },
+                     }}
                      />
                     {/* {error && <Text>{error}</Text>} */}
                  </View>

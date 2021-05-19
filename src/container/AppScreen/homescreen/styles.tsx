@@ -4,28 +4,19 @@ const styles = ScaledSheet.create({
       container:{
         flex:1,
         backgroundColor:'lightgrey',
-        alignItems:'center',
-        paddingBottom:10
-        
-      },
+       },
       header:{
         borderBottomRightRadius :'20@ms',
-      borderBottomLeftRadius :'15@ms',
-       backgroundColor:'#4E387E',
-      height:'70@ms',
-       padding:'20@ms',
-      flexDirection:'row',
-      alignItems:'center',
-      
-       width:'100%',
-       justifyContent: 'space-between',
-      },
-      textcontainer:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        width:'100%',
-        padding:'6@ms'
-
+        borderBottomLeftRadius :'15@ms',
+         backgroundColor:'#4E387E',
+         height:'80@ms',
+         padding:'20@ms',
+         flexDirection:'row',
+         alignItems:'center',
+         position:'relative',
+          //position:'absolute',
+          width:'100%',
+          justifyContent: 'space-between',
       },
       headertitle:{
         alignSelf:'center',
@@ -34,42 +25,90 @@ const styles = ScaledSheet.create({
         marginLeft:'50@ms'
 
       },
-      text1:{
-        marginLeft:'20@ms',
+      searchicon:{
+        marginRight:'20@ms'
+      },
+      textcontainer:{
+        flexDirection:'row',
+        justifyContent:'space-between',
+        width:'92%',
+         marginTop:'10@ms',
+        marginBottom:'10@ms'
+      },
+      text:{
+        fontWeight:'bold',
         color:'black',
         fontSize:'11@ms'
 
       },
-      text2:{
-        marginRight:'20@ms',
-        color:'black',
-        fontSize:'11@ms'
+      smallcardcontent:{
+        width:'110@ms',
+        height:'145@ms',
+        borderRadius:'20@ms',
+        alignItems:'center',
+        margin:'5@ms',
+        justifyContent:'center'
+    
+      },
+      studentnametext:{
+         textAlign:'center',
+         fontWeight:'bold',
+         color:'grey',
+         fontSize:'11@ms',
+         marginTop:'5@ms'
+      },
+      batchmatetext:{
+        fontSize:'10@ms',
+        textAlign:'center',
+        color:'grey'
 
       },
-      cardcontent:{
-        width:'90%',
+
+      smallcardimage:{
+        width:'110@ms',
+         height:'65@ms',
+        borderTopRightRadius:'20@ms',
+       position:'relative',
+        borderTopLeftRadius:'20@ms'
+    
+      },
+      addbuddybutton:{
+        height:'25@ms',
+        backgroundColor:'#4E387E',
+        justifyContent:'center',
+        alignItems:'center',
+        width:'65@ms',
+        borderRadius:'5@ms',
+        marginTop:'10@ms',
+         alignSelf:'center'
+    
+      },
+       
+      cardcontainer:{
+        width:'94%',
         marginTop:'8@ms',
         borderRadius:'20@ms',
         padding:'12@ms',
         
 
        },
-      cardcontent1:{
-        flexDirection:'row', 
-        justifyContent: 'space-between',
-         borderBottomWidth: 1,
-        borderColor:'#DCDCDC',
-        padding:'5@ms'
-         
-    
-      },
+       nametextstyle:{
+          marginTop:'8@ms',
+          marginLeft:'20@ms',
+           },
+      
       nametext:{
         fontWeight:'bold',
-        marginTop:'8@ms',
-        marginLeft:'20@ms',
-        fontSize:'12@ms',
+         fontSize:'15@ms',
         color:'black'
     
+      },
+      bigimage:{
+        width:'100%',
+        height:'150@ms',
+        borderRadius:'15@ms',
+        marginTop:'6@ms'
+
       },
       profilepic:{
         width:'35@ms', 
@@ -77,20 +116,14 @@ const styles = ScaledSheet.create({
         borderRadius:'20@ms'
     
       },
-      cardcontent2:{
-        flexDirection:'row', 
-        justifyContent: 'space-between',
-        marginTop:'5@ms',
-        padding:'6@ms'
-    
-      },
+       
       videocontent:{
       width:'100%',
          height:'120@ms',
        
     
       },
-      cardcontent3:{
+      iconcontainer:{
         justifyContent:'space-between',
         flexDirection:'row',
         marginTop:'5@ms',
@@ -104,7 +137,11 @@ const styles = ScaledSheet.create({
         fontWeight:'bold',
         textAlign:'justify'
 
-      }
+      },
+      icontext:{
+        marginRight:'15@ms'
 
+      },
+      
       })
 export default styles;

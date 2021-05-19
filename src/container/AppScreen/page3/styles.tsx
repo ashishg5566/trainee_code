@@ -3,12 +3,12 @@ const styles = ScaledSheet.create({
     container:{
       flex:1,
        backgroundColor:'#e0e0e0',
-      alignItems:'center'
+       alignItems:'center',
+      
     },
-    
-      formcontainer:{
+     formcontainer:{
           width:'100%',
-        //   backgroundColor:'red',
+          // backgroundColor:'red',
           alignItems:'center',
           marginTop:'40@ms'
           },

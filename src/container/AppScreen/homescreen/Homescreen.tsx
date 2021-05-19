@@ -1,91 +1,111 @@
  //import liraries
 import React, { Component,FC,useState } from 'react';
-import { View, Text, TouchableOpacity,ScrollView,Image, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity,ScrollView,Image, StyleSheet,FlatList } from 'react-native';
 import styles from './styles.tsx';
 import {Customcard,Smallcustomcard} from '../../../components/card';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-
-
-
-
+const DATA = [
+    {
+      id: '1',
+      name: 'Ankit Sharma',
+       image:"https://bootdey.com/img/Content/avatar/avatar4.png",
+       alumni:"Alumni",
+       batchmates:'Batchmates 2009-10'
+    },
+    {
+      id: '2',
+      name: 'Nitesh',
+      image:"https://bootdey.com/img/Content/avatar/avatar4.png",
+       batchmates:'Batchmates 2009-10'
+      },
+    {
+      id: '3',
+      name: 'Rohit',
+      image:"https://bootdey.com/img/Content/avatar/avatar4.png",
+      alumni:"",
+       batchmates:'Batchmates 2009-18'
+    },
+    {
+        id: '4',
+        name: 'Ria Jain',
+        image:"https://bootdey.com/img/Content/avatar/avatar4.png",
+        alumni:"",
+         batchmates:'Batchmates 2009-18'
+      },
+  ];
 // create a component
-const Homescreen: FC = () => {
+const Homescreen: FC = ({navigation}) => {
     return (
-        <ScrollView>
+       
         <View style={styles.container}>
              <View style={styles.header}>
-                 <Icon name="bars" size={20}  color="white" style={{color:'white',alignSelf:'center'}}/>
+               <TouchableOpacity onPress={navigation.openDrawer()}> 
+                 <Icon name="bars" size={20}  color="white"/>
+                 </TouchableOpacity>
                  <Text style={styles.headertitle}>ZatchUp</Text>
                  <View style={{flexDirection:'row'}}> 
-                    <Icon name="search" size={20} style={{color:'white',alignSelf:'center',marginRight:15}}/>
-                    <Icon name="bell" size={20} color="white" style={{alignSelf:'center',padding:5}}/>
+                    <Icon name="search" size={20} color="white" style={styles.searchicon}/>
+                    <Icon name="bell" size={20} color="white"/>
                  </View>
             </View>
-           <Card style={styles.cardcontent}>
-             <View style={styles.cardcontent1}>
-                 <View style={{flexDirection:'row'}}> 
-                    <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  /> 
-                    <Text style={styles.nametext}>Simmi Sharma</Text>
-                </View>
-                 <Icon name="ellipsis-v"  color="grey" size={20}/>
+        <ScrollView  > 
+         <View style={{alignItems:'center',paddingBottom:30}}> 
+          <Customcard/>
+          <View style={styles.textcontainer}>
+              <Text style={styles.text}>Suggetions</Text>
+               <Text style={styles.text}>View All</Text>
+          </View>
+          <FlatList
+          horizontal={true}
+            style={{width:'94%'}}
+              data={DATA}
+               renderItem={({ item }) =>  
+              <Card style={styles.smallcardcontent}>
+                   <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.smallcardimage}  /> 
+                   <Text style={styles.studentnametext}>{item.name}</Text>
+                   <Text style={styles.batchmatetext}>{item.batchmates}</Text>
+                    <TouchableOpacity style={styles.addbuddybutton}>
+                        <Text style={{color:'white',fontSize:10}}>Add Buddy</Text>
+                  </TouchableOpacity>
+             </Card>
+           }
+           keyExtractor={item => item.id}
+          />
+         <Card style={styles.cardcontainer}>
+            <View style={{flexDirection:'row',  justifyContent: 'space-between',}}>
+                  <View style={{flexDirection:'row'}}> 
+                      <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  /> 
+                      <View style={styles.nametextstyle}> 
+                         <Text style={styles.nametext}>Loreal</Text>
+                      </View>
+                  </View>
+                     <Icon name="ellipsis-v"  color="grey" size={20}/>
             </View>
-            <View style={styles.cardcontent2}>
-                <Text style={{color:'grey',fontSize:13,fontWeight:'bold'}}>Title of the Project</Text>
-                <Text style={{color:'grey',fontWeight:'bold'}}>655</Text>
-            </View>
-             <Image source={require('../../../Assets/images/video.jpg')} style={{width:'100%',height:150,borderRadius:15}}  /> 
-             <Paragraph style={styles.cardparagrap}>
-                 Lorem ipsum is simply dummy text of the printing and simply type setting industry
-             </Paragraph>
-             <View style={styles.cardcontent3}>
-                <Icon name="thumbs-up" size={15} color="grey"/>
-                <View style={{flexDirection:'row' }}> 
-                   <Text style={{marginLeft:35}}>665</Text>
-                    <Icon name="comment" color="grey" size={15} style={{marginLeft:15}}/>
-               </View>
-                <View style={{flexDirection:'row'}}> 
-                   <Text style={{marginRight:10,fontWeight:'bold',color:'grey'}}>Share</Text>
-                   <Icon name="share-alt"  color="grey" size={15}/>
-              </View>
-            </View>
-        </Card>
-         <View style={styles.textcontainer}>
-              <Text style={styles.text1}>Suggetions</Text>
-               <Text style={styles.text2}>View All</Text>
-        </View>
-        <View style={{flexDirection:'row'}}> 
-           <Smallcustomcard/>
-            <Smallcustomcard/>
-           <Smallcustomcard/>
-       </View>
-       <Card style={styles.cardcontent}>
-          <View style={{flexDirection:'row', 
-                 justifyContent: 'space-between',}}>
-            <View style={{flexDirection:'row'}}> 
-                 <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  /> 
-                  <Text style={styles.nametext}>Loreal</Text>
-            </View>
-                  <Icon name="ellipsis-v"  color="grey" size={20}/>
-            </View>
-            <Image source={require('../../../Assets/images/loreal.jpg')} style={{width:'100%',height:150,borderRadius:15,marginTop:6}}  /> 
+            <Image source={require('../../../Assets/images/loreal.jpg')} style={styles.bigimage}  /> 
             <Paragraph style={styles.cardparagrap}>
                  Lorem ipsum is simply dummy text of the printing and simply type setting industry
              </Paragraph>
-             <View style={styles.cardcontent3}>
+             <View style={styles.iconcontainer}>
                    <Icon name="thumbs-up" size={15} color="grey"/>
-                 <View style={{flexDirection:'row' }}> 
-                    <Text style={{marginLeft:35}}>665</Text>
-                     <Icon name="comment" color="grey" size={15} style={{marginLeft:15}}/>
+                   <View style={{flexDirection:'row' }}> 
+                   <View style={styles.icontext}> 
+                     <Text>665</Text>
+                    </View>
+                     <Icon name="comment" color="grey" size={15} style={styles.icon}/>
                  </View>
                   <View style={{flexDirection:'row'}}> 
-                      <Text style={{marginRight:10,fontWeight:'bold',color:'grey'}}>Share</Text>
-                       <Icon name="share-alt"  color="grey" size={15}/>
+                     <View style={styles.icontext}> 
+                        <Text style={{color:'grey',fontWeight:'bold'}}>Share</Text>
+                     </View>
+                       <Icon name="share-alt"  color="grey" size={15} style={styles.icon} />
                 </View>
              </View>
-       </Card>
-     </View>
-  </ScrollView>
+         </Card>
+       </View>
+     </ScrollView>
+ </View>
+  
                 
     );
 };

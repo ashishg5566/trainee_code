@@ -29,19 +29,21 @@ import Icon from 'react-native-vector-icons/FontAwesome';
     <KeyboardAwareScrollView> 
       <View style={styles.container}>
        <Image source={require('../../../Assets/images/profile.jpg')} style={{marginBottom:40,width: 150, height: 150,marginTop:50,borderRadius:100}}  /> 
-          <CustomTextinput  label="Enter Email" 
+          <CustomTextinput   
+          placeholder="Enter Email"
               value={Email} 
                onChangeText={(text) => onChangeText(text, "Email")}
             />
            {/* <Text style={{color:'red'}}>{emailerror}</Text> */}
            <CustomTextinput  
-             label="Enter Password"
+            //  label="Enter Password"
+            placeholder="Enter Password"
                value={Password} 
                 onChangeText={(text) => onChangeText(text, "Password")}
                />
             {/* <Text style={{color:'red'}}>{passworderror}</Text> */}
-             <TouchableOpacity style={styles.signinButtonStyle} >
-                  <Text style={styles.signinTextStyle} onPress={() => navigation.navigate('navbar')}>Sign In</Text>
+             <TouchableOpacity style={styles.signinButtonStyle} onPress={() => navigation.navigate('navbar')}>
+                  <Text style={styles.signinTextStyle} >Sign In</Text>
               </TouchableOpacity>
              <TouchableOpacity style={styles.forgotPasswordButtonStyle} onPress={() => navigation.navigate('forgotpassword')}>
                 <Text style={styles.forgotPasswordTextStyle} >Forgot Password ?</Text>

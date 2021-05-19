@@ -2,8 +2,9 @@ import { ScaledSheet } from 'react-native-size-matters';
 const styles = ScaledSheet.create({
 container: {
      flex:1,
-     backgroundColor:'lightgrey',
-       paddingBottom:'10@ms'
+    backgroundColor:'lightgrey',
+    
+ 
       },
      header:{
           borderBottomRightRadius :'20@ms',
@@ -15,32 +16,45 @@ container: {
              width:'100%',
              justifyContent:'space-between',
              alignItems:'center',
+            // marginBottom:-10,
+             //position:'absolute',
              
              },
              headerTitle:{
                color:'white',
                fontSize:'20@ms',
-               alignItems:'center'
+               alignItems:'center',
+               
              },
              backgroundImage:{
+                
                  width:'100%',
-                 height:'240@ms'
+                 height:'160@ms',
+               //position:'relative',
+                // resizeMode:'contain',
+                marginTop:-20
+               
+                
              },
              profilepic:{
                  marginTop:'-40@ms',
+                
                 borderWidth:2,
                 borderColor:'white',
                 width:'80@ms',
                 height:'80@ms',
                 borderRadius:'50@ms',
-                marginLeft:'8@ms'
+                
 
              },
              profilecontainer:{
                 flexDirection:'row',
+                paddingLeft:'15@ms',
+                paddingRight:'10@ms',
                 width:'100%',
-              //  backgroundColor:'grey',
+              // backgroundColor:'red',
                 padding:'5@ms',
+                justifyContent:'space-between'
                
 
              },
@@ -49,7 +63,7 @@ container: {
 
              },
              messageicon:{
-                marginLeft:'35@ms',
+               // marginLeft:'35@ms',
                   },
                   nametext:{
                     fontSize:'16@ms',
@@ -99,10 +113,12 @@ container: {
                     padding:'10@ms',
                     marginTop:'10@ms',
                    borderBottomColor:'white',
-                    marginBottom:-50,
-                    height:50,
-                    borderTopEndRadius:10,
+                   position:'relative',
+                   height:50,
+                   borderBottomWidth: '1@ms',
+                   borderTopEndRadius:10,
                    borderTopLeftRadius:10,
+                  // backgroundColor:'red'
                        },
                   cardtitletext:{
                       fontWeight:'bold',
@@ -171,16 +187,18 @@ container: {
                   }
 ,
 picContainer:{
-  width:'100%',
-  
+  width:'90%',
+  alignSelf:'center',
+  paddingLeft:'10@ms',
   flexDirection:'row',
   justifyContent:'center',
+  paddingRight:'10@ms'
   
   
 },
 image:{
-  width:'170@ms',
-  height:'170@ms',
+  width:'155@ms',
+  height:'155@ms',
   margin:'8@ms',
   borderRadius:'20@ms'
 

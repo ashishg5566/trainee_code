@@ -6,14 +6,16 @@ import styles from './styles.tsx';
 import { TextInput } from 'react-native-paper';
  
 // create a component
-const Task4: FC = () => {
+const Task4: FC = ({navigation}) => {
      return (
-        <ScrollView>
+        
         <View style={styles.container}> 
            
            <View style={styles.header}>
                 <View> 
+                <TouchableOpacity  onPress={() => navigation.goBack()} >
                     <Icon name="arrow-left" size={20}  color="white"/>
+                    </TouchableOpacity>
                 </View>
                  <View> 
                     <Text style={styles.headerTitle}>Create Group Chat</Text>
@@ -21,6 +23,7 @@ const Task4: FC = () => {
                  <View>
                 </View>
             </View>
+            <ScrollView>
             <View style={styles.imagecontainer}>
                <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profileimage}  /> 
                <View style={styles.cameraicon}> 
@@ -30,7 +33,11 @@ const Task4: FC = () => {
           <View style={styles.textinputcontainer}>
              <TextInput
               placeholder="ABC Group"
-              
+              theme={{
+                colors: {
+                primary: 'white',
+                },
+             }}
                style={styles.textinput}
                underlineColor={'trannsparent'}
                />
@@ -75,9 +82,11 @@ const Task4: FC = () => {
               <TouchableOpacity style={styles.exitbutton}>
                  <Text style={styles.exittext}>Exit Group</Text>
              </TouchableOpacity>
-          </View>
+       
+                 </View>
+                 </ScrollView>
 </View>
-</ScrollView> 
+ 
     );
 };
 export default Task4;

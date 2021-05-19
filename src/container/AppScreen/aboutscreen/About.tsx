@@ -29,16 +29,15 @@ const DATA = [
   ];
 function SameSchoolScreen() {
   return (
-    <View  >
+    <View style={{paddingLeft:15,paddingRight:15}} >
      <FlatList
-        style={{width:'100%'}}
+         style={{alignSelf:'center',width:'100%'}}
             data={DATA}
               renderItem={({ item }) =>  
-              <Card style={styles.cardcontainer}>
-               <View style={styles.cardcontent}>
-                 <View style={{flexDirection:'row'}}>
+                 <View style={styles.cardcontent}>
+                 <View style={{flexDirection:'row',marginTop:8}}>
                     <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  />
-                      <View style={{marginLeft:20}}> 
+                      <View style={{marginLeft:14}}> 
                        <Text style={styles.buddyname}>{item.name}</Text>
                        <Text style={styles.buddyalumni}>{item.alumni}</Text>
                         <Text style={styles.buddybatchmates}>{item.batchmates}</Text>
@@ -50,7 +49,7 @@ function SameSchoolScreen() {
                      </TouchableOpacity>
                  </View> 
                 </View> 
-              </Card>
+             
           }
            keyExtractor={item => item.id}
           />
@@ -61,16 +60,16 @@ function SameSchoolScreen() {
 
 function ContactScreen() {
   return (
-    <View>
+    <View style={{paddingLeft:15,paddingRight:15}}>
       <FlatList
-       style={{width:'100%'}}
+        style={{alignSelf:'center',width:'100%'}}
        data={DATA}
         renderItem={({ item }) =>  
-          <Card style={styles.cardcontainer}>
+         
           <View style={styles.cardcontent}>
-             <View style={{flexDirection:'row'}}>
+             <View style={{flexDirection:'row',marginTop:8}}>
                 <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  />
-                 <View style={{marginLeft:20}}> 
+                 <View style={{marginLeft:14}}> 
                     <Text style={styles.buddyname}>{item.name}</Text>
                     <Text style={styles.buddyalumni}>{item.alumni}</Text>
                     </View>
@@ -81,7 +80,7 @@ function ContactScreen() {
                  </TouchableOpacity>
               </View> 
            </View> 
-           </Card>
+           
           }
            keyExtractor={item => item.id}
           />
@@ -90,12 +89,14 @@ function ContactScreen() {
 }
 
 const Tab = createMaterialTopTabNavigator();
-export default function About() {
+export default function About({navigation}) {
   return (
     <View style={styles.container}> 
        <View style={styles.header}>
            <View> 
-              <Icon name="arrow-left" size={20}  color="white" style={{color:'white',alignSelf:'flex-start'}}/>
+           <TouchableOpacity  onPress={() => navigation.goBack()} >
+              <Icon name="arrow-left" size={20}  color="white" style={{alignSelf:'flex-start'}}/>
+              </TouchableOpacity>
            </View>
             <View> 
                <Text style={styles.headerTitle}>Suggetions</Text>
@@ -108,19 +109,25 @@ export default function About() {
           labelStyle: { fontSize: 17 ,textTransform: 'none'
             // color:'white'
         },
+        // activeBackgroundColor: '#ff6900',
            activeTintColor:'white',
             inactiveTintColor:'grey',
              indicatorStyle: {
              backgroundColor:'#4E387E',
              height:'100%',
+             width:'50%',
+             
+             
           //   borderBottomWidth: 0,
           // borderBottomLeftRadius: 0,
           //   borderBottomRightRadius: 0,
-             borderRadius:6
+            
+             
                },
         //   pressColor: 'white',
-        // tabStyle: { backgroundColor: '#36A7E7', borderRadius: 30, margin: 12, justifyContent: 'center', alignContent: 'center' },
-            style: { margin:12,height:68 ,justifyContent:'center',borderRadius:6},
+        tabStyle: {},
+        
+            style: { margin:12 ,justifyContent:'center',borderRadius:5},
            }}
            >
         <Tab.Screen name="Same School" component={SameSchoolScreen} 

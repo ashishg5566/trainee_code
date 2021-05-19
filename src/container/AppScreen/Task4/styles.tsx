@@ -49,13 +49,22 @@ const styles = ScaledSheet.create({
          textinputcontainer:{
             marginTop:'15@ms',
            justifyContent:'center',
-           alignItems:'center'
+           alignItems:'center',
+          
          },
          textinput:{
-          borderTopEndRadius:'15@ms',
-          borderTopLeftRadius:'15@ms',
-           borderRadius: '20@ms',
-           height: '57@ms',
+          shadowColor: 'black',
+          shadowOffset: {
+           width: '10@ms',
+           height:  '10@ms',
+            },
+           shadowOpacity: 0.29,
+           shadowRadius: 5.22,
+            elevation: '10@ms',
+          borderTopEndRadius:'8@ms',
+          borderTopLeftRadius:'8@ms',
+           borderRadius: '10@ms',
+           height: '50@ms',
             backgroundColor:'white',
             fontSize:'15@ms',
              width:'275@ms',
@@ -63,7 +72,7 @@ const styles = ScaledSheet.create({
             borderColor:'grey',
              color:'grey',
             overflow: 'hidden',
-            borderWidth:1,
+            //borderWidth:1,
             fontWeight:'bold'
 
           },
@@ -117,12 +126,12 @@ const styles = ScaledSheet.create({
               flexDirection:'row',
               alignItems:'center',
               justifyContent:'center',
-              marginTop:'50@ms'
+              marginTop:'30@ms'
           },
           deletebutton:{
               backgroundColor:'darkred',
-              height:'60@ms',
-              width:'150@ms',
+              height:'50@ms',
+              width:'140@ms',
               borderRadius:'10@ms',
               justifyContent:'center',
               alignItems:'center',
@@ -130,14 +139,22 @@ const styles = ScaledSheet.create({
           },
           exitbutton:{
             backgroundColor:'white',
-            height:'60@ms',
-            width:'150@ms',
+            height:'50@ms',
+            width:'140@ms',
             borderRadius:'10@ms',
             justifyContent:'center',
             alignItems:'center',
             margin:8,
             borderColor:'darkred',
-            borderWidth:1
+            borderWidth:1,
+            shadowColor: 'black',
+            shadowOffset: {
+             width: '10@ms',
+             height:  '10@ms',
+              },
+             shadowOpacity: 0.29,
+             shadowRadius: 5.22,
+              elevation: '3@ms',
         },
           deletetext:{
               color:'white',

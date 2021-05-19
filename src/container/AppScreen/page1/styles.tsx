@@ -2,22 +2,22 @@ import { ScaledSheet } from 'react-native-size-matters';
 const styles = ScaledSheet.create({
     container:{
       flex:1,
-       backgroundColor:'white',
+       backgroundColor:'#e0e0e0',
      },
     maincontainer1:{
-      width:'100%',
+      flex:1,
       backgroundColor:'#e0e0e0',
       alignItems:'center',
-      height:'410@ms',
+     // height:'410@ms',
       
     },
       maincontainer2:{
-      width:'100%',
+      flex:1,
       backgroundColor:'#e0e0e0',
       marginTop:'5@ms',
       padding:'20@ms',
       alignItems:'center',
-      height:'100%'
+      height:'357@ms'
     },
     gradeContainer:{
       flexDirection:'row',

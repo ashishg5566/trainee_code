@@ -1,12 +1,11 @@
  
 import React, { Component, FC,useState } from 'react';
-import { View, Text, StyleSheet,  TouchableOpacity ,Image,TextInput} from 'react-native';
+import { View, Text, StyleSheet,  TouchableOpacity ,Image,TextInput,ScrollView} from 'react-native';
  import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 import Modal from 'react-native-modal';
  import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-const Dashboard: FC = ({ 
-}) => {
+const Dashboard: FC = ({ navigation}) => {
     const [isModalVisible, setModalVisible] = useState(false);
     const toggleModal = () => {
         setModalVisible(!isModalVisible);
@@ -32,7 +31,9 @@ const Dashboard: FC = ({
            </Modal>
             <View style={styles.header}>
               <View> 
+              <TouchableOpacity  onPress={() => navigation.goBack()} style={styles.backbutton}>
                  <Icon name="arrow-left" size={20}  color="white" style={{color:'white',alignSelf:'flex-start'}}/>
+                 </TouchableOpacity>
               </View>
               <View> 
                    <Text style={styles.headerTitle}>Post Detailed</Text>
@@ -40,6 +41,10 @@ const Dashboard: FC = ({
                <View>
              </View>
           </View>
+          
+         
+         <ScrollView  > 
+         <View style={{alignItems:'center',paddingBottom:30}}> 
           <Card style={styles.cardContent}>
              <View style={styles.cardcontent1}>
                  <View style={{flexDirection:'row'}}> 
@@ -74,7 +79,7 @@ const Dashboard: FC = ({
             </View>
             <View style={styles.cardcontent4}>
                  <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  /> 
-                 <View >
+                 <View style={styles.paragraphcontent}>
                       <Text style={styles.profiletext}>Raushel</Text>
                       <Paragraph style={styles.profileparagraph}>
                           Lorem ipsum is simply dummy text of the printing and simply type setting industry
@@ -83,11 +88,11 @@ const Dashboard: FC = ({
             </View>
              <View style={styles.cardcontent4}>
                   <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic} /> 
-                  <View >
+                  <View style={styles.paragraphcontent}>
                      <Text style={styles.profiletext}>Nikhil</Text>
                       <Paragraph style={styles.profileparagraph}>
                         Lorem ipsum is simply dummy text of the printing and simply type setting industry
-                   </Paragraph>
+                         </Paragraph>
                 </View>
             </View>
              <TextInput
@@ -95,6 +100,8 @@ const Dashboard: FC = ({
                style={styles.textinput}
              />
           </Card>
+          </View>
+          </ScrollView>
     </View>
        
          );

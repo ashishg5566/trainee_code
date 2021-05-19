@@ -3,15 +3,16 @@ import { View, Text, StyleSheet,  TouchableOpacity ,Image,TextInput,ScrollView} 
  import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-const Task3: FC = ({ 
-}) => {
+const Task3: FC = ({ navigation}) => {
     return (
      // <ScrollView> 
      
          <View style={styles.container}> 
              <View style={styles.header}>
                 <View> 
+                <TouchableOpacity  onPress={() => navigation.goBack()} >
                   <Icon name="arrow-left" size={20}  color="white"/>
+                  </TouchableOpacity>
                </View>
                 <View> 
                    <Text style={styles.headerTitle}>Project Funding</Text>
@@ -21,12 +22,14 @@ const Task3: FC = ({
                     <Icon name="history" size={25}  color="white"/>
                 </View>
              </View>
-             <Card style={styles.cardContainer}>
-                 <View style={styles.content1}>   
-                     <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profileimage}  /> 
+           <ScrollView> 
+             <View style={{alignItems:'center',paddingBottom:30}}> 
+                <Card style={styles.cardContainer}>
+                   <View style={styles.content1}>   
+                       <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profileimage}  /> 
                       <Text style={styles.nametext}>Delhi Public School</Text>
                  </View>
-                  <View style={styles.separator}>
+                    <View style={styles.separator}>
                  </View>
                   <View style={styles.content2}>
                       <Text style={styles.titletext}>Title of the Project</Text>
@@ -74,24 +77,25 @@ const Task3: FC = ({
             </View>
             <View style={styles.separator}>
            </View>
-            <View style={styles.content4}>
-                <View> 
+           <View style={styles.cardcontent4}>
                   <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic} /> 
-                 </View>
-                  <View style={styles.profiledesc}>
-                      <Text style={styles.profiletext}>Raushel</Text>
+                  <View style={styles.smallparagraphcontent}>
+                     <Text style={styles.profiletext}>Nikhil</Text>
                       <Paragraph style={styles.profileparagraph}>
                         Lorem ipsum is simply dummy text of the printing and simply type setting industry
-                     </Paragraph>
+                        
+                         </Paragraph>
                 </View>
-             </View>
+            </View>
              <TextInput
               placeholder="Write here..."
                style={styles.textinput}
              />
        </Card>
+       </View>
+       </ScrollView>
    </View>
-  // </ScrollView>
+   
    
          );
 };

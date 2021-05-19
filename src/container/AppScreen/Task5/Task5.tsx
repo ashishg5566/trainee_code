@@ -1,17 +1,19 @@
 //import liraries
 import React, { Component,FC,useState} from 'react';
-import { View, Text, TouchableOpacity,Image } from 'react-native';
+import { View, Text, TouchableOpacity,Image, ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles.tsx';
 import { TextInput } from 'react-native-paper';
 // create a component
-const Task5: FC = () => {
+const Task5: FC = ({navigation}) => {
    return (
         <View style={styles.container}> 
            
            <View style={styles.header}>
                 <View> 
+                <TouchableOpacity  onPress={() => navigation.goBack()} >
                     <Icon name="arrow-left" size={20}  color="white"/>
+                    </TouchableOpacity>
                 </View>
                  <View> 
                     <Text style={styles.headerTitle}>Create Group Chat</Text>
@@ -19,6 +21,7 @@ const Task5: FC = () => {
                  <View>
                 </View>
             </View>
+            <ScrollView>
             <View style={styles.imagecontainer}>
                <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profileimage}  /> 
                <View style={styles.cameraicon}> 
@@ -31,6 +34,11 @@ const Task5: FC = () => {
                style={styles.textinput}
             //    label="ABC Group"
                underlineColor={'transparent'}
+               theme={{
+                  colors: {
+                  primary: 'white',
+                  },
+               }}
                />
            </View>
           <View style={styles.profilecontainer}>
@@ -59,6 +67,7 @@ const Task5: FC = () => {
                    <Text style={styles.exittext}>Exit Group</Text>
              </TouchableOpacity>
           </View>
+          </ScrollView>
 </View>
     );
 };

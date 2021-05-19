@@ -7,7 +7,7 @@ import styles from './styles.tsx';
   import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
   function ImageScreen() {
     return (
-       <View style={{backgroundColor:'lightgray',flex:1}}>
+       <View style={{backgroundColor:'lightgray',paddingBottom:10}}>
          <View style={styles.picContainer}>
          <Image source={require('../../../Assets/images/college1.jpg')} style={styles.image}  />
          <Image source={require('../../../Assets/images/college2.jpg')} style={styles.image}  />
@@ -22,7 +22,7 @@ import styles from './styles.tsx';
   }
   function ProfileScreen() {
     return (
-      <View style={{flex:1,backgroundColor:'lightgrey'}}>
+      <View style={{backgroundColor:'lightgrey',paddingBottom:10}}>
           <Customcard/>
       </View>
     );
@@ -30,30 +30,46 @@ import styles from './styles.tsx';
   const Tab = createMaterialTopTabNavigator();
   const Task1: FC = (props) => {
   return (
-      <ScrollView> 
+       
     <View style={styles.container}> 
-      <ImageBackground source={require(' ../../../Assets/images/back.jpg')} style={styles.backgroundImage} >
+      
+      <ImageBackground source={require(' ../../../Assets/images/back.jpg')} style={{height:83}} > 
+         
              <View style={styles.header}>
+             
                 <View> 
                     <Icon name="bars" size={20}  color="white" style={{color:'white',alignSelf:'flex-start'}}/>
                 </View>
                  <View> 
                     <Text style={styles.headerTitle}>Profile</Text>
                  </View>
+                 
                  <View>
                 </View>
+                
              </View>
-          </ImageBackground>
+             </ImageBackground>
+             
+             <ScrollView>
+             <ImageBackground source={require(' ../../../Assets/images/back.jpg')} style={styles.backgroundImage} > 
+             
+              
+             </ImageBackground>
+            
+          
+         
           <View style={styles.profilecontainer}>
-               <View> 
+               <View style={{flexDirection:'row'}}> 
                   <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  />
-               </View>
+              
+              
                <View style={styles.profiletextcontainer}>
                   <View style={{flexDirection:"row"}}> 
                      <Text style={styles.nametext}>Neha Sharma</Text>
                      <Icon name="check-circle" size={18}  color="#4E387E" style={{margin:5}}/>
                  </View>
                   <Text style={{color:'grey',fontWeight:'bold'}}>You were in same class in 2019</Text>
+               </View>
                </View>
                 <View style={styles.messageicon}> 
                      <Icon name="envelope" size={24} color="grey"/>
@@ -88,6 +104,7 @@ import styles from './styles.tsx';
 
                </View>
            </View>
+           
            <Card style={styles.cardContent}>
                <View style={styles.cardtitlecontent}>
                    <View>
@@ -161,19 +178,19 @@ import styles from './styles.tsx';
                    <View>
                        <Text style={styles.cardtitletext}>Posts</Text>
                    </View>
-                    <View>
-                   </View>
+                   
                </View>
+               
                
                 {/* <View style={ styles.borderstyle} >
               </View> */}
               </Card>
+                
             <Tab.Navigator
                   tabBarOptions={{
                     iconStyle:{
                       height:50,
                       width:50,
-                      //backgroundColor:'lightblue',
                       justifyContent:'center',
                       alignItems:'center'
 
@@ -184,20 +201,24 @@ import styles from './styles.tsx';
                         activeTintColor:'#4E387E',
                          inactiveTintColor:'grey',
                          indicatorStyle: {
-                            backgroundColor:'white',
-                            width:150,
+                            //backgroundColor:'white',
+                            //width:150,
                             opacity: 0
                           },
                           tabStyle: {
-                            width:160,
+                            //width:160,
                             height:50,
-                           // color:'red',
-                            //backgroundColor:'red',
+                           //backgroundColor:'red',
                              alignSelf:'center',
-                             marginLeft:20,
-                             marginTop:50,
-                             },
-                            style: {borderWidth:1,borderColor:'white' , width:'92%',backgroundColor:'white',borderRadius:12,height:110,justifyContent:'center',alignSelf:'center'},
+                               },
+                            style: {height:70,
+                              paddingTop:10,
+                              backgroundColor:'white',
+                              width:'92%',
+                              alignSelf:'center',
+                               borderBottomEndRadius:10,
+                               borderBottomLeftRadius:10
+                              },
                            }}
                         >
             <Tab.Screen name="th" component={ImageScreen} 
@@ -217,10 +238,10 @@ import styles from './styles.tsx';
            />
           </Tab.Navigator>
         
-          
-            
-    </View>
-</ScrollView>
+          </ScrollView> 
+      </View>
+   
+ 
      );
 }
 export default Task1;

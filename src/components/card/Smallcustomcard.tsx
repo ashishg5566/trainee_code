@@ -8,7 +8,7 @@ const Smallcustomcard: FC = ({
 }) => {
     return (
            <Card style={styles.smallcardcontent}>
-                <Image source={require('../../Assets/images/pic.jpg')} style={styles.smallcardimage}  /> 
+                <Image source={require('../../Assets/images/pic.jpeg')} style={styles.smallcardimage}  /> 
                 <Text style={{textAlign:'center',fontWeight:'bold',color:'grey',fontSize:10}}>Nitesh</Text>
                 <Text style={{fontSize:9,textAlign:'center',color:'grey'}}>Batchmates 2009-10</Text>
                 <TouchableOpacity style={styles.addbuddybutton}>

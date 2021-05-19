@@ -55,18 +55,27 @@ const styles = ScaledSheet.create({
             
          },
          textinput:{
-             borderTopEndRadius:'15@ms',
-             borderTopLeftRadius:'15@ms',
-            borderRadius: '20@ms',
-            height: '57@ms',
+             
+          shadowColor: 'black',
+          shadowOffset: {
+           width: '10@ms',
+           height:  '10@ms',
+            },
+           shadowOpacity: 0.29,
+           shadowRadius: 5.22,
+            elevation: '10@ms',
+          borderTopEndRadius:'8@ms',
+          borderTopLeftRadius:'8@ms',
+           borderRadius: '10@ms',
+           height: '50@ms',
             backgroundColor:'white',
             fontSize:'15@ms',
-            width:'275@ms',
+             width:'275@ms',
             textAlign:'center',
             borderColor:'grey',
-            color:'grey',
+             color:'grey',
             overflow: 'hidden',
-            borderWidth:1,
+            //borderWidth:1,
             fontWeight:'bold'
           },
           
@@ -99,12 +108,13 @@ const styles = ScaledSheet.create({
           buttoncontainer:{
                 alignItems:'center',
               justifyContent:'center',
-              marginTop:'80@ms'
+              marginTop:'55@ms',
+              paddingBottom:'10@ms'
           },
           
           exitbutton:{
             backgroundColor:'white',
-            height:'60@ms',
+            height:'55@ms',
             width:'250@ms',
             borderRadius:'10@ms',
             justifyContent:'center',

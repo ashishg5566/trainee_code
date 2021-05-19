@@ -2,7 +2,7 @@ import { ScaledSheet } from 'react-native-size-matters';
 const styles = ScaledSheet.create({
     container:{
       flex:1,
-      alignItems:'center',
+      
       backgroundColor:'lightgrey'
       },
       header:{
@@ -22,7 +22,7 @@ const styles = ScaledSheet.create({
            marginLeft:'20@ms'
           },
           cardContainer:{
-            width:'95%',
+            width:'94%',
             marginTop:'8@ms',
             borderRadius:'20@ms',
             padding:'12@ms',
@@ -114,24 +114,36 @@ const styles = ScaledSheet.create({
             fontSize:'14@ms',
             color:'grey'
           },
-          content4:{
+           
+          cardcontent4:{
             flexDirection:'row',
-            paddingLeft:'5@ms',
-            paddingRight:'5@ms',
-        },
-          profiledesc:{
-            marginLeft:'10@ms'
+            width:'90%',
+            padding:'10@ms',
+           // backgroundColor:'yellow'
+
           },
           profiletext:{
             fontWeight:'bold',
-            fontSize:'14@ms',
-             },
+            fontSize:'16@ms',
+           
+
+          },
           profileparagraph:{
             color:'gray',
             fontWeight:'bold',
-           width:'300@ms',
-            fontSize:'12@ms'
-           },
+            //width:'280@ms',
+            fontSize:'12@ms',
+            //backgroundColor:'red',
+
+
+          },
+          smallparagraphcontent:{
+            marginLeft:'10@ms',
+            //backgroundColor:'pink',
+            paddingRight:'10@ms'
+
+          },
+
           profilepic:{
             width:'50@ms', 
             height:'50@ms',

@@ -36,11 +36,15 @@ const Customcard: FC = ({
              <View style={styles.cardcontent3}>
                 <Icon name="thumbs-up" size={15} color="grey"/>
                 <View style={{flexDirection:'row' }}> 
-                   <Text style={{marginLeft:35}}>665</Text>
-                    <Icon name="comment" color="grey" size={15} style={{marginLeft:15}}/>
+                <View style={styles.icontext}> 
+                   <Text style={{fontWeight:'bold',color:'grey'}}>665</Text>
+                </View>
+                    <Icon name="comment" color="grey" size={15} />
                </View>
                 <View style={{flexDirection:'row'}}> 
-                   <Text style={{marginRight:10,fontWeight:'bold',color:'grey'}}>Share</Text>
+                <View style={styles.icontext}> 
+                   <Text style={{fontWeight:'bold',color:'grey'}}>Share</Text>
+                </View>
                    <Icon name="share-alt"  color="grey" size={15}/>
               </View>
             </View>

@@ -5,7 +5,6 @@ import styles from './styles.tsx';
 import {CustomDropdown,CustomTextInput2,Customheader} from '../../../components/textinput';
  import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 const Information3: FC = () => {
-    const [isModalVisible, setModalVisible] = useState(false);
     const [userid,setuserid]=useState('');
     const [userrollno,setuserrollno]=useState('');
     const [userfathername,setuserfathername]=useState('');
@@ -56,26 +55,28 @@ const Information3: FC = () => {
         alert('Success');
       };
 return (
-    <KeyboardAwareScrollView> 
+     
          <View style={styles.container}>
-            <View style={{width:'100%'}}> 
+                <View style={{width:'100%'}}> 
                    <Customheader title="Current School Information"/>
                    </View>
+                   <KeyboardAwareScrollView> 
                     <View  style={styles.formcontainer}>
-                      <CustomDropdown  label1="Current Class/Course" value1="one"  label2="vps" value2="two" label3="modern" value3="three"  selectedValue={selectedSchool}
-                        onValueChange={(selectedValue)=>setselectedSchool(selectedValue)}
-                      />
-                      <CustomTextInput2  label="Enter User's EI ID Number" value={userid}  onChangeText={(value)=>setuserid(value)}/>
-                      <CustomTextInput2  label="Enter User's Roll Number" value={userrollno}  onChangeText={(value)=>setuserrollno(value)}/>
-                      <CustomTextInput2  label="Enter Father's Name" value={userfathername} onChangeText={(value)=>setuserfathername(value)}/>
-                      <CustomTextInput2  label="Enter Mother's Name"value={usermothername}  onChangeText={(value)=>setusermothername(value)} />
-                      {/* <TouchableOpacity style={styles.button} onPress={toggleModal}> */}
-                      <TouchableOpacity style={styles.button} onPress={submit}>
+                        <CustomDropdown  label1="Current Class/Course" value1="one"  label2="vps" value2="two" label3="modern" value3="three"  selectedValue={selectedSchool}
+                           onValueChange={(selectedValue)=>setselectedSchool(selectedValue)}
+                          />
+                         <CustomTextInput2  label="Enter User's EI ID Number" value={userid}  onChangeText={(value)=>setuserid(value)}/>
+                         <CustomTextInput2  label="Enter User's Roll Number" value={userrollno}  onChangeText={(value)=>setuserrollno(value)}/>
+                         <CustomTextInput2  label="Enter Father's Name" value={userfathername} onChangeText={(value)=>setuserfathername(value)}/>
+                         <CustomTextInput2  label="Enter Mother's Name"value={usermothername}  onChangeText={(value)=>setusermothername(value)} />
+                          {/* <TouchableOpacity style={styles.button} onPress={toggleModal}> */}
+                          <TouchableOpacity style={styles.button} onPress={submit}>
                           <Text style={styles.buttontext}>Send to EI for Approval</Text>
-                      </TouchableOpacity>
-                 </View>
+                         </TouchableOpacity>
+                    </View>
+                 </KeyboardAwareScrollView>
             </View>
-            </KeyboardAwareScrollView>
+           
      );
 };
  export default Information3;

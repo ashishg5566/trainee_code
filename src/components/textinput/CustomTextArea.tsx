@@ -20,6 +20,11 @@ const CustomTextArea: FC = ({  value, onChangeText, placeholder, secureTextEntry
                      value={value}
                      underlineColor={'white'}
                      numberOfLines={10}
+                     theme={{
+                      colors: {
+                      primary: 'white',
+                      },
+                   }}
                      
                    />
                    

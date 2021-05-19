@@ -82,22 +82,45 @@ const Login: FC = ({navigation}) => {
            </View>
             <View style={styles.formcontainer}>
                 <View style={styles.nameinputcontainer} > 
-                <CustomTextinput label="First Name" style={{width:160,margin:5}}
+                <CustomTextinput 
+               // label="First Name" 
+               placeholder="First Name"
+                style={{width:160,margin:5}}
                 value={textFirstNameValue}
                  maxLength={20}
                  onChangeText={(text)=>settextFirstNameValue(text)}
                />
-               <CustomTextinput label="First Name" style={{width:160,margin:5}}
+               <CustomTextinput 
+              // label="First Name" 
+              placeholder="Last Name"
+               style={{width:160,margin:5}}
                 value={textLastNameValue}
                  maxLength={20}
                  onChangeText={(text)=>settextLastNameValue(text)}
                />
              </View>
-         <CustomTextinput label="Enter Your Email Id"  value={textEmailValue} onChangeText={(value)=>settextEmailValue(value)} />
-         <CustomTextinput label="Enter Your Phone Number"   value={PhoneValue} onChangeText={(value)=>setPhoneValue(value)}  />
-         <CustomTextinput label="Enter DOB"   value={dob} onChangeText={(value)=>setdob(value)}/>
-         <CustomTextinput label="Enter Password" value={password} onChangeText={(value)=>setpassword(value)}/>
-         <CustomTextinput label="Confirm Password"  value={confirmpassword} onChangeText={(value)=>setconfirmpassword(value)}
+         <CustomTextinput 
+        //  label="Enter Your Email Id"  
+        placeholder=" Enter Your Email Id"
+         value={textEmailValue}
+          onChangeText={(value)=>settextEmailValue(value)} />
+         <CustomTextinput 
+        //  label="Enter Your Phone Number"  
+        placeholder="Enter Your Phone Number"
+          value={PhoneValue} onChangeText={(value)=>setPhoneValue(value)}  />
+         <CustomTextinput
+          // label="Enter DOB"   
+          placeholder="Enter DOB"
+         value={dob} onChangeText={(value)=>setdob(value)}/>
+         <CustomTextinput 
+        //  label="Enter Password" 
+        placeholder="Enter Password"
+         value={password} onChangeText={(value)=>setpassword(value)}/>
+         <CustomTextinput 
+        //  label="Confirm Password"  
+        placeholder="Confirm Password"
+         value={confirmpassword} 
+         onChangeText={(value)=>setconfirmpassword(value)}
          />
          <View style={{flexDirection:'row',marginTop:20}}> 
            <CheckBox

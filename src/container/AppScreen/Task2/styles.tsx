@@ -164,12 +164,15 @@ const styles = ScaledSheet.create({
                },
                 content6:{
                  width:'100%',
+                 alignSelf:'flex-start',
+                // justifyContent:'center',
                 paddingLeft:'22@ms',
                 paddingRight:'22@ms',
-                flexDirection:'row'
+                flexDirection:'row',
+                //backgroundColor:'yellow'
               },
               textinput1:{
-               width:'230@ms',
+               width:'210@ms',
                 borderRadius:'10@ms',
                 borderColor:'lightgrey',
                 borderWidth:3,
@@ -189,14 +192,38 @@ const styles = ScaledSheet.create({
               fundbuttontext:{
                 color:'white'
                 },
-              content7:{
-                flexDirection:'row',
-                width:'100%',
-                paddingLeft:'22@ms',
-                 },
-               profiledesc:{
-                marginLeft:'10@ms',
+                cardcontent7:{
+                  flexDirection:'row',
+                  width:'90%',
+                  padding:'10@ms',
+                 // backgroundColor:'red'
+      
                 },
+                profiletext:{
+                  fontWeight:'bold',
+                  fontSize:'16@ms',
+                 
+      
+                },
+                profileparagraph:{
+                  color:'gray',
+                  fontWeight:'bold',
+                  //width:'280@ms',
+                  fontSize:'12@ms',
+                  //backgroundColor:'red',
+                  //textAlign:'justify',
+                  
+      
+      
+                },
+                paragraphcontent:{
+                  marginLeft:'10@ms',
+                  //backgroundColor:'pink',
+                  paddingRight:'18@ms'
+      
+                },
+      
+               
               content8:{
                 flexDirection:'row',
                 width:'100%',

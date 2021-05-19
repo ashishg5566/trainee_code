@@ -39,7 +39,7 @@ shadowColor: 'black',
       borderColor:'lightgray',
       // marginLeft:'20@ms',
       // marginRight:'20@ms',
-       height:'55@ms',
+       height:'57@ms',
         borderRadius: '10@ms',
       backgroundColor:'white',
       },
@@ -48,8 +48,9 @@ shadowColor: 'black',
       marginTop: '10@ms',
       borderWidth:'3@ms',
       borderColor:'lightgray',
-      height:'55@ms',
+      height:'57@ms',
        margin:5,
+       padding:4,
        borderRadius: '10@ms',
       backgroundColor:'white',
       justifyContent:'center',
@@ -57,6 +58,8 @@ shadowColor: 'black',
   pickerItem:{
     color:'grey',
     flex:1,
+    //backgroundColor:'red'
+    
   },
   
    //custom header
