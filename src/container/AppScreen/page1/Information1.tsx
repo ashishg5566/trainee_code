@@ -1,8 +1,10 @@
 import React, {FC,useState } from 'react';
 import { View, Text, TouchableOpacity,ScrollView} from 'react-native';
 import styles from './styles.tsx';
- import {CustomDropdown,CustomTextArea,Customheader} from '../../../components/textinput';
+ import {CustomDropdown,CustomTextArea} from '../../../components/textinput';
+ import {CustomHeader} from '../../../components/Customheader';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {Custombutton} from '../../../components/Custombutton';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
  const Information1: FC = () => {
        const [selectedState, setSelectedState] = useState();
@@ -38,7 +40,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
        <View style={styles.container}>
              
              <View style={{width:'100%'}}> 
-                        <Customheader title="EI Information"/>
+                        <CustomHeader title="EI Information"/>
                    </View>
                  
      <ScrollView> 
@@ -94,9 +96,7 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
                       </View>
                   </View>
                 
-                  <TouchableOpacity style={styles.submitbutton} onPress={submit} >
-                        <Text style={styles.submittext}>Submit</Text>
-                  </TouchableOpacity>
+                  <Custombutton title="Submit"/>
                   
            </View>
            </View>

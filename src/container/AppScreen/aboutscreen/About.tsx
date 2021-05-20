@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Text, View,FlatList,Image,TouchableOpacity } from 'react-native';
 import styles from './styles.tsx';
  import Icon from 'react-native-vector-icons/FontAwesome';
+ import {CustomHeader} from '../../../components/Customheader';
   import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
  import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 const DATA = [
@@ -92,18 +93,7 @@ const Tab = createMaterialTopTabNavigator();
 export default function About({navigation}) {
   return (
     <View style={styles.container}> 
-       <View style={styles.header}>
-           <View> 
-           <TouchableOpacity  onPress={() => navigation.goBack()} >
-              <Icon name="arrow-left" size={20}  color="white" style={{alignSelf:'flex-start'}}/>
-              </TouchableOpacity>
-           </View>
-            <View> 
-               <Text style={styles.headerTitle}>Suggetions</Text>
-           </View>
-            <View>
-           </View>
-       </View>
+            <CustomHeader title="Suggetions" icon1="arrow-left" />
     <Tab.Navigator
         tabBarOptions={{
           labelStyle: { fontSize: 17 ,textTransform: 'none'

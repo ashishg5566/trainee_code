@@ -1,5 +1,6 @@
 import React, { Component,FC } from 'react';
 import { Text, View,FlatList,Image,TouchableOpacity,ImageBackground ,ScrollView} from 'react-native';
+import {CustomHeader} from '../../../components/Customheader';
 import styles from './styles.tsx';
  import Icon from 'react-native-vector-icons/FontAwesome';
   import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
@@ -35,19 +36,7 @@ import styles from './styles.tsx';
       
       <ImageBackground source={require(' ../../../Assets/images/back.jpg')} style={{height:83}} > 
          
-             <View style={styles.header}>
-             
-                <View> 
-                    <Icon name="bars" size={20}  color="white" style={{color:'white',alignSelf:'flex-start'}}/>
-                </View>
-                 <View> 
-                    <Text style={styles.headerTitle}>Profile</Text>
-                 </View>
-                 
-                 <View>
-                </View>
-                
-             </View>
+      <CustomHeader title="Profile" icon1="bars"/>
              </ImageBackground>
              
              <ScrollView>

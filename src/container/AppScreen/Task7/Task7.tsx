@@ -1,6 +1,9 @@
 import React, { Component,FC,useState} from 'react';
 import { View, Text, TouchableOpacity,Image,ScrollView ,FlatList} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {CustomHeader} from '../../../components/Customheader';
+import {Custombutton} from '../../../components/Custombutton';
+ 
 import styles from './styles.tsx';
 import { TextInput } from 'react-native-paper';
 const DATA = [
@@ -79,18 +82,7 @@ const DATA = [
 const Task7: FC = ({navigation}) => {
      return (
        <View style={styles.container}> 
-            <View style={styles.header}>
-                <View> 
-                    <TouchableOpacity  onPress={() => navigation.goBack()} >
-                         <Icon name="arrow-left" size={20}  color="white"/>
-                    </TouchableOpacity>
-                </View>
-                 <View> 
-                    <Text style={styles.headerTitle}>Create Group Chat</Text>
-                 </View>
-                 <View>
-                </View>
-             </View>
+             <CustomHeader title="Create Group Chat" icon1="arrow-left" icon2="ellipsis-v"/>
              <View style={styles.content1}>
                   <View style={styles.cameracontainer}>
                        <Icon name="camera" size={50}  color="black"/>
@@ -135,9 +127,8 @@ const Task7: FC = ({navigation}) => {
                    <Text>Add More</Text>
             </View> 
          
-         <TouchableOpacity style={styles.creategroupbutton}>
-              <Text style={styles.grouptext}>Create Group</Text>
-         </TouchableOpacity>
+         
+         <Custombutton title="Create Group"/>
 </View>
  
     );

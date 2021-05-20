@@ -1,6 +1,7 @@
 import React, { Component, FC,useState } from 'react';
 import { View, Text, StyleSheet,  TouchableOpacity ,Image,TextInput,ScrollView} from 'react-native';
  import Icon from 'react-native-vector-icons/FontAwesome';
+ import {Custombutton} from '../../../components/Custombutton';
 import styles from './styles';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 const Task3: FC = ({ navigation}) => {

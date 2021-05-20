@@ -2,12 +2,14 @@
 import React, { Component,FC,useState } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles.tsx';
- import {CustomDropdown,CustomTextArea,Customheader} from '../../../components/textinput';
+ import {CustomDropdown,CustomTextArea} from '../../../components/textinput';
+ import {CustomHeader} from '../../../components/Customheader';
 import { TextInput } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome';  
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 import { ScrollView } from 'react-native-gesture-handler';
+import {Custombutton} from '../../../components/Custombutton';
  // create a component
 const Information2: FC = () => {
     const [selectedState, setSelectedState] = useState();
@@ -58,7 +60,7 @@ if (!address) {
         
            <View style={styles.maincontainer}> 
                      <View style={{width:'100%',position:'relative'}}> 
-                             <Customheader title="EI Information"/>
+                             <CustomHeader title="EI Information"/>
                     </View>
                     <ScrollView> 
                     <View style={{flexDirection:'row',alignItems:"center",width:'100%',justifyContent:'center'}}>
@@ -136,9 +138,7 @@ if (!address) {
                              </TouchableOpacity>
                                  <Text style={styles.addmoreschooltext}>Add More Schools</Text>
                           </View>
-                          <TouchableOpacity style={styles.submitbutton} onPress={submit}>
-                             <Text style={styles.submittext}>Continue</Text>
-                        </TouchableOpacity>
+                          <Custombutton title="Continue"/>
                         </ScrollView> 
 
                       </View>

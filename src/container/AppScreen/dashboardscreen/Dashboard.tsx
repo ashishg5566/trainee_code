@@ -2,6 +2,7 @@
 import React, { Component, FC,useState } from 'react';
 import { View, Text, StyleSheet,  TouchableOpacity ,Image,TextInput,ScrollView} from 'react-native';
  import Icon from 'react-native-vector-icons/FontAwesome';
+ import {CustomHeader} from '../../../components/Customheader';
 import styles from './styles';
 import Modal from 'react-native-modal';
  import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
@@ -29,18 +30,7 @@ const Dashboard: FC = ({ navigation}) => {
               </View>
               
            </Modal>
-            <View style={styles.header}>
-              <View> 
-              <TouchableOpacity  onPress={() => navigation.goBack()} style={styles.backbutton}>
-                 <Icon name="arrow-left" size={20}  color="white" style={{color:'white',alignSelf:'flex-start'}}/>
-                 </TouchableOpacity>
-              </View>
-              <View> 
-                   <Text style={styles.headerTitle}>Post Detailed</Text>
-              </View>
-               <View>
-             </View>
-          </View>
+             <CustomHeader title="Post Detailed" icon1="arrow-left"/>
           
          
          <ScrollView  > 

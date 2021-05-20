@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import {CustomHeader} from '../../../components/Customheader';
 import {
   Text,
   View,
@@ -87,19 +88,7 @@ const Task6: FC = ({navigation}) => {
   };
   return (
     <View style={styles.container}>
-         <View style={styles.header}>
-                <View> 
-                <TouchableOpacity  onPress={() => navigation.goBack()} >
-                    <Icon name="arrow-left" size={20}  color="white" />
-                    </TouchableOpacity>
-                </View>
-                 <View> 
-                    <Text style={styles.headerTitle}>Create Group Chat</Text>
-                 </View>
-                  <View>
-                    <Icon name="search" size={20}  color="white"/>
-                 </View>
-             </View>
+         <CustomHeader title="Create Group Chat" icon1="arrow-left" icon2="search"/>
             <FlatList
               style={styles.flatlist}
                bounces={false}

@@ -1,0 +1,1 @@
+export{default as Customprofile} from './Customprofile';

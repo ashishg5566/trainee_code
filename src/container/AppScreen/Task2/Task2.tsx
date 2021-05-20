@@ -2,25 +2,15 @@ import * as React from 'react';
 import { Text, View,FlatList,Image,TouchableOpacity,ImageBackground ,ScrollView,TextInput} from 'react-native';
 import styles from './styles.tsx';
  import Icon from 'react-native-vector-icons/FontAwesome';
+ import {CustomHeader} from '../../../components/Customheader';
   
   export default function Task2({navigation}) {
   return (
       
     <View style={styles.container}> 
+      <CustomHeader title="Project Detail" icon1="arrow-left" icon2="ellipsis-v"/>
      
-             <View style={styles.header}>
-                <View> 
-                <TouchableOpacity  onPress={() => navigation.goBack()} >
-                    <Icon name="arrow-left" size={20}  color="white" style={{color:'white',alignSelf:'flex-start'}}/>
-                    </TouchableOpacity>
-                </View>
-                 <View> 
-                    <Text style={styles.headerTitle}>Project Details</Text>
-                 </View>
-                 <View>
-                 <Icon name="ellipsis-v" size={20}  color="white" style={{color:'white',alignSelf:'flex-end'}}/>
-                </View>
-             </View>
+              
              <ScrollView> 
              <View style={styles.schoolProfile}>
                  <View >

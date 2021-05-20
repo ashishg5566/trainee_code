@@ -2,16 +2,16 @@
 import React, { Component,FC } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import styles from './styles.tsx';
+import {CustomHeader} from '../../../components/Customheader';
+import {Custombutton} from '../../../components/Custombutton';
 import { ScaledSheet } from 'react-native-size-matters';
 // create a component
 const Detail: FC = () => {
     return (
         <View style={styles.container}>
         <View style={{width:'100%',backgroundColor:'white'}}> 
-                  <View style={styles.titlecontainer}>
-                          {/* /<Text style={{color:'white',fontSize:20,marginLeft:10}}>Back</Text> */}
-                          <Text style={styles.titletext}>EI Information</Text>
-                  </View>
+              <CustomHeader title="EI Information"  />
+                  
                   <View style={styles.textcontent}>
                     <Text style={styles.titletext2}>Delhi Public School</Text>
                     <Text style={styles.addresstext}>A-100,Sector 28 Noida, Uttar Pradesh (201301)</Text>
@@ -36,9 +36,7 @@ const Detail: FC = () => {
                        </View>
                  </View>
               
-            <TouchableOpacity style={styles.savebutton}>
-                <Text style={styles.savebuttontext}>Save</Text>
-            </TouchableOpacity>
+            <Custombutton title="Save"/>
         </View>
     );
 };

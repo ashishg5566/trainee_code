@@ -4,25 +4,16 @@ import { View, Text, TouchableOpacity,Image,ScrollView } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles.tsx';
 import { TextInput } from 'react-native-paper';
+import {CustomHeader} from '../../../components/Customheader';
  
 // create a component
 const Task4: FC = ({navigation}) => {
      return (
         
         <View style={styles.container}> 
+              <CustomHeader title="Create Group Chat" icon1="arrow-left" />
            
-           <View style={styles.header}>
-                <View> 
-                <TouchableOpacity  onPress={() => navigation.goBack()} >
-                    <Icon name="arrow-left" size={20}  color="white"/>
-                    </TouchableOpacity>
-                </View>
-                 <View> 
-                    <Text style={styles.headerTitle}>Create Group Chat</Text>
-                 </View>
-                 <View>
-                </View>
-            </View>
+           
             <ScrollView>
             <View style={styles.imagecontainer}>
                <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profileimage}  /> 

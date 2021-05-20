@@ -2,7 +2,9 @@
 import React, { Component,FC,useState } from 'react';
 import { View, Text, TouchableOpacity,Button } from 'react-native';
 import styles from './styles.tsx';
-import {CustomDropdown,CustomTextInput2,Customheader} from '../../../components/textinput';
+import {CustomDropdown,CustomTextInput2} from '../../../components/textinput';
+import {Custombutton} from '../../../components/Custombutton';
+import {CustomHeader} from '../../../components/Customheader';
  import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 const Information3: FC = () => {
     const [userid,setuserid]=useState('');
@@ -58,7 +60,7 @@ return (
      
          <View style={styles.container}>
                 <View style={{width:'100%'}}> 
-                   <Customheader title="Current School Information"/>
+                   <CustomHeader title="Current School Information"/>
                    </View>
                    <KeyboardAwareScrollView> 
                     <View  style={styles.formcontainer}>
@@ -70,9 +72,8 @@ return (
                          <CustomTextInput2  label="Enter Father's Name" value={userfathername} onChangeText={(value)=>setuserfathername(value)}/>
                          <CustomTextInput2  label="Enter Mother's Name"value={usermothername}  onChangeText={(value)=>setusermothername(value)} />
                           {/* <TouchableOpacity style={styles.button} onPress={toggleModal}> */}
-                          <TouchableOpacity style={styles.button} onPress={submit}>
-                          <Text style={styles.buttontext}>Send to EI for Approval</Text>
-                         </TouchableOpacity>
+                           
+                         <Custombutton title="Send to EI for Approval"/>
                     </View>
                  </KeyboardAwareScrollView>
             </View>
