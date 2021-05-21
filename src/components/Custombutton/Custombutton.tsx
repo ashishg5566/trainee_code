@@ -6,7 +6,7 @@ import styles from './styles';
 // create a component
 const Custombutton: FC = ({title}) => {
     return (
-        <View>
+        <View style={{justifyContent:'center',alignItems:'center'}}>
                <TouchableOpacity style={styles.savebutton}>
                 <Text style={styles.savebuttontext}>{title}</Text>
             </TouchableOpacity>

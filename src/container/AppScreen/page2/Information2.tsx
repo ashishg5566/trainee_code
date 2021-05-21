@@ -138,7 +138,9 @@ if (!address) {
                              </TouchableOpacity>
                                  <Text style={styles.addmoreschooltext}>Add More Schools</Text>
                           </View>
+                          <View style={{marginTop:30}}> 
                           <Custombutton title="Continue"/>
+                          </View>
                         </ScrollView> 
 
                       </View>

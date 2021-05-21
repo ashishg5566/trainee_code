@@ -1,14 +1,15 @@
 import { ScaledSheet } from 'react-native-size-matters';
 const styles = ScaledSheet.create({
   cardcontent:{
-    width:'92%',
+    width:'90%',
     marginTop:'10@ms',
     borderRadius:'10@ms',
-    padding:'10@ms',
+    padding:'15@ms',
     alignSelf:'center'
     
 
    },
+   
   cardcontent1:{
     flexDirection:'row', 
     justifyContent: 'space-between',

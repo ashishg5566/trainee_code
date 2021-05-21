@@ -35,8 +35,9 @@ const Detail: FC = () => {
                          </View> 
                        </View>
                  </View>
-              
+              <View style={{marginTop:40}}> 
             <Custombutton title="Save"/>
+            </View>
         </View>
     );
 };

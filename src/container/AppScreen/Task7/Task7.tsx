@@ -127,8 +127,9 @@ const Task7: FC = ({navigation}) => {
                    <Text>Add More</Text>
             </View> 
          
-         
+         <View style={{marginTop:40}}> 
          <Custombutton title="Create Group"/>
+         </View>
 </View>
  
     );

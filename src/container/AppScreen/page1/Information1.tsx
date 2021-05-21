@@ -95,8 +95,10 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
                            <Icon name="edit" size={25} color="gray"/>
                       </View>
                   </View>
+                  <View style={{marginTop:30}}> 
                 
-                  <Custombutton title="Submit"/>
+                  <Custombutton title="Submit" onPress={submit}/>
+                  </View>
                   
            </View>
            </View>
