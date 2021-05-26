@@ -9,8 +9,7 @@ import { TextInput } from 'react-native-paper';
 const Task5: FC = ({navigation}) => {
    return (
         <View style={styles.container}> 
-           
-           <CustomHeader title="Create Group Chat" icon1="arrow-left" />
+            <CustomHeader title="Create Group Chat" icon1="arrow-left" />
             <ScrollView>
             <View style={styles.imagecontainer}>
                <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profileimage}  /> 

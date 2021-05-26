@@ -8,7 +8,7 @@ const Customprofile: FC = ({name,paragraph}) => {
     return (
         <View>
                 <View style={styles.cardcontent4}>
-                 <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  /> 
+                 <Image source={require('../../Assets/images/pic.jpeg')} style={styles.profilepic}  /> 
                  <View style={styles.paragraphcontent}>
                       <Text style={styles.profiletext}>{name}</Text>
                       <Text style={styles.profileparagraph}>

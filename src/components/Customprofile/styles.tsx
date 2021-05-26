@@ -32,6 +32,12 @@ const styles = ScaledSheet.create({
         paddingRight:'10@ms'
 
       },
+      profilepic:{
+        width:'50@ms', 
+        height:'50@ms',
+        borderRadius:'40@ms'
+
+      },
 
         
     })

@@ -3,20 +3,15 @@ import { Text, View,FlatList,Image,TouchableOpacity,ImageBackground ,ScrollView,
 import styles from './styles.tsx';
  import Icon from 'react-native-vector-icons/FontAwesome';
  import {CustomHeader} from '../../../components/Customheader';
-  
-  export default function Task2({navigation}) {
+ import {Customprofile} from '../../../components/Customprofile';
+export default function Task2({navigation}) {
   return (
-      
-    <View style={styles.container}> 
+     <View style={styles.container}> 
       <CustomHeader title="Project Detail" icon1="arrow-left" icon2="ellipsis-v"/>
-     
-              
-             <ScrollView> 
+         <ScrollView> 
              <View style={styles.schoolProfile}>
-                 <View >
-                   <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  />
-                 </View>
-                 <View style={styles.schoolprofileText}>
+                  <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  />
+                  <View style={styles.schoolprofileText}>
                      <Text style={styles.schoolnameText}>
                          Delhi Public School
                      </Text>
@@ -56,10 +51,8 @@ import styles from './styles.tsx';
                    <Text style={styles.fundingtext}>Funding Required: </Text>
                    <Text style={styles.fundingamounttext} >Rs 3,00,000 </Text>
                 </View>
-                <View>
-                    <Text style={styles.viewprogressText}>View Progress</Text>
-                </View>
-           </View>
+                 <Text style={styles.viewprogressText}>View Progress</Text>
+         </View>
            <View style={ styles.separator} >
            </View>
            <View style={styles.content3}>
@@ -102,17 +95,8 @@ import styles from './styles.tsx';
             </View>
             <View style={ styles.separator} >
            </View>
-           <View style={styles.cardcontent7}>
-                  <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic} /> 
-                  <View style={styles.paragraphcontent}>
-                     <Text style={styles.profiletext}>Nikhil</Text>
-                      <Text style={styles.profileparagraph}>
-                        Lorem ipsum is simply dummy text of the printing and simply type setting industry
-                        
-                        
-                         </Text>
-                </View>
-            </View>
+           <Customprofile name="Nikhil"
+               paragraph="Lorem ipsum is simply dummy text of the printing and simply type setting industry"/>
                <View style={styles.content8}>
                <TextInput
                 placeholder="Write here..."

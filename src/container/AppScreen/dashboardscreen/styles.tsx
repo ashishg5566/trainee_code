@@ -5,21 +5,17 @@ const styles = ScaledSheet.create({
        backgroundColor:'lightgrey'
       
     },
-    
-          
-          cardContent:{
-            width:'96%',
+     cardContent:{
+            width:'94%',
             marginTop:'8@ms',
             borderRadius:'20@ms',
             padding:'12@ms',
-             
-
-          },
+             alignSelf:'center'
+             },
           cardcontent1:{
             flexDirection:'row', 
             justifyContent: 'space-between',
-            
-            borderBottomWidth: '1@ms',
+           borderBottomWidth: '1@ms',
             borderColor:'#DCDCDC',
             padding:'10@ms'
 
@@ -27,15 +23,19 @@ const styles = ScaledSheet.create({
           profileimage:{
             width:'45@ms', 
             height: '45@ms'
-            ,borderRadius:'40@ms'
+            ,borderRadius:'40@ms',
+            resizeMode:'cover'
+
+          },
+          nametextcontent:{
+            //marginTop:'8@ms',
+            marginLeft:'18@ms',
 
           },
           nametext:{
             fontWeight:'bold',
             color:'black',
-            marginTop:'8@ms',
-            marginLeft:'18@ms',
-            fontSize:'18@ms'
+           fontSize:'18@ms'
 
           },
           cardcontent2:{
@@ -75,41 +75,16 @@ const styles = ScaledSheet.create({
             borderColor:'lightgrey'
 
           },
-          cardcontent4:{
+          commentsection:{
             flexDirection:'row',
-            width:'90%',
-            padding:'10@ms',
-           // backgroundColor:'red'
-
-          },
-          profiletext:{
-            fontWeight:'bold',
-            fontSize:'16@ms',
-           
-
-          },
-          profileparagraph:{
-            color:'gray',
-            fontWeight:'bold',
-            //width:'280@ms',
-            fontSize:'12@ms',
-            //backgroundColor:'red',
-
-
-          },
-          paragraphcontent:{
-            marginLeft:'10@ms',
-            //backgroundColor:'pink',
-            paddingRight:'10@ms'
-
-          },
-
-          profilepic:{
-            width:'50@ms', 
-            height:'50@ms',
-            borderRadius:'40@ms'
-
-          },
+            justifyContent:'center',
+            alignItems:'center' ,
+           },
+          text:{
+            color:'grey',
+            fontSize:'15@ms',
+            fontWeight:'bold'
+            },
           modalcontent:{
             flexDirection:'row',
             marginRight:'10@ms',

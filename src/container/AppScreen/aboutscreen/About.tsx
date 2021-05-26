@@ -1,10 +1,8 @@
 import * as React from 'react';
 import { Text, View,FlatList,Image,TouchableOpacity } from 'react-native';
 import styles from './styles.tsx';
- import Icon from 'react-native-vector-icons/FontAwesome';
- import {CustomHeader} from '../../../components/Customheader';
-  import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
- import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import {CustomHeader} from '../../../components/Customheader'; 
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 const DATA = [
     {
       id: '1',
@@ -36,7 +34,7 @@ function SameSchoolScreen() {
             data={DATA}
               renderItem={({ item }) =>  
                  <View style={styles.cardcontent}>
-                 <View style={{flexDirection:'row',marginTop:8}}>
+                 <View style={{flexDirection:'row',alignItems:'center'}}>
                     <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  />
                       <View style={{marginLeft:14}}> 
                        <Text style={styles.buddyname}>{item.name}</Text>
@@ -68,7 +66,7 @@ function ContactScreen() {
         renderItem={({ item }) =>  
          
           <View style={styles.cardcontent}>
-             <View style={{flexDirection:'row',marginTop:8}}>
+             <View style={{flexDirection:'row',alignItems:'center'}}>
                 <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  />
                  <View style={{marginLeft:14}}> 
                     <Text style={styles.buddyname}>{item.name}</Text>
@@ -106,14 +104,10 @@ export default function About({navigation}) {
              backgroundColor:'#4E387E',
              height:'100%',
              width:'50%',
-             
-             
-          //   borderBottomWidth: 0,
-          // borderBottomLeftRadius: 0,
-          //   borderBottomRightRadius: 0,
-            
-             
-               },
+            //   borderBottomWidth: 0,
+           // borderBottomLeftRadius: 0,
+           //   borderBottomRightRadius: 0,
+            },
         //   pressColor: 'white',
         tabStyle: {},
         

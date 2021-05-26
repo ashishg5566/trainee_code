@@ -4,35 +4,14 @@ const styles = ScaledSheet.create({
       flex:1,
        backgroundColor:'#ecf0f1',
       },
-     header:{
-          borderBottomRightRadius :'20@ms',
-          borderBottomLeftRadius :'15@ms',
-          backgroundColor:'#4E387E',
-          height:'80@ms',
-          flexDirection:'row',           
-          padding:'15@ms',
-          width:'100%',
-          justifyContent:'space-between',
-          alignItems:'center',
-          //position:'absolute'
-          marginBottom:'15@ms'
-         
-         },
-         headerTitle:{
-            color:'white',
-            fontSize:'20@ms',
-            alignItems:'center'
-         },
-         flatlist:{
+      flatlist:{
           width: '100%',
-          
+          marginTop:'15@ms'
          },
          flatListItem: {
             height: '80@ms',
             paddingRight:'18@ms',
             paddingLeft:'25@ms',
-            //justifyContent: 'center',
-            
           },
           flatlistcontainer:{
             flexDirection:'row',

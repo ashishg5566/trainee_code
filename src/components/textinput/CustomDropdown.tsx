@@ -6,14 +6,14 @@ import RNPickerSelect from 'react-native-picker-select';
 import styles from './styles';
 import { colors } from 'react-native-elements';
 // create a component
-const CustomDropdown: FC = ({ value1,value2,value3,label1,label2,label3, onValueChange,selectedValue,style}) => {
+const CustomDropdown: FC = ({ value1,value2,value3,label1,label2,label3, onValueChange,selectedValue,style,label,value}) => {
     
     return (
         <View>
                   <View
                            style={[styles.dropdownpicker,style]}>
                             <Picker
-                            //mode="dropdown"
+                          //  mode="dropdown"
                             //iosHeader="Select one"
                          // itemStyle={ backgroundColor: 'red', height:40}
                               style={styles.pickerItem}
@@ -26,7 +26,23 @@ const CustomDropdown: FC = ({ value1,value2,value3,label1,label2,label3, onValue
                                <Picker.Item  style={{color:'blue',backgroundColor:'white'}} label={label3} value={value3} />
                             </Picker>
                      </View>
-             
+
+{/* <View
+                           style={[styles.dropdownpicker,style]}>
+                            <Picker
+                            //mode="dropdown"
+                            //iosHeader="Select one"
+                         // itemStyle={ backgroundColor: 'red', height:40}
+                              style={styles.pickerItem}
+                            //style={[styles.pickerItem, {color: 'red', backgroundColor: 'blue'}]}
+                              selectedValue={selectedValue}
+                                onValueChange={onValueChange} 
+                                >
+                               <Picker.Item  style={{color:'blue'}}  label={label} value={value}  />
+                              
+                            </Picker>
+                     </View>
+              */}
         </View>
          );
 };

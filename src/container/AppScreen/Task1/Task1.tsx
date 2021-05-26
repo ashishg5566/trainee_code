@@ -31,27 +31,16 @@ import styles from './styles.tsx';
   const Tab = createMaterialTopTabNavigator();
   const Task1: FC = (props) => {
   return (
-       
-    <View style={styles.container}> 
-      
-      <ImageBackground source={require(' ../../../Assets/images/back.jpg')} style={{height:83}} > 
-         
-      <CustomHeader title="Profile" icon1="bars"/>
+      <View style={styles.container}> 
+          <ImageBackground source={require(' ../../../Assets/images/back.jpg')} style={{height:83}} > 
+                <CustomHeader title="Profile" icon1="bars"/>
              </ImageBackground>
-             
-             <ScrollView>
-             <ImageBackground source={require(' ../../../Assets/images/back.jpg')} style={styles.backgroundImage} > 
-             
-              
-             </ImageBackground>
-            
-          
-         
-          <View style={styles.profilecontainer}>
+        <ScrollView>
+           <ImageBackground source={require(' ../../../Assets/images/back.jpg')} style={styles.backgroundImage} > 
+           </ImageBackground>
+         <View style={styles.profilecontainer}>
                <View style={{flexDirection:'row'}}> 
                   <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profilepic}  />
-              
-              
                <View style={styles.profiletextcontainer}>
                   <View style={{flexDirection:"row"}}> 
                      <Text style={styles.nametext}>Neha Sharma</Text>
@@ -66,7 +55,7 @@ import styles from './styles.tsx';
           </View>
            <View style={styles.likecontainer}>
              <View>
-                 <Text style={{fontWeight:'bold',marginLeft:15}}>
+                 <Text style={{fontWeight:'bold',textAlign:'center'}}>
                      20K
                  </Text>
                  <Text>
@@ -74,44 +63,33 @@ import styles from './styles.tsx';
                  </Text>
              </View>
               <View>
-              <Text style={{fontWeight:'bold',marginLeft:10}}>
+              <Text style={{fontWeight:'bold',textAlign:'center'}}>
                    205
                  </Text>
                  <Text>
                     Buddies
                  </Text>
              </View>
-              <View> 
-                   <TouchableOpacity style={styles.followbutton}>
+             <TouchableOpacity style={styles.followbutton}>
                         <Text style={{color:'white',fontSize:12}}>Follow</Text>
-                    </TouchableOpacity>
-              </View>
-              <View>
-                     <TouchableOpacity style={styles.addbuddybutton}>
+             </TouchableOpacity>
+              <TouchableOpacity style={styles.addbuddybutton}>
                         <Text style={{color:'grey',fontSize:12}}>Add Buddy</Text>
-                    </TouchableOpacity>
-
-               </View>
-           </View>
-           
-           <Card style={styles.cardContent}>
+              </TouchableOpacity>
+          </View>
+         <Card style={styles.cardContent}>
                <View style={styles.cardtitlecontent}>
-                   <View>
-                       <Text style={styles.cardtitletext}>Education</Text>
-                  </View>
-                   <View>
-                       <Icon name="edit" size={25}  color="grey"/>
-                  </View>
+                    <Text style={styles.cardtitletext}>Education</Text>
+                     <Icon name="edit" size={25}  color="grey"/>
                </View>
-               
-                <View style={ styles.borderstyle} >
+             <View style={ styles.borderstyle} >
               </View>
                 <View style={styles.textcontainer}>
                   <View style={{flexDirection:'row'}}> 
-                   <Text style={styles.schooltext}>
-                       Delhi Public School
-                  </Text>
-                  <Icon name="check-circle" size={17}  color="#4E387E" style={{marginLeft:5,marginTop:2}}/>
+                      <Text style={styles.schooltext}>
+                          Delhi Public School
+                      </Text>
+                       <Icon name="check-circle" size={17}  color="#4E387E" style={{marginLeft:5,marginTop:2}}/>
                   </View>
                    <Text style={styles.textcontent}>
                        <Text style={styles.boldtext}>6th</Text> (Batch 2016-2017) 

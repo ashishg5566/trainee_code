@@ -43,6 +43,7 @@ shadowColor: 'black',
         borderRadius: '10@ms',
       backgroundColor:'white',
       },
+      
    dropdownpicker:{
      width: '310@ms',
       marginTop: '10@ms',

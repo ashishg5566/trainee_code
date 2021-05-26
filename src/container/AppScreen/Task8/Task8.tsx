@@ -65,13 +65,13 @@ import styles from './styles.tsx';
               </Text>
           </View>
           
-          <View style={styles.totalstudentcontainer}>
+          <View style={[styles.totalstudentcontainer,{backgroundColor:'honeydew'}]}>
               <Text style={{fontSize:15}}>Number of Students</Text>
-              <Text style={{fontSize:18,color:'green',fontWeight:'bold'}}>1,758</Text>
+              <Text style={[styles.numbertext,{color:'green'}]}>1,758</Text>
           </View>
-          <View style={styles.alumninumbercontainer}>
+          <View style={[styles.totalstudentcontainer,{backgroundColor:'lightgrey'}]}>
               <Text style={{fontSize:15}}>Number of alumni on ZatchUp</Text>
-              <Text style={{fontSize:18,fontWeight:'bold',color:'#4E387E'}}>950</Text>
+              <Text style={[styles.numbertext,{color:'#4E387E'}]} >950</Text>
           </View>
           <View style={styles.button2container}>
               <TouchableOpacity style={styles.button}>
@@ -83,9 +83,10 @@ import styles from './styles.tsx';
          </View>
           <Card style={styles.cardContent}>
                <View style={styles.cardtitlecontent}>
-                   <View>
+                   
                        <Text style={styles.cardtitletext}>Posts</Text>
-                   </View>
+                       <View style={{borderBottomWidth:1,borderBottomColor:'lightgrey',marginTop:8}}></View>
+                   
              </View>
           </Card>
            <Tab.Navigator
@@ -107,14 +108,21 @@ import styles from './styles.tsx';
                           tabStyle: {
                              height:50,
                               alignSelf:'center',
+                             
                                },
                             style: {height:60,
+                             
                               paddingTop:10,
+                              borderWidth:1,
+                              borderColor:'white',
                               backgroundColor:'white',
                               width:'90%',
                               alignSelf:'center',
                                borderBottomEndRadius:10,
-                               borderBottomLeftRadius:10
+                               borderBottomLeftRadius:10,
+                               shadowColor:'white',
+                               elevation:0,
+                               marginTop:0
                               },
                            }}
                         >

@@ -85,7 +85,7 @@ const Task6: FC = ({navigation}) => {
     temp.sort((a, b) => parseInt(a.id) - parseInt(b.id));
     setAllItems(temp);
     console.log(allItems);
-  };
+  }; 
   return (
     <View style={styles.container}>
          <CustomHeader title="Create Group Chat" icon1="arrow-left" icon2="search"/>

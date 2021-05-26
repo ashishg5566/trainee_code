@@ -68,7 +68,7 @@ container: {
      totalstudentcontainer:{
       padding:'18@ms',
       borderRadius:'20@ms',
-      backgroundColor:'honeydew',
+     
       justifyContent:'center',
       alignItems:'center',
       marginTop:'20@ms',
@@ -76,15 +76,10 @@ container: {
       marginLeft:'20@ms'
 
      },
-     alumninumbercontainer:{
-      padding:'18@ms',
-      borderRadius:'20@ms',
-       backgroundColor:'lightgrey',
-       justifyContent:'center',
-       alignItems:'center',
-       marginTop:'20@ms',
-       marginRight:'20@ms',
-       marginLeft:'20@ms'
+     
+     numbertext:{
+      fontSize:'18@ms',
+     fontWeight:'bold'
 
      },
      button2container:{
@@ -134,17 +129,23 @@ container: {
               borderRadius:'8@ms'
                },
                cardContent:{
+                 
                    width:'90%',
                    alignSelf:'center',
                     padding:'10@ms',
                     marginTop:'15@ms',
                     borderBottomColor:'white',
-                     position:'relative',
+                    borderBottomWidth:1,
+                    marginBottom:-1.5,
+                     
                      height:50,
-                     borderBottomWidth: '1@ms',
+                     
+                     //borderBottomWidth: '1@ms',
                      borderTopEndRadius:10,
                      borderTopLeftRadius:10,
-                  // backgroundColor:'red'
+                  backgroundColor:'white',
+                  shadowColor:'white',
+                  elevation:0
                        },
                   cardtitletext:{
                       fontWeight:'bold',
@@ -152,10 +153,7 @@ container: {
                       color:'#4E387E'
 
                   },
-                  cardtitlecontent:{
-                    justifyContent:'space-between',
-                    flexDirection:'row'
-                  },
+                  
                   
   picContainer:{
   width:'90%',

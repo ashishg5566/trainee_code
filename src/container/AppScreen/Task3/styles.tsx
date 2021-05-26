@@ -26,12 +26,12 @@ const styles = ScaledSheet.create({
             marginTop:'8@ms',
             borderRadius:'20@ms',
             padding:'12@ms',
-            
-           // alignItems:'center'
+            alignSelf:'center'
             },
            content1:{
             flexDirection:'row', 
-             padding:'5@ms'
+             padding:'5@ms',
+             alignItems:'center'
            },
            separator:{
                borderBottomWidth: '1@ms',
@@ -42,20 +42,18 @@ const styles = ScaledSheet.create({
                marginRight:'8@ms',
                },
            profileimage:{
+             resizeMode:'cover',
               width:'45@ms', 
-              height: '45@ms'
-              ,borderRadius:'40@ms'
+              height: '45@ms',
+              marginRight:'15@ms',
+              borderRadius:'40@ms'
            },
             nametext:{
                fontWeight:'bold',
                color:'black',
-               marginTop:'8@ms',
-               marginLeft:'15@ms',
                fontSize:'16@ms'
             },
-           content2:{
-            width:'100%',
-             },
+           
            titletext:{
             color:'grey',
             fontSize:'14@ms',
@@ -64,22 +62,31 @@ const styles = ScaledSheet.create({
           },
           videocontent:{
             width:'100%',
-             borderRadius:'10@ms',
+            alignItems:'center',
+            justifyContent:'center',
             marginTop:'8@ms',
          },
           paragraphcontent:{
-            width:'100%',
-             color:'gray'
+            color:'gray'
             ,marginTop:'10@ms',
             fontWeight:'bold',
             fontSize:'13@ms',
-            textAlign:'justify'
+            textAlign:'justify',
+           
            },
            fundingContent:{
-             width:'100%',
-            flexDirection:'row',
+           flexDirection:'row',
             justifyContent:'space-between',
              },
+             fundtext:{
+              fontWeight:'bold',
+              fontSize:'14@ms'
+          },
+          amounttext:{
+            fontWeight:'bold',
+            fontSize:'14@ms',
+            color:'#4E387E'
+        },
            fundingtextcontent:{
             flexDirection:'row',
             marginTop:'8@ms'
@@ -92,65 +99,23 @@ const styles = ScaledSheet.create({
             width:'100@ms',
             borderRadius:'15@ms',
             backgroundColor:'green'
-
-           },
-
+            },
           content3:{
-            width:'100%',
-            //backgroundColor:'red',
             paddingLeft:'10@ms',
             paddingRight:'10@ms',
             justifyContent:'space-between',
             flexDirection:'row',
              borderColor:'lightgrey'
-
-          },
+              },
           icon:{
             marginLeft:'8@ms'
-
-          },
+           },
           icontext:{
             fontWeight:'bold',
             fontSize:'14@ms',
             color:'grey'
           },
-           
-          cardcontent4:{
-            flexDirection:'row',
-            width:'90%',
-            padding:'10@ms',
-           // backgroundColor:'yellow'
-
-          },
-          profiletext:{
-            fontWeight:'bold',
-            fontSize:'16@ms',
-           
-
-          },
-          profileparagraph:{
-            color:'gray',
-            fontWeight:'bold',
-            //width:'280@ms',
-            fontSize:'12@ms',
-            //backgroundColor:'red',
-
-
-          },
-          smallparagraphcontent:{
-            marginLeft:'10@ms',
-            //backgroundColor:'pink',
-            paddingRight:'10@ms'
-
-          },
-
-          profilepic:{
-            width:'50@ms', 
-            height:'50@ms',
-            borderRadius:'40@ms'
-
-          },
-           textinput:{
+      textinput:{
             marginTop:'10@ms',
             borderRadius:'10@ms',
             backgroundColor:'lightgrey',
@@ -158,14 +123,6 @@ const styles = ScaledSheet.create({
             fontSize:'18@ms',
             height:'50@ms'
           },
-          fundtext:{
-              fontWeight:'bold',
-              fontSize:'14@ms'
-          },
-          amounttext:{
-            fontWeight:'bold',
-            fontSize:'14@ms',
-            color:'#4E387E'
-        }
+          
  })
 export default styles;

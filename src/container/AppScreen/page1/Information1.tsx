@@ -1,17 +1,23 @@
-import React, {FC,useState } from 'react';
+import React, {FC,useState,useEffect } from 'react';
 import { View, Text, TouchableOpacity,ScrollView} from 'react-native';
 import styles from './styles.tsx';
  import {CustomDropdown,CustomTextArea} from '../../../components/textinput';
  import {CustomHeader} from '../../../components/Customheader';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Custombutton} from '../../../components/Custombutton';
+import {Picker} from '@react-native-picker/picker';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
+import { indigoA200 } from 'react-native-paper/lib/typescript/styles/colors';
  const Information1: FC = () => {
        const [selectedState, setSelectedState] = useState();
        const [selectedCity,setselectedCity]=useState('');
        const [selectedSchool,setselectedSchool]=useState('');
        const [selectedBoard,setselectedBoard]=useState('');
-       const[address,setaddress]=useState('')
+       const[address,setaddress]=useState('');
+       // Picker.item List
+        const [values, setValues] = useState([]);
+       const [selectedValue, setSelectedValue] = useState(null);
+       
    const submit = () => {
    if (!selectedState) {
      alert('please select state')
@@ -35,27 +41,54 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
      }
      alert('Success');
  };
+ useEffect(() => {
+    
+     fetch('http://172.105.61.231:3000/api/user/getallstate', {
+          method: 'GET',
+          //Request Type
+        })
+     .then(response => response.json())
+     .then(responseJson => {
+         setValues(responseJson.results)
+     })
+     .catch((error) => {
+         console.error(error);
+       });
+   }, []);
+  
+
+
+
  return (
       
        <View style={styles.container}>
-             
-             <View style={{width:'100%'}}> 
+                <View style={{width:'100%'}}> 
                         <CustomHeader title="EI Information"/>
                    </View>
                  
      <ScrollView> 
           <View style={{backgroundColor:'white'}}> 
          <View style={styles.maincontainer1}> 
-         
-         
-                   
-                   <View style={{flexDirection:'row'}}>
-                            <CustomDropdown  label1="State"
+               <View style={{flexDirection:'row'}}>
+                            {/* <CustomDropdown  label1="State"
                                   value1="0"  label2="Bombay" value2="1" label3="Gujarat" value3="2"
-                                   selectedValue={selectedSchool} 
+                                   selectedValue={selectedState} 
                                    onValueChange={(Value)=>setSelectedState(Value)} 
-                                    style={{width:160}}/>
-                              <CustomDropdown  label1="City"
+                                    style={{width:160}}/> */}
+                                    <View style={{marginTop:12,backgroundColor:'white',height:62,borderRadius:10,borderWidth:3,borderColor:'lightgrey'}}> 
+                                     <Picker
+                                     // mode="dropdown"
+                                        selectedValue={selectedValue ? selectedValue.id : null}
+                                        style={{ width:160 ,color:'grey'}}
+                                        onValueChange={(itemValue) => setSelectedValue({ id: itemValue })}>
+                                             <Picker.Item value={0} label="State"/>
+                                       { values.map((value, i) => {
+                          
+                                       return <Picker.Item key={i} value={value.id} label={value.state} />
+                                 })}
+                               </Picker>
+                               </View>
+                                 <CustomDropdown  label1="City"
                                    value1="0"  label2="Noida" value2="1" label3="Ghaziabad" value3="2"
                                     selectedValue={selectedCity}
                                     onValueChange={(Value)=>setselectedCity(Value)}

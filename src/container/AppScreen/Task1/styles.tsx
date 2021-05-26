@@ -6,39 +6,16 @@ container: {
     
  
       },
-     header:{
-          borderBottomRightRadius :'20@ms',
-           borderBottomLeftRadius :'15@ms',
-             backgroundColor:'#4E387E',
-            height:'80@ms',
-            flexDirection:'row',           
-             padding:'15@ms',
-             width:'100%',
-             justifyContent:'space-between',
-             alignItems:'center',
-            // marginBottom:-10,
-             //position:'absolute',
-             
-             },
-             headerTitle:{
-               color:'white',
-               fontSize:'20@ms',
-               alignItems:'center',
-               
-             },
-             backgroundImage:{
-                
+      backgroundImage:{
                  width:'100%',
                  height:'160@ms',
-               //position:'relative',
-                // resizeMode:'contain',
-                marginTop:-20
+                  marginTop:-20
                
                 
              },
              profilepic:{
                  marginTop:'-40@ms',
-                
+                resizeMode:'cover',
                 borderWidth:2,
                 borderColor:'white',
                 width:'80@ms',

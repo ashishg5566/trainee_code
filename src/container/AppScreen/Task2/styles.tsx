@@ -4,37 +4,25 @@ const styles = ScaledSheet.create({
      flex:1,
      backgroundColor:'white',
       },
-      header:{
-           width:'100%',
-            borderBottomRightRadius :'20@ms',
-            borderBottomLeftRadius :'15@ms',
-            backgroundColor:'#4E387E',
-            height:'70@ms',
-            flexDirection:'row',           
-             padding:'16@ms',
-            justifyContent:'space-between',
-             alignItems:'center',
-             },
-             headerTitle:{
-               color:'white',
-               fontSize:'20@ms',
-               alignItems:'center'
-             },
+     
+            
              schoolProfile:{
                 flexDirection:'row',
                 width:"100%",
                 marginTop:'15@ms',
                 paddingLeft:'22@ms',
                 paddingRight:'22@ms',
+                alignItems:'center'
                },
               profilepic:{
+                resizeMode:'cover',
                height:'50@ms',
                width:'50@ms',
                borderRadius:'40@ms'
               },
              schoolprofileText:{
                marginLeft:'20@ms',
-               marginTop:'8@ms'
+               
              },
              schoolnameText:{
                fontWeight:'bold',
@@ -66,7 +54,8 @@ const styles = ScaledSheet.create({
                marginBottom:'18@ms'
                },
               bigImage:{
-               width:'100%',
+              resizeMode:'cover',
+              width:360,
                height:'190@ms',
                borderRadius:'20@ms',
               },

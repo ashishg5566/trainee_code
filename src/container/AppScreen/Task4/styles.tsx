@@ -4,26 +4,7 @@ const styles = ScaledSheet.create({
       flex:1,
        backgroundColor:'lightgrey',
       },
-    
-       header:{
-        borderBottomRightRadius :'20@ms',
-        borderBottomLeftRadius :'15@ms',
-        backgroundColor:'#4E387E',
-        height:'80@ms',
-        flexDirection:'row',           
-         padding:'15@ms',
-         width:'100%',
-         justifyContent:'space-between',
-         alignItems:'center',
-         
-         },
-         headerTitle:{
-           color:'white',
-           fontSize:'20@ms',
-           alignItems:'center',
-           flexDirection:'row'
-         },
-         imagecontainer:{
+       imagecontainer:{
             // backgroundColor:'pink',
              flexDirection:'row',
              alignItems:'center',
@@ -33,7 +14,8 @@ const styles = ScaledSheet.create({
          profileimage:{
              height:'140@ms',
              width:'140@ms',
-             borderRadius:'80@ms'
+             borderRadius:'80@ms',
+             resizeMode:'cover'
          },
          cameraicon:{
              backgroundColor:'#4E387E',
@@ -57,26 +39,27 @@ const styles = ScaledSheet.create({
           shadowOffset: {
            width: '10@ms',
            height:  '10@ms',
+          
             },
            shadowOpacity: 0.29,
            shadowRadius: 5.22,
-            elevation: '10@ms',
-          borderTopEndRadius:'8@ms',
-          borderTopLeftRadius:'8@ms',
+           elevation: '10@ms',
+           borderTopEndRadius:'8@ms',
+           borderTopLeftRadius:'8@ms',
            borderRadius: '10@ms',
            height: '50@ms',
-            backgroundColor:'white',
-            fontSize:'15@ms',
-             width:'275@ms',
-            textAlign:'center',
-            borderColor:'grey',
-             color:'grey',
-            overflow: 'hidden',
-            //borderWidth:1,
-            fontWeight:'bold'
+           backgroundColor:'white',
+           fontSize:'15@ms',
+           width:'275@ms',
+           textAlign:'center',
+           borderColor:'grey',
+           color:'grey',
+           overflow: 'hidden',
+           fontWeight:'bold'
 
           },
           usericoncontainer:{
+            alignItems:'center',
               marginTop:'25@ms',
                paddingLeft:'20@ms',
               flexDirection:'row'
@@ -93,7 +76,6 @@ const styles = ScaledSheet.create({
           text:{
               fontSize:'15@ms',
               fontWeight:'bold',
-              alignSelf:'center',
               marginLeft:'25@ms'
                },
           profilecontainer:{
@@ -108,11 +90,13 @@ const styles = ScaledSheet.create({
           userimage:{
             height:'60@ms',
             width:'60@ms',
-            borderRadius:'80@ms'
+            borderRadius:'80@ms',
+            resizeMode:'cover'
 
           },
           userprofile:{
-               flexDirection:'row'
+               flexDirection:'row',
+               alignItems:'center'
           },
           deleteicon:{
               backgroundColor:'darkred',

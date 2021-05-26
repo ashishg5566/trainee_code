@@ -5,16 +5,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles.tsx';
 import { TextInput } from 'react-native-paper';
 import {CustomHeader} from '../../../components/Customheader';
- 
 // create a component
 const Task4: FC = ({navigation}) => {
      return (
-        
-        <View style={styles.container}> 
+      <View style={styles.container}> 
               <CustomHeader title="Create Group Chat" icon1="arrow-left" />
-           
-           
-            <ScrollView>
+         <ScrollView>
             <View style={styles.imagecontainer}>
                <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.profileimage}  /> 
                <View style={styles.cameraicon}> 
@@ -38,7 +34,7 @@ const Task4: FC = ({navigation}) => {
                   <Icon name="user-plus" size={25}  color="white" />
                </View>
                  <Text style={styles.text}>Add Participants</Text>
-             </View>
+          </View>
           <View style={styles.profilecontainer}>
                <View style={styles.userprofile}>
                      <Image source={require('../../../Assets/images/pic.jpeg')} style={styles.userimage}  /> 
@@ -73,9 +69,8 @@ const Task4: FC = ({navigation}) => {
               <TouchableOpacity style={styles.exitbutton}>
                  <Text style={styles.exittext}>Exit Group</Text>
              </TouchableOpacity>
-       
-                 </View>
-                 </ScrollView>
+          </View>
+    </ScrollView>
 </View>
  
     );
