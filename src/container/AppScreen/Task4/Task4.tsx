@@ -72,7 +72,7 @@ const Task4: FC = ({navigation}) => {
           </View>
     </ScrollView>
 </View>
- 
+  
     );
 };
 export default Task4;

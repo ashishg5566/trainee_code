@@ -142,16 +142,12 @@ import styles from './styles.tsx';
           </Card>
           <Card style={styles.cardContent2}>
                <View style={styles.cardtitlecontent}>
-                   <View>
-                       <Text style={styles.cardtitletext}>Posts</Text>
-                   </View>
                    
-               </View>
-               
-               
-                {/* <View style={ styles.borderstyle} >
-              </View> */}
-              </Card>
+                       <Text style={styles.cardtitletext}>Posts</Text>
+                       <View style={{borderBottomWidth:1,borderBottomColor:'lightgrey',marginTop:8}}></View>
+                   
+             </View>
+          </Card>
                 
             <Tab.Navigator
                   tabBarOptions={{
@@ -178,13 +174,18 @@ import styles from './styles.tsx';
                            //backgroundColor:'red',
                              alignSelf:'center',
                                },
-                            style: {height:70,
+                            style: {
                               paddingTop:10,
+                              borderWidth:1,
+                              borderColor:'white',
                               backgroundColor:'white',
                               width:'92%',
                               alignSelf:'center',
                                borderBottomEndRadius:10,
-                               borderBottomLeftRadius:10
+                               borderBottomLeftRadius:10,
+                               shadowColor:'white',
+                               elevation:0,
+                               marginTop:0
                               },
                            }}
                         >

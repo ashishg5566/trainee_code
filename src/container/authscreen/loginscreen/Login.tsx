@@ -1,48 +1,69 @@
  import React, {FC,useState} from 'react';
  import styles from './styles.tsx';
- import { View, Text,  TouchableOpacity,Image} from 'react-native';
+ import { View, Text,  TouchableOpacity,Image, Alert} from 'react-native';
  import {CustomTextinput} from '../../../components/textinput';
  import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import iconFont from 'react-native-vector-icons/Fonts/FontAwesome.ttf';
-import Icon from 'react-native-vector-icons/FontAwesome';  
  const Login: FC = ({navigation}) => {
    const [Email,setEmail]=useState(''); 
-   const [Password,setPasswordText]=useState(''); 
+   const [Password,setPassword]=useState(''); 
    const [emailerror,setEmailError]=useState(''); 
-   const [passworderror,setPasswordTextError]=useState(''); 
-   const onChangeText = (text, type) => {
-      var pattern = /(?:[\u2700-\u27bf]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe23\u20d0-\u20f0]|\ud83c[\udffb-\udfff])?(?:\u200d(?:[^\ud800-\udfff]|(?:\ud83c[\udde6-\uddff]){2}|[\ud800-\udbff][\udc00-\udfff])[\ufe0e\ufe0f]?(?:[\u0300-\u036f\ufe20-\ufe23\u20d0-\u20f0]|\ud83c[\udffb-\udfff])?)*/;
-      if (type === "Email") {
-      if (!pattern.test(text)) { 
-      setEmail(text.replace(/[^A-Za-z0-9@_.]/g, ""));
-      setEmailError("Enter valid Email");
+   const [passwordError,setPasswordError]=useState(''); 
+   const [message,setMessage]=useState(''); 
+   const signin=async()=>{
+       if(Email!=""&&Password!=""){
+          await fetch('http://172.105.61.231:3000/api/subadmin/login/',{
+             method:'POST',
+             headers:{
+               // 'Accept':'vary',
+               'Content-Type':'application/json',
+                 },
+             body:JSON.stringify(
+                {
+                   "username":Email,
+                   "password":Password
+                } )
+             } ).then(response=>response.json())
+             .then(responseJson=>{
+               console.log(responseJson)
+            //   setMessage(responseJson.detail);
+             })
+             }
+        if(Email!=""){
+         alert(Email)
+         setEmailError('')
+      }else{
+         setEmailError('Please Enter email')
+
       }
-       }
-      if (type === "Password") {
-         setPasswordText(
-         text.replace(/[^A-Za-z0-9!"#$%&'()*+,-./:;<=>?@[^_`{|}~]/g, "")
-         );
-         setPasswordTextError("Enter Valid Password");
-         }
-         };
-    return (
+      if(Password!=""){
+         alert(Password)
+         setPasswordError('')
+      }else{
+         setPasswordError('Please Enter Password')
+
+      }
+
+   }
+ return (
     <KeyboardAwareScrollView> 
       <View style={styles.container}>
-       <Image source={require('../../../Assets/images/profile.jpg')} style={{marginBottom:40,width: 150, height: 150,marginTop:50,borderRadius:100}}  /> 
+        <Image source={require('../../../Assets/images/profile.jpg')} style={{marginBottom:40,width: 150, height: 150,marginTop:50,borderRadius:100}}  /> 
+         <Text style={{color:'green'}}>{message}</Text>
           <CustomTextinput   
           placeholder="Enter Email"
               value={Email} 
-               onChangeText={(text) => onChangeText(text, "Email")}
+               onChangeText={(Email) => setEmail(Email)}
             />
-           {/* <Text style={{color:'red'}}>{emailerror}</Text> */}
+          <Text style={{color:'red'}}>{emailerror}</Text> 
            <CustomTextinput  
             //  label="Enter Password"
             placeholder="Enter Password"
                value={Password} 
-                onChangeText={(text) => onChangeText(text, "Password")}
+               onChangeText={(Password) => setPassword(Password)}
                />
-            {/* <Text style={{color:'red'}}>{passworderror}</Text> */}
+            <Text style={{color:'red'}}>{passwordError}</Text> 
              <TouchableOpacity style={styles.signinButtonStyle} onPress={() => navigation.navigate('navbar')}>
+             {/* <TouchableOpacity style={styles.signinButtonStyle} onPress={signin}> */}
                   <Text style={styles.signinTextStyle} >Sign In</Text>
               </TouchableOpacity>
              <TouchableOpacity style={styles.forgotPasswordButtonStyle} onPress={() => navigation.navigate('forgotpassword')}>
@@ -57,6 +78,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
                    </TouchableOpacity>
                </View>  
               <TouchableOpacity style={styles.signupButtonStyle}  onPress={() => navigation.navigate('signup')}>
+             
                   <Text style={styles.signupText}>Don't have an account?<Text style={{color:'#4E387E'}}>Sign Up</Text></Text>
              </TouchableOpacity>
         </View>

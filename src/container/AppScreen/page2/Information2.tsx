@@ -139,7 +139,7 @@ if (!address) {
                                  <Text style={styles.addmoreschooltext}>Add More Schools</Text>
                           </View>
                           <View style={{marginTop:30}}> 
-                          <Custombutton title="Continue"/>
+                          <Custombutton title="Continue" onPress={submit}/>
                           </View>
                         </ScrollView> 
 

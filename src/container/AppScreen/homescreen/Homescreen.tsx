@@ -4,6 +4,7 @@ import { View, Text, TouchableOpacity,ScrollView,Image, StyleSheet,FlatList } fr
 import styles from './styles.tsx';
 import {Customcard,Smallcustomcard} from '../../../components/card';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import {CustomHeader} from '../../../components/Customheader'; 
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 const DATA = [
     {
@@ -35,20 +36,12 @@ const DATA = [
       },
   ];
 // create a component
-const Homescreen: FC = ({navigation}) => {
+const Homescreen: FC = ({navigation}) => {  
     return (
        
         <View style={styles.container}>
-             <View style={styles.header}>
-               <TouchableOpacity onPress={navigation.openDrawer()}> 
-                 <Icon name="bars" size={20}  color="white"/>
-                 </TouchableOpacity>
-                 <Text style={styles.headertitle}>ZatchUp</Text>
-                 <View style={{flexDirection:'row'}}> 
-                    <Icon name="search" size={20} color="white" style={styles.searchicon}/>
-                    <Icon name="bell" size={20} color="white"/>
-                 </View>
-            </View>
+             
+               <CustomHeader title="Zatchup" icon1="bars" icon2="search" icon3="bell"/>
         <ScrollView  > 
          <View style={{alignItems:'center',paddingBottom:30}}> 
           <Customcard/>
@@ -57,8 +50,8 @@ const Homescreen: FC = ({navigation}) => {
                <Text style={styles.text}>View All</Text>
           </View>
           <FlatList
-          horizontal={true}
-            style={{width:'94%'}}
+            horizontal={true}
+             style={{width:'94%'}}
               data={DATA}
                renderItem={({ item }) =>  
               <Card style={styles.smallcardcontent}>

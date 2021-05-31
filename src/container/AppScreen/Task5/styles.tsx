@@ -20,7 +20,7 @@ const styles = ScaledSheet.create({
              backgroundColor:'#4E387E',
              width:'50@ms',
              height:'50@ms',
-             justifyContent:'center',
+             justifyContent:'center', 
              alignItems:'center',
              borderRadius:'40@ms',
              marginTop:'60@ms',

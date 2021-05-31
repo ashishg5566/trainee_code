@@ -4,11 +4,12 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 // import FloatLabelTextInput from 'react-native-floating-label-text-input';
 import styles from './styles';
 // create a component
-const Customprofile: FC = ({name,paragraph}) => {
+const Customprofile: FC = ({name,paragraph,image}) => {
     return (
         <View>
                 <View style={styles.cardcontent4}>
                  <Image source={require('../../Assets/images/pic.jpeg')} style={styles.profilepic}  /> 
+               
                  <View style={styles.paragraphcontent}>
                       <Text style={styles.profiletext}>{name}</Text>
                       <Text style={styles.profileparagraph}>

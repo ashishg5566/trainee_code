@@ -4,24 +4,13 @@ import { View, Text, StyleSheet,  TouchableOpacity ,Image,TextInput,ScrollView} 
 import {Customprofile} from '../../../components/Customprofile';
 import styles from './styles';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
+import {CustomHeader} from '../../../components/Customheader'; 
 const Task3: FC = ({ navigation}) => {
     return (
      // <ScrollView> 
     <View style={styles.container}> 
-             <View style={styles.header}>
-                <View> 
-                <TouchableOpacity  onPress={() => navigation.goBack()} >
-                  <Icon name="arrow-left" size={20}  color="white"/>
-                  </TouchableOpacity>
-               </View>
-                <View> 
-                   <Text style={styles.headerTitle}>Project Funding</Text>
-                </View>
-                 <View style={{flexDirection:'row',alignItems:'flex-end'}}>
-                    <Icon name="search" size={25}  color="white" style={{marginRight:10}}/>
-                    <Icon name="history" size={25}  color="white"/>
-                </View>
-             </View>
+            
+              <CustomHeader title="Project Funding" icon1="bars" icon2="search" icon3="history"/>
            <ScrollView> 
              {/* <View style={{alignItems:'center',paddingBottom:30}}>  */}
                 <Card style={styles.cardContainer}>

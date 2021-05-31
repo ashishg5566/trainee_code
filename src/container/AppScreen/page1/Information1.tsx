@@ -6,9 +6,7 @@ import styles from './styles.tsx';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {Custombutton} from '../../../components/Custombutton';
 import {Picker} from '@react-native-picker/picker';
-import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
-import { indigoA200 } from 'react-native-paper/lib/typescript/styles/colors';
- const Information1: FC = () => {
+const Information1: FC = () => {
        const [selectedState, setSelectedState] = useState();
        const [selectedCity,setselectedCity]=useState('');
        const [selectedSchool,setselectedSchool]=useState('');
@@ -16,9 +14,9 @@ import { indigoA200 } from 'react-native-paper/lib/typescript/styles/colors';
        const[address,setaddress]=useState('');
        // Picker.item List
         const [values, setValues] = useState([]);
-       const [selectedValue, setSelectedValue] = useState(null);
-       
-   const submit = () => {
+        const [cityvalues, setcityValues] = useState([]);
+        const [schoolvalues, setschoolValues] = useState([]);
+ const submit = () => {
    if (!selectedState) {
      alert('please select state')
      return;
@@ -41,26 +39,82 @@ import { indigoA200 } from 'react-native-paper/lib/typescript/styles/colors';
      }
      alert('Success');
  };
- useEffect(() => {
-    
-     fetch('http://172.105.61.231:3000/api/user/getallstate', {
-          method: 'GET',
-          //Request Type
+ const getStateData =  () => {
+  fetch('http://172.105.61.231:3000/api/user/getallstate', {
+              method: 'GET',
+              //Request Type
+            })
+            
+         .then(response => response.json())
+         .then(responseJson => {
+             setValues(responseJson.results)
+         })
+         .catch((error) => {
+             console.error(error);
+           });
+};
+const getCityData = () => {
+  fetch('http://172.105.61.231:3000/api/user/getcitybystateid/12/', {
+             method: 'GET',
+             //Request Type
+           })
+           
+        .then(response => response.json())
+        .then(responseJson => {
+            setcityValues(responseJson.results)
         })
-     .then(response => response.json())
-     .then(responseJson => {
-         setValues(responseJson.results)
-     })
-     .catch((error) => {
-         console.error(error);
-       });
-   }, []);
-  
-
-
-
- return (
-      
+        .catch((error) => {
+            console.error(error);
+          });
+};
+const getSchoolData = () => {
+  fetch('http://172.105.61.231:3000/api/ei/getschoollistwithcity/291/', {
+             method: 'GET',
+             //Request Type
+           })
+           
+        .then(response => response.json())
+        .then(responseJson => {
+            setschoolValues(responseJson.results)
+        })
+        .catch((error) => {
+            console.error(error);
+          });
+};
+useEffect(() => {
+  getStateData();
+  getCityData();
+  getSchoolData();
+}, []);
+//  useEffect(() => {
+//    fetch('http://172.105.61.231:3000/api/user/getallstate', {
+//           method: 'GET',
+//           //Request Type
+//         })
+        
+//      .then(response => response.json())
+//      .then(responseJson => {
+//          setValues(responseJson.results)
+//      })
+//      .catch((error) => {
+//          console.error(error);
+//        });
+// }, []);
+// useEffect(() => {
+//   fetch('http://172.105.61.231:3000/api/user/getcitybystateid/25/', {
+//          method: 'GET',
+//          //Request Type
+//        })
+       
+//     .then(response => response.json())
+//     .then(responseJson => {
+//         setcityValues(responseJson.results)
+//     })
+//     .catch((error) => {
+//         console.error(error);
+//       });
+// }, []);
+  return (
        <View style={styles.container}>
                 <View style={{width:'100%'}}> 
                         <CustomHeader title="EI Information"/>
@@ -75,26 +129,46 @@ import { indigoA200 } from 'react-native-paper/lib/typescript/styles/colors';
                                    selectedValue={selectedState} 
                                    onValueChange={(Value)=>setSelectedState(Value)} 
                                     style={{width:160}}/> */}
-                                    <View style={{marginTop:12,backgroundColor:'white',height:62,borderRadius:10,borderWidth:3,borderColor:'lightgrey'}}> 
+                                    <View style={{paddingLeft:5,marginTop:12,backgroundColor:'white',height:62,borderRadius:10,borderWidth:3,borderColor:'lightgrey'}}> 
                                      <Picker
                                      // mode="dropdown"
-                                        selectedValue={selectedValue ? selectedValue.id : null}
-                                        style={{ width:160 ,color:'grey'}}
-                                        onValueChange={(itemValue) => setSelectedValue({ id: itemValue })}>
-                                             <Picker.Item value={0} label="State"/>
+                                        selectedValue={selectedState ? selectedState.id : null}
+                                        style={{ width:155 ,color:'grey'}}
+                                        onValueChange={(itemValue) => setSelectedState({ id: itemValue })}>
+                                             <Picker.Item  style={{color:'blue',backgroundColor:'white'}} value={0} label="State"/>
                                        { values.map((value, i) => {
-                          
-                                       return <Picker.Item key={i} value={value.id} label={value.state} />
+                                         return <Picker.Item  style={{color:'blue',backgroundColor:'white'}} key={i} value={value.id} label={value.state} />
                                  })}
                                </Picker>
                                </View>
-                                 <CustomDropdown  label1="City"
-                                   value1="0"  label2="Noida" value2="1" label3="Ghaziabad" value3="2"
-                                    selectedValue={selectedCity}
-                                    onValueChange={(Value)=>setselectedCity(Value)}
-                                    style={{width:160}}/>
+                                  <View style={{paddingLeft:4,marginTop:12,backgroundColor:'white',height:62,borderRadius:10,borderWidth:3,borderColor:'lightgrey'}}> 
+                                     <Picker
+                                     // mode="dropdown"
+                                        selectedValue={selectedCity ? selectedCity.id : null}
+                                        style={{ width:155 ,color:'grey'}}
+                                        onValueChange={(itemValue) => setselectedCity({ id: itemValue })}>
+                                             <Picker.Item  style={{color:'blue',backgroundColor:'white'}} value={0} label="City"/>
+                                       { cityvalues.map((value, i) => {
+                          
+                                       return <Picker.Item style={{color:'blue',backgroundColor:'white'}} key={i} value={value.id} label={value.city} />
+                                 })}
+                               </Picker>
+                               </View>
                              </View>
-                            <CustomDropdown  label1="Select School Name" value1="0"  label2="VPS" value2="1" label3="modern" value3="2"selectedValue={selectedSchool} onValueChange={(selectedValue)=>setselectedSchool(selectedValue)}/>
+                           
+                            {/* <CustomDropdown  label1="Select School Name" value1="0"  label2="VPS" value2="1" label3="modern" value3="2"selectedValue={selectedSchool} onValueChange={(selectedValue)=>setselectedSchool(selectedValue)}/> */}
+                            <View style={{paddingLeft:4,marginTop:12,backgroundColor:'white',height:62,borderRadius:10,borderWidth:3,borderColor:'lightgrey'}}> 
+                                     <Picker
+                                     // mode="dropdown"
+                                        selectedValue={selectedSchool ? selectedSchool.id : null}
+                                        style={{ width:330 ,color:'grey'}}
+                                        onValueChange={(itemValue) => setselectedSchool({ id: itemValue })}>
+                                             <Picker.Item value={0} label="Select School Name" style={{color:'blue',backgroundColor:'white'}} />
+                                       { schoolvalues.map((value, i) => {
+                                         return <Picker.Item key={i}  style={{color:'blue',backgroundColor:'white'}} value={value.id} label={value.school} />
+                                 })}
+                               </Picker>
+                               </View>
                             <CustomTextArea   value={address}
                                   onChangeText={(text)=>setaddress(text)}
                                   label="Enter Your Address"/>

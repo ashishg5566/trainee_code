@@ -87,15 +87,20 @@ container: {
                   cardContent2:{
                     width:'92%',
                     alignSelf:'center',
-                    padding:'10@ms',
-                    marginTop:'10@ms',
-                   borderBottomColor:'white',
-                   position:'relative',
-                   height:50,
-                   borderBottomWidth: '1@ms',
-                   borderTopEndRadius:10,
-                   borderTopLeftRadius:10,
-                  // backgroundColor:'red'
+                     padding:'10@ms',
+                     marginTop:'15@ms',
+                     borderBottomColor:'white',
+                     borderBottomWidth:1,
+                     marginBottom:-1.5,
+                      
+                      height:50,
+                      
+                      //borderBottomWidth: '1@ms',
+                      borderTopEndRadius:10,
+                      borderTopLeftRadius:10,
+                   backgroundColor:'white',
+                   shadowColor:'white',
+                   elevation:0
                        },
                   cardtitletext:{
                       fontWeight:'bold',

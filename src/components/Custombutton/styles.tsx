@@ -12,7 +12,7 @@ const styles = ScaledSheet.create({
       },
       savebuttontext:{
         color:'white',
-        fontSize:'18@ms'
+        fontSize:'14@ms'
       },
     
 

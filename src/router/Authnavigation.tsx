@@ -5,6 +5,7 @@ import Login from  "../container/authscreen/loginscreen/Login.tsx";
 import Changepassword from  "../container/authscreen/Changepasswordscreen/Changepassword.tsx";
 import Signup from  "../container/authscreen/signupscreen/Signup.tsx";
 import Forgot from  "../container/authscreen/forgotpassword/Forgot.tsx";
+import Otpscreen from  "../container/authscreen/otpscreen/Otpscreen.tsx";
 import { createStackNavigator } from '@react-navigation/stack';
 const Stack = createStackNavigator();
 // create a component
@@ -21,6 +22,9 @@ const Authnavigation: FC = () => {
         options={{headerShown: false}}
       />
        <Stack.Screen name="forgotpassword" component={Forgot}
+        options={{headerShown: false}} 
+      />
+       <Stack.Screen name="Otpscreen" component={Otpscreen}
         options={{headerShown: false}} 
       />
        

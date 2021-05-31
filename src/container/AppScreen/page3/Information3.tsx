@@ -73,7 +73,7 @@ return (
                          <CustomTextInput2  label="Enter Mother's Name"value={usermothername}  onChangeText={(value)=>setusermothername(value)} />
                           {/* <TouchableOpacity style={styles.button} onPress={toggleModal}> */}
                         <View style={{marginTop:40}}> 
-                         <Custombutton title="Send to EI for Approval"/>
+                         <Custombutton title="Send to EI for Approval " onPress={submit}/>
                          </View>
                     </View>
                  </KeyboardAwareScrollView>

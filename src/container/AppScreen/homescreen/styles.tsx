@@ -5,26 +5,8 @@ const styles = ScaledSheet.create({
         flex:1,
         backgroundColor:'lightgrey',
        },
-      header:{
-        borderBottomRightRadius :'20@ms',
-        borderBottomLeftRadius :'15@ms',
-         backgroundColor:'#4E387E',
-         height:'80@ms',
-         padding:'20@ms',
-         flexDirection:'row',
-         alignItems:'center',
-         position:'relative',
-          //position:'absolute',
-          width:'100%',
-          justifyContent: 'space-between',
-      },
-      headertitle:{
-        alignSelf:'center',
-        color:'white',
-        fontSize:'18@ms',
-        marginLeft:'50@ms'
-
-      },
+      
+     
       searchicon:{
         marginRight:'20@ms'
       },
@@ -33,7 +15,9 @@ const styles = ScaledSheet.create({
         justifyContent:'space-between',
         width:'92%',
          marginTop:'10@ms',
-        marginBottom:'10@ms'
+        marginBottom:'10@ms',
+        paddingLeft:'5@ms',
+        paddingRight:'5@ms'
       },
       text:{
         fontWeight:'bold',
@@ -85,7 +69,7 @@ const styles = ScaledSheet.create({
       },
        
       cardcontainer:{
-        width:'94%',
+        width:'92%',
         marginTop:'8@ms',
         borderRadius:'20@ms',
         padding:'12@ms',

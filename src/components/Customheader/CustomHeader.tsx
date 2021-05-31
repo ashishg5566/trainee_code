@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 // import FloatLabelTextInput from 'react-native-floating-label-text-input';
 import styles from './styles';
 // create a component
-const Customheader: FC = ({title,leftticon,righticon,icon1,icon2}) => {
+const Customheader: FC = ({title,leftticon,righticon,icon1,icon2,icon3}) => {
     return (
         <View>
               <View style={styles.header}>
@@ -17,8 +17,9 @@ const Customheader: FC = ({title,leftticon,righticon,icon1,icon2}) => {
                  <View> 
                     <Text style={styles.headerTitle}>{title}</Text>
                  </View>
-                 <View>
-                   <Icon name={icon2} size={20}  color="white"/>
+                 <View style={{flexDirection:'row'}}>
+                   <Icon name={icon2} size={20}  color="white" style={{marginRight:10}}/>
+                   <Icon name={icon3} size={20}  color="white"/>
                 </View>
              </View>
         </View>

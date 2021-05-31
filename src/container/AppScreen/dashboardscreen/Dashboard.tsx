@@ -67,7 +67,7 @@ const Dashboard: FC = ({ navigation}) => {
                 </View>
             </View>
             <Customprofile name="Raushel"
-               paragraph="Lorem ipsum is simply dummy text of the printing and simply type setting industry"/>
+               paragraph="Lorem ipsum is simply dummy text of the printing and simply type setting industry" />
             <Customprofile name="Nikhil"
                paragraph="Lorem ipsum is simply dummy text of the printing and simply type setting industry"/>
              <TextInput
