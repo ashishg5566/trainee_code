@@ -14,8 +14,9 @@
           await fetch('http://172.105.61.231:3000/api/subadmin/login/',{
              method:'POST',
              headers:{
-               // 'Accept':'vary',
+            // 'Accept':'vary',
                'Content-Type':'application/json',
+               'Accept': "application/json"
                  },
              body:JSON.stringify(
                 {
@@ -25,18 +26,25 @@
              } ).then(response=>response.json())
              .then(responseJson=>{
                console.log(responseJson)
-            //   setMessage(responseJson.detail);
+               navigation.navigate('Otpscreen', {
+                  paramKey: Email,
+                
+                 
+                })
+              
+              
+               setMessage(responseJson.detail);
              })
              }
         if(Email!=""){
-         alert(Email)
+        // alert(Email)
          setEmailError('')
       }else{
          setEmailError('Please Enter email')
 
       }
       if(Password!=""){
-         alert(Password)
+        // alert(Password)
          setPasswordError('')
       }else{
          setPasswordError('Please Enter Password')
