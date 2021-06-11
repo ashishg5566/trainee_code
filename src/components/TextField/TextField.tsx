@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TextInput, Image, TouchableWithoutFeedback } from 'react-native';
+import Icon from 'react-native-vector-icons/FontAwesome';
 //import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from './styles';
 
@@ -74,7 +75,8 @@ export default class TextField extends Component<AppProps, {}> {
         />
         {this.props.imageIcon != '' && <View style={styles.imageiconConatiner}>
           <TouchableWithoutFeedback onPress={this.props.onIconPress} >
-            <Image source={this.props.imageIcon} style={styles.imageicon} />
+            {/* <Image source={this.props.imageIcon} style={styles.imageicon} /> */}
+            <Icon name={this.props.imageIcon} size={18} color='grey'/>
           </TouchableWithoutFeedback>
         </View>}
 

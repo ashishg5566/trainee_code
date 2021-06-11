@@ -4,8 +4,8 @@ const styles = ScaledSheet.create({
     savebutton:{
         
         backgroundColor:'#4E387E',
-        width:'310@ms',
-        height:'55@ms',
+        width:'90%',
+        height:'48@ms',
         justifyContent:'center',
         alignItems:'center',
         borderRadius:'10@ms'

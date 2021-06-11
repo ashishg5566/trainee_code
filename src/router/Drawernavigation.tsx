@@ -16,7 +16,7 @@ import Task7 from '../container/AppScreen/Task7/Task7.tsx';
 import Task8 from '../container/AppScreen/Task8/Task8.tsx';
 import Task9 from '../container/AppScreen/Task9/Task9.tsx';
  import Task10 from '../container/AppScreen/Task10/Task10.tsx';
-// import Task11 from '../container/AppScreen/Task11/Task11.tsx';
+import resetPassword from '../container/AppScreen/Task11/resetPassword.tsx';
 import About from '../container/AppScreen/aboutscreen/About.tsx';
  
  
@@ -26,6 +26,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { NavigationContainer } from '@react-navigation/native';
 import Tabnavigation from './Tabnavigation.tsx'
+ 
  
 const Drawer = createDrawerNavigator();
  
@@ -57,7 +58,7 @@ const Drawernavigation: FC = () => {
         <Drawer.Screen name="Task7" component={Task7} />
         <Drawer.Screen name="Task8" component={Task8} />
         <Drawer.Screen name="Task9" component={Task9} />
-        {/* <Drawer.Screen name="Task11" component={Task11} /> */}
+        <Drawer.Screen name="resetPassword" component={resetPassword} />
         <Drawer.Screen name="Task10" component={Task10} />
       </Drawer.Navigator>
         

@@ -2,8 +2,8 @@ import { Platform, Dimensions } from 'react-native';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { ScaledSheet } from 'react-native-size-matters';
 
-const screenWidth = Dimensions.get('window').width;
-const screenHeight = Math.round(Dimensions.get('window').height);
+// const screenWidth = Dimensions.get('window').width;
+// const screenHeight = Math.round(Dimensions.get('window').height);
 //import {Font} from '../index';
 import { Images, Colors, TextField, Font, CustomButton } from '../../components';
 
@@ -14,11 +14,11 @@ export default ScaledSheet.create({
 		borderRadius: 12,
 		marginTop:'2%',
 		borderWidth: 0.7,
-		borderColor: 'lightgray',
-		width:'95%',
-		alignSelf:'center'
+		borderColor: 'gray',
+		width:'90%',
+		alignSelf:'center',
 
-		//borderColor: 'rgba(51,51,51,0.5)',
+		 
 
 	},
 	flexdirection: {
@@ -33,7 +33,7 @@ export default ScaledSheet.create({
 		fontFamily: 'Lato-Regular',
 		height: 50,
 		width: '80%',
-		fontSize: hp(2.1),
+		fontSize: 15,
 		paddingLeft: '5%',
 		color: '#000'
 	},
@@ -41,7 +41,7 @@ export default ScaledSheet.create({
 		fontFamily: 'Lato-Regular',
 		height: 100,
 		 width:200,
-		fontSize: hp(2.3),
+		fontSize: 10,
 		paddingLeft: '5%',
 		textAlignVertical: 'top'
 	},
@@ -54,9 +54,9 @@ export default ScaledSheet.create({
 
 	},
 	imageicon: {
-		width: Dimensions.get('window').width * 0.07,
-		height: Dimensions.get('window').width * 0.07,
-		resizeMode: 'contain',
+		// width: Dimensions.get('window').width * 0.07,
+		// height: Dimensions.get('window').width * 0.07,
+		// resizeMode: 'contain',
 
 	}
 });
