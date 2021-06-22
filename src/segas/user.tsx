@@ -1,6 +1,7 @@
 import { put, takeLatest, all, call, takeEvery } from 'redux-saga/effects';
 import {
    RESET_PASSWORD,
+   GET_PRIVACYDATA,
   
 } from '../actions/user-actions-types';
 import httpClient from './http-client';
@@ -29,10 +30,36 @@ function* resetPassword({ payload: { data, callback } }) {
     }
   }
 }
+function* getPrivacyData({ payload: { callback } }) {
+  const payload = {
+    method: 'GET',
+    url: `admin/view_static_content/?user_type=user&page_name=Privacy%20Policy`,
+  };
+  const { result, error } = yield call(httpClient, payload);
+  callback({ result, error });
+  if (!error) {
+    if (result) {
+       console.log('get privacydata result', JSON.stringify(result, undefined, 2));
+      callback({ result, error });
+       
+    } else {
+      Toast.show(result.message);
+    }
+  }
+}
+
+
+
+
+
+
+
+
 function* User() {
   yield all([
      
     yield takeLatest(RESET_PASSWORD, resetPassword),
+    yield takeLatest(GET_PRIVACYDATA, getPrivacyData),
 
   ]);
 }

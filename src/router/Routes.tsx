@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
  const Routes: FC = () => {
      return (
          <View style={styles.container}>
-             <NavigationContainer> 
+            
              {/* <Navigation/> */}
              <Stack.Navigator initialRouteName="Auth"
               screenOptions={{
@@ -24,7 +24,7 @@ const Stack = createStackNavigator();
               
             />
             </Stack.Navigator>
-           </NavigationContainer>
+           
          </View>
      );
  };

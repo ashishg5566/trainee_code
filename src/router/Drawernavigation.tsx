@@ -18,19 +18,12 @@ import Task9 from '../container/AppScreen/Task9/Task9.tsx';
  import Task10 from '../container/AppScreen/Task10/Task10.tsx';
 import resetPassword from '../container/AppScreen/Task11/resetPassword.tsx';
 import About from '../container/AppScreen/aboutscreen/About.tsx';
- 
- 
-import Contact from '../container/AppScreen/contactscreen/Contact.tsx';
-import Detail from '../container/AppScreen/detailscreen/Detail.tsx';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import contactUs from '../container/AppScreen/ContactUs/contactUs.tsx';
+import privacyPolicy from '../container/AppScreen/privacyPolicy/privacyPolicy.tsx';
 import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
 import Tabnavigation from './Tabnavigation.tsx'
- 
- 
 const Drawer = createDrawerNavigator();
- 
-// create a component
+ // create a component
 const Drawernavigation: FC = () => {
     return (
         <View style={styles.container}>
@@ -59,7 +52,11 @@ const Drawernavigation: FC = () => {
         <Drawer.Screen name="Task8" component={Task8} />
         <Drawer.Screen name="Task9" component={Task9} />
         <Drawer.Screen name="resetPassword" component={resetPassword} />
+        <Drawer.Screen name="contact" component={contactUs} />
+        <Drawer.Screen name="PrivacyPolicy" component={privacyPolicy} />
+        
         <Drawer.Screen name="Task10" component={Task10} />
+       
       </Drawer.Navigator>
         
         </View>
