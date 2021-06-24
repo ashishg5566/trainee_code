@@ -1,10 +1,15 @@
 import { ScaledSheet } from 'react-native-size-matters';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
+import { Colors} from '../../constants';
+
 const styles = ScaledSheet.create({
     
     savebutton:{
         
-        backgroundColor:'#4E387E',
-        width:'90%',
+      width:'90%',
+	//	padding: '5%',
+        backgroundColor:Colors.$BtnBackgroundColor,
+       
         height:'48@ms',
         justifyContent:'center',
         alignItems:'center',
@@ -12,7 +17,8 @@ const styles = ScaledSheet.create({
       },
       savebuttontext:{
         color:'white',
-        fontSize:'14@ms'
+        fontSize: hp(2.8),
+        fontFamily: 'Lato-Medium',
       },
     
 

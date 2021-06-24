@@ -1,4 +1,5 @@
 import { ScaledSheet } from 'react-native-size-matters';
+import { Colors} from '../../constants';
 const styles = ScaledSheet.create({
     container:{
       flex:1,
@@ -8,7 +9,7 @@ const styles = ScaledSheet.create({
     header:{
        borderBottomRightRadius :'20@ms',
         borderBottomLeftRadius :'15@ms',
-          backgroundColor:'#4E387E',
+          backgroundColor:Colors.$BtnBackgroundColor,
          height:'80@ms',
          flexDirection:'row',
          padding:'15@ms',

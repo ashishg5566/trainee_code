@@ -33,6 +33,7 @@ const styles = ScaledSheet.create({
 
           },
           nametext:{
+            fontFamily: 'Lato-Regular',
             fontWeight:'bold',
             color:'black',
            fontSize:'18@ms'
@@ -45,6 +46,7 @@ const styles = ScaledSheet.create({
 
           },
           titletext:{
+            fontFamily: 'Lato-Regular',
             color:'grey',
             fontSize:'15@ms',
             fontWeight:'bold'
@@ -83,7 +85,8 @@ const styles = ScaledSheet.create({
           text:{
             color:'grey',
             fontSize:'15@ms',
-            fontWeight:'bold'
+            fontWeight:'bold',
+            fontFamily: 'Lato-Regular',
             },
           modalcontent:{
             flexDirection:'row',

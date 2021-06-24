@@ -1,28 +1,24 @@
 import { ScaledSheet } from 'react-native-size-matters';
+import { Colors} from '../../../constants';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 const styles = ScaledSheet.create({
-     
-      container:{
+     container:{
         flex:1,
-        backgroundColor:'lightgrey',
+        backgroundColor:Colors.$backgroundColor,
        },
-      
-     
-      searchicon:{
-        marginRight:'20@ms'
-      },
-      textcontainer:{
+       textcontainer:{
         flexDirection:'row',
         justifyContent:'space-between',
-        width:'92%',
+        width:'100%',
          marginTop:'10@ms',
         marginBottom:'10@ms',
-        paddingLeft:'5@ms',
-        paddingRight:'5@ms'
+        paddingLeft:'7%',
+        paddingRight:'7%'
       },
       text:{
-        fontWeight:'bold',
+         fontFamily:'lato-regular',
         color:'black',
-        fontSize:'11@ms'
+        fontSize: hp(2.0),
 
       },
       smallcardcontent:{
@@ -38,11 +34,11 @@ const styles = ScaledSheet.create({
          textAlign:'center',
          fontWeight:'bold',
          color:'grey',
-         fontSize:'11@ms',
+         fontSize: hp(1.5),
          marginTop:'5@ms'
       },
       batchmatetext:{
-        fontSize:'10@ms',
+        fontSize: hp(1.2),
         textAlign:'center',
         color:'grey'
 
@@ -53,12 +49,13 @@ const styles = ScaledSheet.create({
          height:'65@ms',
         borderTopRightRadius:'20@ms',
        position:'relative',
-        borderTopLeftRadius:'20@ms'
+        borderTopLeftRadius:'20@ms',
+        resizeMode:'cover'
     
       },
       addbuddybutton:{
         height:'25@ms',
-        backgroundColor:'#4E387E',
+        backgroundColor:Colors.$BtnBackgroundColor,
         justifyContent:'center',
         alignItems:'center',
         width:'65@ms',
@@ -77,8 +74,8 @@ const styles = ScaledSheet.create({
 
        },
        nametextstyle:{
-          marginTop:'8@ms',
-          marginLeft:'20@ms',
+          alignItems:'center',
+          marginLeft:30
            },
       
       nametext:{
@@ -101,12 +98,7 @@ const styles = ScaledSheet.create({
     
       },
        
-      videocontent:{
-      width:'100%',
-         height:'120@ms',
-       
-    
-      },
+      
       iconcontainer:{
         justifyContent:'space-between',
         flexDirection:'row',
